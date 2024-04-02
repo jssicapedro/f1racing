@@ -1,0 +1,556 @@
+.ActualyRace,
+.drivers,
+.races,
+.classification {
+    z-index: 1;
+}
+
+
+.drivers,
+.races,
+.classification {
+    margin-top: 70px;
+}
+
+.ActualyRace {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ActualyRaceImg {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ActualyRaceImg img {
+    width: 100%;
+}
+
+.screen1,
+.races__{
+    width: 75vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.infoActualyRace {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+
+.infoActualyRace .country {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--default_gray);
+    gap: 10px;
+    font-size: 15px;
+}
+
+.infoActualyRace .country img {
+    width: 70px;
+}
+
+h1 {
+    font-size: 52.5px;
+}
+
+.date {
+    font-size: 16px;
+    color: var(--default_gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    font-weight: 500;
+}
+
+.nextRace {
+    margin-top: 30px;
+    background: var(--default_white);
+    max-width: 400px;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 25px;
+}
+
+.infoNextRace {
+    gap: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.infoNextRace h2 {
+    font-size: 16.5px;
+    font-weight: bold;
+}
+
+/* DRIVERS */
+.drivers {
+    width: 100%;
+}
+
+.drivers .splide__list {
+    display: flex;
+    flex-direction: row;
+    gap: 3%;
+}
+
+.drivers .splide__slide {
+    display: flex;
+    flex-direction: row;
+    max-width: 420px;
+    background: var(--default_white);
+    border-radius: 20px;
+    align-items: center;
+}
+
+.splide__slide .driverImg img {
+    height: 250px;
+}
+
+.drivers .splide__arrows.splide__arrows--ltr {
+    display: none;
+}
+
+.drivers .splide.splide_mobile,
+.drivers .splide.splide_mobile_800 {
+    display: none;
+}
+
+.driverInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    padding-left: 10%;
+    min-width: 55%;
+}
+
+.driverInfo img {
+    width: 25%;
+    vertical-align: bottom;
+}
+
+.driverInfo h2.driverName {
+    font-size: 40px;
+}
+
+.driverNumCou {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.driverNumCou p {
+    font-size: 30px;
+}
+
+.driverNumCou img {
+    height: 40px;
+}
+
+/* IMG CALENDAR */
+.position_img {
+    position: absolute;
+    z-index: 0;
+    width: 100vw;
+    height: 1000px;
+    margin-top: 32%;
+    clip-path: polygon(0 40%, 100% 0%, 100% 100%, 0% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_calendar {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    filter: brightness(110%) contrast(90%);
+}
+
+.position_img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #ffffff00 30%, #000000 80%);
+    z-index: 2;
+    /* Coloca o gradiente acima da imagem */
+}
+
+/* RACES */
+.races {
+    color: var(--default_white);
+    font-weight: normal;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.races__ .actuallyRace {
+    width: 25%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 25px;
+    text-transform: uppercase;
+}
+
+.actuallyRace h3 {
+    font-size: 25px;
+}
+
+.days {
+    font-size: 17px;
+}
+
+.pqs {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pqsSubtitle {
+    color: var(--default_gray);
+}
+
+.race_day {
+    margin-top: 10px;
+}
+
+a.btnRed {
+    width: 25%;
+}
+
+.fullRaces {
+    width: 70%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fullRaces div#splide03 {
+    width: 100%;
+    height: 100%;
+}
+
+.fullRaces div#splide03-track {
+    height: 90% !important;
+}
+
+.fullRaces .splide_callendar{
+    height: 100%;
+}
+
+.fullRaces .splide__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.fullRaces .splide__slide {
+    width: calc(25% - 10px);
+    height: 30% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-left: 1px solid var(--default_gray);
+    border-right: 1px solid var(--default_gray);
+    padding-top: 25px;
+}
+
+.fullRaces .splide__arrows--ttb .splide__arrow--prev {
+    top: 1em;
+    margin: -45px 0;
+}
+
+.splide__arrow svg {
+    fill: #fff !important;
+}
+
+.splide__arrow {
+    background: #cccccc00 !important;
+}
+
+.fullRaces .splide__arrow:disabled svg {
+    fill: #fff !important;
+}
+
+.fullRaces hr {
+    margin-top: 12px;
+    width: 70%;
+    border-color: var(--default_gray);
+}
+
+/* CLASSIFICATION */
+.classification{
+    margin-top: 90px;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.classification h1{
+    text-align: center;
+}
+
+.classification_menu{
+    margin: 35px 0;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.classification_menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 35px;
+    border: 1px solid var(--default_color);
+    border-radius: 30px;
+    padding: 15px 0px;
+}
+
+.classification_menu ul li a{
+    text-decoration: none;
+    color: var(--default_color);
+    font-weight: normal;
+    padding: 15px 30px;
+    border-radius: 30px;
+}
+
+#Drivers,
+#Constructors,
+#LastRace {
+    width: 100%;
+    font-weight: normal;
+}
+
+.active{
+    font-weight: bold !important;
+    border: 1px solid var(--default_color);
+    background: var(--default_gray);
+}
+
+.hidden{
+    display: none;
+}
+
+#classification_content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.classificarion_drivers_top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 35px;
+}
+
+.top {
+    width: calc(100% / 5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--default_gray);
+    /* background: rgb(225, 6, 0);
+    background: linear-gradient(43deg, rgba(225, 6, 0, 1) 50%, rgba(246, 243, 240, 1) 100%); */
+    padding: 20px;
+    border-radius: 22% 78% 18% 82% / 87% 31% 69% 13% ;
+    transition: transform 0.5s;
+}
+
+.top:hover{
+    transform: scale(1.2);
+}
+
+.top-name{
+    padding-top: 10px;
+    font-weight: 700;
+}
+
+.top-team{
+    margin-bottom: 20px;
+}
+
+.classificarion_drivers_top p span{
+    font-weight: bold;
+}
+
+.classification_drivers {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.drivers_list {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    border: 1px solid var(--default_color);
+    border-radius: 25px;
+    transition: background-color 0.5s ease;
+}
+
+.drivers_list:hover{
+    font-weight: bold;
+    background-color: var(--default_color);
+    color: var(--default_white);
+}
+
+.drivers_list:hover .driver_info p{
+    font-weight: bold;
+}
+
+.drivers_list:hover .driver_achievements{
+    font-weight: normal;
+}
+
+.driver_info p{
+    font-weight: normal;
+}
+
+.driver_info img {
+    border-radius: 20px;
+}
+
+.driver_achievements {
+    display: flex;
+    gap: 55px;
+}
+
+
+@media (max-width:1200px) {
+    .splide_mobile {
+        display: block !important;
+    }
+
+    .splide_default {
+        display: none;
+    }
+
+    .position_img {
+        height: 130vh;
+    }
+}
+
+@media (max-width: 1500px) {
+    .position_img {
+        display: none;
+    }
+    .races__ {
+        width: 100vw;
+        color: var(--default_color);
+        justify-content: normal;
+        align-items: center;
+    }
+
+    .races__ .actuallyRace {
+        width: 35%;
+    }
+}
+
+@media (max-width:1100px) {
+    .races__ {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .races__ .actuallyRace {
+        background-image: linear-gradient(to bottom, rgb(0 0 0 / 87%), rgb(0 0 0 / 65%)), url(../img/F1Racing/background_.jpg);
+        color: var(--default_white);
+        padding: 50px 0;
+    }
+
+    .races__ .actuallyRace,
+    .races__ .fullRaces {
+        width: 100%;
+    }
+
+    .fullRaces .splide__list {
+        justify-content: center;
+    }
+}
+
+@media (max-width:1000px) {
+    .screen1 {
+        flex-direction: column;
+        height: auto;
+        gap: 25px;
+    }
+
+    .infoActualyRace {
+        width: 100%;
+    }
+
+    .ActualyRaceImg {
+        width: 100%;
+    }
+}
+
+@media (max-width:800px) {
+    .nextRace {
+        min-width: 100%;
+        padding: 20px 0;
+    }
+
+    .nextRace img {
+        width: 15%;
+    }
+
+    .splide_default,
+    .drivers .splide.splide_mobile {
+        display: none !important;
+    }
+
+    .splide.splide_mobile_800 {
+        display: block !important;
+    }
+
+    .drivers .splide__list {
+        gap: 10%;
+    }
+
+    .fullRaces .splide__list {
+        justify-content: space-between;
+    }
+
+    .fullRaces .splide__slide {
+        border: none;
+    }
+}

@@ -1,0 +1,12 @@
+.card-image{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border: 1px solid red;
+}
+
+.card-image .card-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
