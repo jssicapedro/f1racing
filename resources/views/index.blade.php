@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                             <div class="driverImg">
-                                <img src="{{ asset('img/driver/LewisHamilton.png') }}" alt="">
+                                <img src="{{ url('storage/driver/imgDriver/'.$driver->imgDriver.'.png') }}" alt="">
                             </div>
                         </li>
                     @endforeach
@@ -101,7 +101,7 @@
                                 </div>
                             </div>
                             <div class="driverImg">
-                                <img src="{{ asset('img/driver/LewisHamilton.png') }}" alt="">
+                                <img src="{{ url('storage/driver/imgDriver/'.$driver->imgDriver.'.png') }}" alt="">
                             </div>
                         </li>
                     @endforeach
@@ -323,7 +323,7 @@
                 <div class="classificarion_drivers_top">
                     @forelse ($topDrivers as $top)
                         <div class="top">
-                            <img src="{{ asset('img/driver/LewisHamilton_profile.png') }}" alt="">
+                            <img src="{{ url('storage/driver/profile/'.$top->imgDriverProfile.'.png') }}" alt="">
                             <p class="top-name">{{ $loop->iteration }}.{{ $top->firstName . ' ' . $top->lastName }}</p>
                             
                             @if ($top->team)

@@ -141,10 +141,12 @@ h1 {
 .driverInfo img {
     width: 25%;
     vertical-align: bottom;
+    z-index: 2;
 }
 
 .driverInfo h2.driverName {
-    font-size: 40px;
+    font-size: 46px;
+    z-index: 10;
 }
 
 .driverNumCou {
@@ -307,7 +309,7 @@ a.btnRed {
 
 /* CLASSIFICATION */
 .classification{
-    margin-top: 90px;
+    margin-top: 150px;
     width: 75vw;
     display: flex;
     flex-direction: column;
