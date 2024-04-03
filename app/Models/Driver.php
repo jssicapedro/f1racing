@@ -24,5 +24,11 @@ class Driver extends Model
         'imgDriverProfile',
         'imgNumber',
         'imgCountry',
+        'Team_idTeam',
     ];
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class, 'Team_idTeam', 'idTeam');
+    }
 }
