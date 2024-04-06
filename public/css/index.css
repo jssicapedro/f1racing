@@ -410,7 +410,7 @@ a.btnRed {
     font-weight: bold;
 }
 
-.classification_drivers {
+.classification_drivers, .classification_teams {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -418,7 +418,7 @@ a.btnRed {
     gap: 20px;
 }
 
-.drivers_list {
+.drivers_list, .teams_list {
     padding: 15px;
     display: flex;
     align-items: center;
@@ -429,33 +429,58 @@ a.btnRed {
     transition: background-color 0.5s ease;
 }
 
-.drivers_list:hover{
+.drivers_list:hover, .teams_list:hover{
     font-weight: bold;
     background-color: var(--default_color);
     color: var(--default_white);
 }
 
-.drivers_list:hover .driver_info p{
+.drivers_list:hover .driver_info p, .teams_list:hover .driver_info p{
     font-weight: bold;
 }
 
-.drivers_list:hover .driver_achievements{
+.drivers_list:hover .driver_achievements, .teams_list:hover .driver_achievements{
     font-weight: normal;
 }
 
-.driver_info p{
+.driver_info p, .teams_info p{
     font-weight: normal;
 }
 
-.driver_info img {
-    border-radius: 20px;
+.teams_info p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.driver_achievements {
+.driver_info img, .teams_info img {
+    border-radius: 5px;
+    width: 35px;
+    margin-left: 15px;
+}
+
+.driver_achievements, .team_achievements {
     display: flex;
     gap: 55px;
 }
 
+
+
+@media (max-width: 1500px) {
+    .position_img {
+        display: none;
+    }
+    .races__ {
+        width: 100vw;
+        color: var(--default_color);
+        justify-content: normal;
+        align-items: center;
+    }
+    
+    .races__ .actuallyRace {
+        width: 35%;
+    }
+}
 
 @media (max-width:1200px) {
     .splide_mobile {
@@ -469,21 +494,22 @@ a.btnRed {
     .position_img {
         height: 130vh;
     }
-}
 
-@media (max-width: 1500px) {
-    .position_img {
-        display: none;
-    }
-    .races__ {
-        width: 100vw;
-        color: var(--default_color);
-        justify-content: normal;
-        align-items: center;
+    .classificarion_drivers_top{
+        flex-direction: column;
     }
 
-    .races__ .actuallyRace {
-        width: 35%;
+    .classification_menu ul{
+        flex-direction: column;
+    }
+
+    .top {
+        width: 100%;
+        height: 320px;
+    }
+
+    .top:hover{
+        transform: scale(1);
     }
 }
 

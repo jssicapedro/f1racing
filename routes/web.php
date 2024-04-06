@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\DriverController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,5 @@ use App\Http\Controllers\IndexController;
 */
 
 Route::get('/', [IndexController::class, 'index']);
+Route::get('/drivers', [DriverController::class, 'index']);
 
