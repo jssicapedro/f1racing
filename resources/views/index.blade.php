@@ -286,7 +286,7 @@
             <div class="classificarion_drivers_top">
                 @forelse ($topDrivers as $top)
                 <div class="top">
-                    <img src="{{ url('storage/driver/profile/'.$top->imgDriverProfile.'.png') }}" alt="">
+                    <img src="{{ url('storage/driver/'.$top->imgDriverProfile.'.png') }}" alt="">
                     <p class="top-name">{{ $loop->iteration }}.{{ $top->firstName . ' ' . $top->lastName }}</p>
 
                     @if ($top->team)

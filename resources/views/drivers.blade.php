@@ -17,20 +17,30 @@
         <ul class="splide__list">
             @foreach ($drivers as $driver)
             <li class="splide__slide">
-                <div class="driverInfo">
-                    <div>
-                        <div class="driverAbout">
-                            <h2 class="driverName">{{ $driver->firstName }}<br> {{ $driver->lastName }}</h2>
-                            <img src="{{ url('storage/country/'.$driver->imgCountry.'.jpg') }}" alt="">
+                <a class="linkDriver" href="#">
+                    <div class="driverInfo">
+                        <div class="all">
+                            <div class="driver">
+                                <div class="driverNameCountry">
+                                    <h2 class="driverName">
+                                        {{ $driver->firstName }}
+                                        <br>
+                                        <span class="lastName">{{ $driver->lastName }}</span>
+                                    </h2>
+                                    <img src="{{ url('storage/country/'.$driver->imgCountry.'.jpg') }}" alt="">
+                                </div>
+                                <hr>
+                                <div class="driverTeam">
+                                    <p>{{$driver->team->fullName}}</p>
+                                </div>
+                            </div>
+                            <img class="driverNumImg" src="{{ url('storage/driver/'.$driver->imgNumber.'.png') }}" alt="">
                         </div>
-                        <hr>
-                        <p>{{$driver->team->name}}</p>
-                        <img src="{{ url('storage/driver/'.$driver->imgNumber.'.png') }}" alt="">
                     </div>
-                </div>
-                <div class="driverImg">
-                    <img src="{{ url('storage/driver/'.$driver->imgDriver.'.png') }}" alt="">
-                </div>
+                    <div class="driverImg">
+                        <img src="{{ url('storage/driver/'.$driver->imgDriver.'.png') }}" alt="">
+                    </div>
+                </a>
             </li>
             @endforeach
         </ul>
