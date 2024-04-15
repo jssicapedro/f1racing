@@ -46,4 +46,37 @@
         </ul>
     </div>
 </div>
+
+<div class="driver_mobile" role="group" aria-label="Splide Basic HTML Example">
+    <ul class="list_driver">
+        @foreach ($drivers as $driver)
+        <li class="item_driver">
+            <a class="linkDriver" href="#">
+                <div class="driverInfo">
+                    <div class="all">
+                        <div class="driver">
+                            <div class="driverNameCountry">
+                                <h2 class="driverName">
+                                    {{ $driver->firstName }}
+                                    <br>
+                                    <span class="lastName">{{ $driver->lastName }}</span>
+                                </h2>
+                                <img src="{{ url('storage/country/'.$driver->imgCountry.'.jpg') }}" alt="">
+                            </div>
+                            <hr>
+                            <div class="driverTeam">
+                                <p>{{$driver->team->fullName}}</p>
+                            </div>
+                        </div>
+                        <img class="driverNumImg" src="{{ url('storage/driver/'.$driver->imgNumber.'.png') }}" alt="">
+                    </div>
+                </div>
+                <div class="driverImg">
+                    <img src="{{ url('storage/driver/'.$driver->imgDriver.'.png') }}" alt="">
+                </div>
+            </a>
+        </li>
+        @endforeach
+    </ul>
+</div>
 @endsection

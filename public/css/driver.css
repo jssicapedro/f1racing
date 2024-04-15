@@ -1,12 +1,12 @@
 main {
     align-items: center;
-    height: calc(100vh - 40vh);
     padding: 50px 0;
     justify-content: center;
     font-family: var(--menu_family);
 }
 
-.splide.is-initialized, .splide.is-rendered{
+.splide.is-initialized,
+.splide.is-rendered {
     width: 90vw;
 }
 
@@ -26,12 +26,13 @@ div#splide01-track {
     z-index: 1;
 }
 
-.linkDriver{
+.linkDriver {
     text-decoration: none;
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    color: var(--default_color);
 }
 
 .splide__slide {
@@ -46,19 +47,19 @@ div#splide01-track {
     padding: 25px 0 0 25px;
 }
 
-.driverAbout{
+.driverAbout {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 10px;
 }
 
-.driverAbout img{
+.driverAbout img {
     width: 73px;
     border-radius: 10px;
 }
 
-.driver{
+.driver {
     display: flex;
     flex-direction: column;
 }
@@ -72,7 +73,7 @@ div#splide01-track {
     z-index: 10;
 }
 
-.driver hr{
+.driver hr {
     margin: 15px 0;
 }
 
@@ -82,7 +83,7 @@ div#splide01-track {
     margin-left: 10px;
 }
 
-.driverInfo .all{
+.driverInfo .all {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -91,18 +92,18 @@ div#splide01-track {
     width: 100%;
 }
 
-.driverName{
+.driverName {
     font-size: 50px;
     font-weight: normal;
     color: var(--default_white);
 }
 
-.driverName .lastName{
+.driverName .lastName {
     font-size: 65px;
     font-weight: bold;
 }
 
-.driverTeam{
+.driverTeam {
     color: var(--default_white);
     font-weight: lighter;
 }
@@ -111,10 +112,56 @@ div#splide01-track {
     width: 150px;
 }
 
-.driverImg{
+.driverImg {
     height: 100%;
     display: flex;
     align-content: flex-end;
     align-items: flex-end;
     justify-content: center;
+}
+
+.driver_mobile {
+    display: none;
+}
+
+@media (max-width: 1400px) {
+    h2.driverName, .driverTeam{
+        color: var(--default_color);
+    }
+    .splide_driver {
+        display: none;
+    }
+
+    .driver_mobile {
+        display: block;
+    }
+
+    .driver_mobile .list_driver {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        list-style: none;
+        justify-content: space-around;
+    }
+
+    .driver_mobile .item_driver {
+        width: calc(90% / 2);
+        margin-bottom: 35px;
+    }
+
+    .driver_mobile .item_driver .linkDriver{
+        flex-direction: column;
+    }
+
+    .driver_mobile .driverNumImg {
+        width: 100px;
+    }
+
+    .driver_mobile .driverImg {
+        height: 350px;
+    }
+
+    .driver_mobile .driverImg img{
+        height: 100%;
+    }
 }

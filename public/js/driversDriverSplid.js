@@ -4,6 +4,4 @@ var splide = new Splide( '.splide_driver', {
     autoplay: true,
     arrows: false,
     drag: false,
-  } );
-  
-  splide.mount();
+  }).mount();
