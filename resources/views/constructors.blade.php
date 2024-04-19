@@ -22,7 +22,17 @@
       </li>
       @endforeach
     </ul>
-    
+</section>
+
+<section class="splide splide_mobile" role="group" aria-label="Splide Basic HTML Example">
+  <div class="splide__track">
+    <ul class="splide__list">
+      @foreach ($constructors as $constructor)
+      <li class="splide__slide" style="background: {{$constructor->color}};">
+        <img src="{{url('storage/team/'.$constructor->imgFullName)}}" alt="{{$constructor->name}}">
+      </li>
+      @endforeach
+    </ul>
 </section>
 
 @endsection

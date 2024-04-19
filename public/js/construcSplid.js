@@ -3,3 +3,9 @@ var splide = new Splide('.splide_const', {
   arrows: false,
   pagination: false,
 }).mount();
+
+var splide = new Splide('.splide_mobile', {
+  perPage: 1,
+  arrows: false,
+  pagination: false,
+}).mount();

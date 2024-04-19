@@ -3,7 +3,7 @@
 }
 
 .splide__slide {
-    height: 535px;
+    height: 520px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,3 +13,19 @@
 .splide .splide__slide img {
     width: 65%;
 }
+
+.splide_const{
+    display: flex;
+}
+.splide_mobile {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+    .splide_const{
+        display: none;
+    }
+    .splide_mobile {
+      display: flex;
+    }
+  }
