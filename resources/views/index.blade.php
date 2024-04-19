@@ -71,15 +71,15 @@
                 @foreach ($drivers as $driver)
                 <li class="splide__slide">
                     <div class="driverInfo">
-                    <img src="{{ url('storage/team/imgLogo/'.$driver->team->imgLogo.'.png') }}" alt="">
+                    <img src="{{ url('storage/team/imgLogo/'.$driver->team->imgLogo) }}" alt="">
                         <h2 class="driverName">{{ $driver->firstName }}<br> {{ $driver->lastName }}</h2>
                         <div class="driverNumCou">
-                            <p>{{ $driver->number }}</p>
-                            <img src="{{ url('storage/country/'.$driver->imgCountry.'.jpg') }}" alt="">
+                            <img src="{{ url('storage/driver/'.$driver->imgNumber) }}" alt="">
+                            <img src="{{ url('storage/country/'.$driver->imgCountry) }}" alt="">
                         </div>
                     </div>
                     <div class="driverImg">
-                        <img src="{{ url('storage/driver/'.$driver->imgDriver.'.png') }}" alt="">
+                        <img src="{{ url('storage/driver/'.$driver->imgDriver) }}" alt="">
                     </div>
                 </li>
                 @endforeach
@@ -93,15 +93,15 @@
                 @foreach ($drivers as $driver)
                 <li class="splide__slide">
                     <div class="driverInfo">
-                    <img src="{{ url('storage/team/imgLogo/'.$driver->team->imgLogo.'.png') }}" alt="">
+                    <img src="{{ url('storage/team/imgLogo/'.$driver->team->imgLogo) }}" alt="">
                         <h2 class="driverName">{{ $driver->firstName }}<br> {{ $driver->lastName }}</h2>
                         <div class="driverNumCou">
                             <p>{{ $driver->number }}</p>
-                            <img src="{{ url('storage/country/'.$driver->imgCountry.'.jpg') }}" alt="">
+                            <img src="{{ url('storage/country/'.$driver->imgCountry) }}" alt="">
                         </div>
                     </div>
                     <div class="driverImg">
-                        <img src="{{ url('storage/driver/'.$driver->imgDriver.'.png') }}" alt="">
+                        <img src="{{ url('storage/driver/'.$driver->imgDriver) }}" alt="">
                     </div>
                 </li>
                 @endforeach
@@ -115,15 +115,15 @@
                 @foreach ($drivers as $driver)
                 <li class="splide__slide">
                     <div class="driverInfo">
-                        <img src="{{ url('storage/team/imgLogo/'.$driver->team->imgLogo.'.png') }}" alt="">
+                        <img src="{{ url('storage/team/imgLogo/'.$driver->team->imgLogo) }}" alt="">
                         <h2 class="driverName">{{ $driver->firstName }}<br> {{ $driver->lastName }}</h2>
                         <div class="driverNumCou">
                             <p>{{ $driver->number }}</p>
-                            <img src="{{ url('storage/country/'.$driver->imgCountry.'.jpg') }}" alt="">
+                            <img src="{{ url('storage/country/'.$driver->imgCountry) }}" alt="">
                         </div>
                     </div>
                     <div class="driverImg">
-                        <img src="{{ url('storage/driver/'.$driver->imgDriver.'.png') }}" alt="">
+                        <img src="{{ url('storage/driver/'.$driver->imgDriver) }}" alt="">
                     </div>
                 </li>
                 @endforeach
@@ -286,7 +286,7 @@
             <div class="classificarion_drivers_top">
                 @forelse ($topDrivers as $top)
                 <div class="top">
-                    <img src="{{ url('storage/driver/'.$top->imgDriverProfile.'.png') }}" alt="">
+                    <img src="{{ url('storage/driver/'.$top->imgDriverProfile) }}" alt="">
                     <p class="top-name">{{ $loop->iteration }}.{{ $top->firstName . ' ' . $top->lastName }}</p>
 
                     @if ($top->team)
@@ -324,7 +324,7 @@
                 <div class="drivers_list">
                     <div class="driver_info">
                         <p>{{ $loop->iteration + 3 . '. ' . $otherDriver->firstName . ' ' . $otherDriver->lastName }}
-                            <img src="{{ url('storage/country/'.$otherDriver->imgCountry.'.jpg') }}" alt=""><br>
+                            <img src="{{ url('storage/country/'.$otherDriver->imgCountry) }}" alt=""><br>
                             @if ($otherDriver->team)
                             {{ $otherDriver->team->name }}
                             @else
@@ -364,7 +364,7 @@
                     <div class="teams_info">
                         <div>
                             <p>{{ $loop->iteration . '. ' . $team->name}}
-                                <img src="{{ url('storage/team/imgLogo/'.$team->imgLogo.'.png') }}" alt=""><br>
+                                <img src="{{ url('storage/team/imgLogo/'.$team->imgLogo) }}" alt=""><br>
                             </p>
                         </div>
                     </div>

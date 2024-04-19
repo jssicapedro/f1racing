@@ -28,18 +28,18 @@
                                         <br>
                                         <span class="lastName">{{ $driver->lastName }}</span>
                                     </h2>
-                                    <img src="{{ url('storage/country/'.$driver->imgCountry.'.jpg') }}" alt="">
+                                    <img src="{{ url('storage/country/'.$driver->imgCountry) }}" alt="">
                                 </div>
                                 <hr>
                                 <div class="driverTeam">
                                     <p>{{$driver->team->fullName}}</p>
                                 </div>
                             </div>
-                            <img class="driverNumImg" src="{{ url('storage/driver/'.$driver->imgNumber.'.png') }}" alt="">
+                            <img class="driverNumImg" src="{{ url('storage/driver/'.$driver->imgNumber) }}" alt="">
                         </div>
                     </div>
                     <div class="driverImg">
-                        <img src="{{ url('storage/driver/'.$driver->imgDriver.'.png') }}" alt="">
+                        <img src="{{ url('storage/driver/'.$driver->imgDriver) }}" alt="">
                     </div>
                 </a>
             </li>
@@ -62,18 +62,18 @@
                                     <br>
                                     <span class="lastName">{{ $driver->lastName }}</span>
                                 </h2>
-                                <img src="{{ url('storage/country/'.$driver->imgCountry.'.jpg') }}" alt="">
+                                <img src="{{ url('storage/country/'.$driver->imgCountry) }}" alt="">
                             </div>
                             <hr>
                             <div class="driverTeam">
                                 <p>{{$driver->team->fullName}}</p>
                             </div>
                         </div>
-                        <img class="driverNumImg" src="{{ url('storage/driver/'.$driver->imgNumber.'.png') }}" alt="">
+                        <img class="driverNumImg" src="{{ url('storage/driver/'.$driver->imgNumber) }}" alt="">
                     </div>
                 </div>
                 <div class="driverImg">
-                    <img src="{{ url('storage/driver/'.$driver->imgDriver.'.png') }}" alt="">
+                    <img src="{{ url('storage/driver/'.$driver->imgDriver) }}" alt="">
                 </div>
             </a>
         </li>

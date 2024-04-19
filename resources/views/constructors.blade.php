@@ -18,11 +18,11 @@
     <ul class="splide__list">
       @foreach ($constructors as $constructor)
       <li class="splide__slide" style="background: {{$constructor->color}};">
-        <img src="{{url('storage/team/'.$constructor->imgFullName.'.png')}}" alt="">
+        <img src="{{url('storage/team/'.$constructor->imgFullName)}}" alt="{{$constructor->name}}">
       </li>
       @endforeach
     </ul>
-  </div>
+    
 </section>
 
 @endsection
