@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('title', 'F1Racing')
+@section('title', 'F1Racing - Drivers')
 
 @section('links')
 <link rel="stylesheet" href="{{ asset('css/driver.css') }}">
@@ -8,10 +8,11 @@
 @endsection
 
 @section('script')
-<script src="{{ asset('js/driversDriverSplid.js') }}"></script>
+<script src="{{ asset('js/driversSplid.js') }}"></script>
 @endsection
 
 @section('main')
+<h1 class="title">Drivers</h1>
 <div class="splide splide_driver" role="group" aria-label="Splide Basic HTML Example">
     <div class="splide__track">
         <ul class="splide__list">

@@ -17,7 +17,7 @@
     /* border: 1px solid red; */
 }
 
-html{
+html {
     overflow-x: hidden;
 }
 
@@ -51,7 +51,7 @@ html{
     text-decoration: none;
 }
 
-.titleRed{
+.titleRed {
     font-size: 13px;
     font-weight: 500;
     color: var(--default_red);
@@ -101,6 +101,11 @@ main {
     background-color: var(--default_background);
     font-family: var(--menu_family);
     font-weight: bold;
+}
+
+h1.title {
+    margin-bottom: 50px;
+    font-size: 52.5px;
 }
 
 footer {
@@ -168,7 +173,7 @@ footer hr.shine::before {
             hsla(0, 0%, 0%, 0));
 }
 
-footer p.rights{
+footer p.rights {
     display: flex;
     justify-content: flex-end;
     font-size: 10px;

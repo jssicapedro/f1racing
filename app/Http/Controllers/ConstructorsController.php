@@ -9,6 +9,7 @@ class ConstructorsController extends Controller
 {
     public function index()
     {
-        return view('constructors');
+        $constructors = Team::orderBy('name')->all();
+        return view('constructors', compact('constructors'));
     }
 }
