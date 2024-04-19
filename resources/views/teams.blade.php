@@ -3,7 +3,7 @@
 @section('title', 'F1Racing - Constructors')
 
 @section('links')
-<link rel="stylesheet" href="{{ asset('css/constructors.css') }}">
+<link rel="stylesheet" href="{{ asset('css/teams.css') }}">
 @endsection
 
 @section('script')
@@ -16,9 +16,11 @@
 <section class="splide splide_const" role="group" aria-label="Splide Basic HTML Example">
   <div class="splide__track">
     <ul class="splide__list">
-      @foreach ($constructors as $constructor)
-      <li class="splide__slide" style="background: {{$constructor->color}};">
-        <img src="{{url('storage/team/'.$constructor->imgFullName)}}" alt="{{$constructor->name}}">
+      @foreach ($teams as $team)
+      <li class="splide__slide" style="background: {{$team->color}};">
+        <a href="{{ route('team.show', ['id' => $team->idTeam]) }}">
+          <img src="{{url('storage/team/'.$team->imgFullName)}}" alt="{{$team->name}}">
+        </a>
       </li>
       @endforeach
     </ul>
@@ -27,9 +29,9 @@
 <section class="splide splide_mobile" role="group" aria-label="Splide Basic HTML Example">
   <div class="splide__track">
     <ul class="splide__list">
-      @foreach ($constructors as $constructor)
-      <li class="splide__slide" style="background: {{$constructor->color}};">
-        <img src="{{url('storage/team/'.$constructor->imgFullName)}}" alt="{{$constructor->name}}">
+      @foreach ($teams as $team)
+      <li class="splide__slide" style="background: {{$team->color}};">
+        <img src="{{url('storage/team/'.$team->imgFullName)}}" alt="{{$team->name}}">
       </li>
       @endforeach
     </ul>

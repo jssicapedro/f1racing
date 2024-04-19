@@ -4,7 +4,7 @@
         <ul>
             <li><a href="/callendar">Callendar</a></li>
             <li><a href="/drivers">Drivers</a></li>
-            <li><a href="/constructors">Constructors</a></li>
+            <li><a href="/teams">Teams</a></li>
             <li><a href="/prix">Prix</a></li>
         </ul>
     </div>
