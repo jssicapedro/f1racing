@@ -71,7 +71,7 @@
                 @foreach ($drivers as $driver)
                 <li class="splide__slide">
                     <div class="driverInfo">
-                    <img src="{{ url('storage/team/'.$driver->team->imgLogo) }}" alt="">
+                        <img src="{{ $driver->team ?  url('storage/team/'.$driver->team->imgLogo) : '' }}" alt="">
                         <h2 class="driverName">{{ $driver->firstName }}<br> {{ $driver->lastName }}</h2>
                         <div class="driverNumCou">
                             <img src="{{ url('storage/driver/'.$driver->imgNumber) }}" alt="">
@@ -93,7 +93,7 @@
                 @foreach ($drivers as $driver)
                 <li class="splide__slide">
                     <div class="driverInfo">
-                    <img src="{{ url('storage/team/'.$driver->team->imgLogo) }}" alt="">
+                        <img src="{{ $driver->team ?  url('storage/team/'.$driver->team->imgLogo) : '' }}" alt="">
                         <h2 class="driverName">{{ $driver->firstName }}<br> {{ $driver->lastName }}</h2>
                         <div class="driverNumCou">
                             <p>{{ $driver->number }}</p>
@@ -109,13 +109,13 @@
         </div>
     </div>
     <div class="splide splide_mobile_800" role="group" aria-label="Splide Basic HTML Example">
-    <div class="splide__track">
+        <div class="splide__track">
             <ul class="splide__list">
 
                 @foreach ($drivers as $driver)
                 <li class="splide__slide">
                     <div class="driverInfo">
-                        <img src="{{ url('storage/team/'.$driver->team->imgLogo) }}" alt="">
+                        <img src="{{ $driver->team ?  url('storage/team/'.$driver->team->imgLogo) : '' }}" alt="">
                         <h2 class="driverName">{{ $driver->firstName }}<br> {{ $driver->lastName }}</h2>
                         <div class="driverNumCou">
                             <p>{{ $driver->number }}</p>
@@ -292,7 +292,7 @@
                     @if ($top->team)
                     <p class="top-team">{{ $top->team->name }}</p>
                     @else
-                    <p class="top-team">Sem equipe</p>
+                    <p class="top-team">Sem equip</p>
                     @endif
 
 
@@ -364,7 +364,7 @@
                     <div class="teams_info">
                         <div>
                             <p>{{ $loop->iteration . '. ' . $team->name}}
-                                <img src="{{ url('storage/team/imgLogo/'.$team->imgLogo) }}" alt=""><br>
+                                <img src="{{ url('storage/team/'.$team->imgLogo) }}" alt=""><br>
                             </p>
                         </div>
                     </div>
@@ -378,7 +378,32 @@
             </div>
         </div>
         <div id="LastRace" class="hidden">
-            Conteúdo da Last Race
+            @if ($results->count() > 0)
+            <table>
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Driver</th>
+                        <th>Points</th>
+                        <th>Team</th>
+                        <th>Best Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($results as $result)
+                    <tr>
+                        <td>{{ $result->position }}</td>
+                        <td><img src="{{ url('storage/driver/'.$result->driver->imgDriverProfile) }}" alt="{{ $result->driver->name }}" title="{{ $result->driver->name }}"></td>
+                        <td>{{ $result->points }}</td>
+                        <td>{{ $result->driver->team->name }}</td>
+                        <td>{{ $result->fastLapTime }}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            @else
+            <p>Não há resultados disponíveis.</p>
+            @endif
         </div>
     </div>
 

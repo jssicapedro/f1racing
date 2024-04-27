@@ -464,7 +464,30 @@ a.btnRed {
     gap: 55px;
 }
 
+#LastRace {
+    width: 100%;
+    justify-content: space-around;
+}
 
+#LastRace table{
+    width: 100%;
+    text-align: center;
+    border: none;
+}
+
+#LastRace th {
+    padding-bottom: 30px;
+}
+
+/* #LastRace tbody{
+    border: 1px solid var(--default_color);
+    border-radius: 25px;
+    transition: background-color 0.5s ease;
+} */
+
+#LastRace img {
+    width: 60px;
+}
 
 @media (max-width: 1500px) {
     .position_img {
