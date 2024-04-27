@@ -18,7 +18,7 @@
         <ul class="splide__list">
             @foreach ($drivers as $driver)
             <li class="splide__slide">
-                <a class="linkDriver" href="#">
+                <a class="linkDriver" href="{{ route('driver.show', ['id' => $driver->idDriver]) }}">
                     <div class="driverInfo">
                         <div class="all">
                             <div class="driver">
@@ -52,7 +52,7 @@
     <ul class="list_driver">
         @foreach ($drivers as $driver)
         <li class="item_driver">
-            <a class="linkDriver" href="#">
+            <a class="linkDriver" href="{{ route('driver.show', ['id' => $driver->idDriver]) }}">
                 <div class="driverInfo">
                     <div class="all">
                         <div class="driver">

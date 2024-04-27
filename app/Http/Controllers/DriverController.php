@@ -16,4 +16,10 @@ class DriverController extends Controller
 
         return view('drivers', compact('drivers'));
     }
+
+    public function show($id)
+    {
+        $driver = Driver::findOrFail($id);
+        return view('driver_show', compact('driver'));
+    }
 }

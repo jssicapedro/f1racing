@@ -15,7 +15,7 @@ class ConstructorsController extends Controller
 
     public function show($id)
     {
-        $team = Team::findOrFail($id); // Obter a equipe com base no ID
+        $team = Team::findOrFail($id); // Obter a equipa com base no ID
         return view('team_show', compact('team'));
     }
 }

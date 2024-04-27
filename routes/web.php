@@ -19,11 +19,18 @@ use App\Http\Controllers\PrixController;
 */
 
 Route::get('/', [IndexController::class, 'index']);
+
+
 Route::get('/callendar', [CallendarController::class, 'index']);
+
+
 Route::get('/drivers', [DriverController::class, 'index']);
+Route::get('/driver/{id}', [DriverController::class, 'show'])->name('driver.show');
+
 
 Route::get('/teams', [ConstructorsController::class, 'index']);
 Route::get('/team/{id}', [ConstructorsController::class, 'show'])->name('team.show');
+
 
 Route::get('/prix', [PrixController::class, 'index']);
 

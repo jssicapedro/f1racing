@@ -71,7 +71,7 @@
                 @foreach ($drivers as $driver)
                 <li class="splide__slide">
                     <div class="driverInfo">
-                    <img src="{{ url('storage/team/imgLogo/'.$driver->team->imgLogo) }}" alt="">
+                    <img src="{{ url('storage/team/'.$driver->team->imgLogo) }}" alt="">
                         <h2 class="driverName">{{ $driver->firstName }}<br> {{ $driver->lastName }}</h2>
                         <div class="driverNumCou">
                             <img src="{{ url('storage/driver/'.$driver->imgNumber) }}" alt="">
@@ -93,7 +93,7 @@
                 @foreach ($drivers as $driver)
                 <li class="splide__slide">
                     <div class="driverInfo">
-                    <img src="{{ url('storage/team/imgLogo/'.$driver->team->imgLogo) }}" alt="">
+                    <img src="{{ url('storage/team/'.$driver->team->imgLogo) }}" alt="">
                         <h2 class="driverName">{{ $driver->firstName }}<br> {{ $driver->lastName }}</h2>
                         <div class="driverNumCou">
                             <p>{{ $driver->number }}</p>
@@ -115,7 +115,7 @@
                 @foreach ($drivers as $driver)
                 <li class="splide__slide">
                     <div class="driverInfo">
-                        <img src="{{ url('storage/team/imgLogo/'.$driver->team->imgLogo) }}" alt="">
+                        <img src="{{ url('storage/team/'.$driver->team->imgLogo) }}" alt="">
                         <h2 class="driverName">{{ $driver->firstName }}<br> {{ $driver->lastName }}</h2>
                         <div class="driverNumCou">
                             <p>{{ $driver->number }}</p>
