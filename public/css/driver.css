@@ -1,9 +1,9 @@
-main {
+/* main {
     align-items: center;
     padding: 50px 0;
     justify-content: center;
     font-family: var(--menu_family);
-}
+} */
 
 .splide.is-initialized,
 .splide.is-rendered {

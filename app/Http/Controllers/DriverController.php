@@ -20,6 +20,14 @@ class DriverController extends Controller
     public function show($id)
     {
         $driver = Driver::findOrFail($id);
-        return view('driver_show', compact('driver'));
+
+        $points = Driver::select('driver.idDriver', 'driver.firstName as driverName')
+            ->leftJoin('results', 'driver.idDriver', '=', 'results.Driver_idDriver')
+            ->selectRaw('COALESCE(SUM(results.points), 0) as totalPoints')
+            ->groupBy('driver.idDriver', 'driver.firstName')
+            ->get();
+
+
+        return view('driver_show', compact('driver', 'points'));
     }
 }
