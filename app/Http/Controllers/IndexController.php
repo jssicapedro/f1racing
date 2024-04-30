@@ -23,9 +23,9 @@ class IndexController extends Controller
 
         $teams = Team::all();
 
-        $results = Results::with('Driver', 'Prix')
-            ->join('Driver', 'results.Driver_idDriver', '=', 'driver.idDriver')
-            ->join('Prix', 'results.Prix_idPrix', '=', 'prix.idPrix')
+        $results = Results::with('driver', 'prix')
+            ->join('driver', 'results.driver_idDriver', '=', 'driver.idDriver')
+            ->join('prix', 'results.prix_idPrix', '=', 'prix.idPrix')
             ->select('results.*', 'driver.*', 'prix.*') // seleciona todas as colunas de todas as tabelas
             ->orderBy('prix.idPrix', 'desc')
             ->limit(20)

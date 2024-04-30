@@ -16,6 +16,7 @@
 
     
     @yield('links')
+    @stack('links')
 </head>
 
 <body>
@@ -29,7 +30,10 @@
     @include('layout.footer')
 
 
+    <script src="https://cdn2.hubspot.net/hubfs/476360/Chart.js"></script>
+    <script src="https://cdn2.hubspot.net/hubfs/476360/utils.js"></script>
     @yield('script')
+    @stack('scripts')
 </body>
 
 </html>

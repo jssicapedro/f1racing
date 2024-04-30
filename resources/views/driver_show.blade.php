@@ -60,5 +60,119 @@
         </div>
 
     </div>
+    
+
+    <div>
+    <div style="width:75%;">
+		<div class="chartjs-size-monitor">
+			<div class="chartjs-size-monitor-expand">
+				<div class=""></div>
+			</div>
+			<div class="chartjs-size-monitor-shrink">
+				<div class=""></div>
+			</div>
+		</div>
+		<canvas id="canvas" style="display: block; width: 1379px; height: 689px;" width="1379" height="689" class="chartjs-render-monitor"></canvas>
+	</div>
+</div>
+
+
 </div>
 @endsection
+
+@push('scripts')
+<script>
+var config = {
+		type: 'line',
+		data: {
+			labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+			datasets: [{
+				label: 'APAC RE Index',
+				backgroundColor: window.chartColors.red,
+				borderColor: window.chartColors.red,
+				fill: false,
+				data: [
+					10,
+					20,
+					30,
+					40,
+					100,
+					50,
+					150
+					/*randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor()*/
+				],
+			}, {
+				label: 'APAC PME',
+				backgroundColor: window.chartColors.blue,
+				borderColor: window.chartColors.blue,
+				fill: false,
+				data: [
+					50,
+					300,
+					100,
+					450,
+					150,
+					200,
+					300
+				],
+		
+			}]
+		},
+		options: {
+			responsive: true,
+			title: {
+				display: true,
+				text: 'Chart.js Line Chart - Logarithmic'
+			},
+			scales: {
+				xAxes: [{
+					display: true,
+          scaleLabel: {
+            display: true,
+            labelString: 'Date'
+          },
+			
+				}],
+				yAxes: [{
+					display: true,
+					//type: 'logarithmic',
+          scaleLabel: {
+							display: true,
+							labelString: 'Index Returns'
+						},
+						ticks: {
+							min: 0,
+							max: 500,
+
+							// forces step size to be 5 units
+							stepSize: 100
+						}
+				}]
+			}
+		}
+	};
+
+	window.onload = function() {
+		var ctx = document.getElementById('canvas').getContext('2d');
+		window.myLine = new Chart(ctx, config);
+	};
+
+	document.getElementById('randomizeData').addEventListener('click', function() {
+		config.data.datasets.forEach(function(dataset) {
+			dataset.data = dataset.data.map(function() {
+				return randomScalingFactor();
+			});
+
+		});
+
+		window.myLine.update();
+	});
+
+</script>
+@endpush
