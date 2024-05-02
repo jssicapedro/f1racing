@@ -61,7 +61,7 @@
 
 	</div>
 </div>
-<div style="width:75%;">
+<div style="width:75%; margin-top: 35px;">
 	<div class="chartjs-size-monitor">
 		<div class="chartjs-size-monitor-expand">
 			<div class=""></div>
