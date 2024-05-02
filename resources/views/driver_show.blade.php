@@ -92,10 +92,13 @@
                 xAxes: [{
                     display: true,
                     scaleLabel: {
-                        display: false
+                        display: false,
                     },
                     ticks: {
-						display: false
+						/* display: false, */
+                        autoSkip: false, // Evita que as labels sejam cortadas
+                        maxRotation: 70, // Rotaciona as labels para melhor visualização
+                        minRotation: 70
                     }
                 }],
                 yAxes: [{
