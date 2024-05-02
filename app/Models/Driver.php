@@ -32,4 +32,9 @@ class Driver extends Model
     {
         return $this->belongsTo(Team::class, 'Team_idTeam', 'idTeam');
     }
+
+    public function results()
+    {
+        return $this->hasMany(Results::class, 'Driver_idDriver');
+    }
 }

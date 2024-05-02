@@ -1,7 +1,14 @@
+main{
+    background: var(--default_white)!important;
+    padding: 0;
+}
+
 .about {
     display: flex;
     width: 100%;
     justify-content: space-around;
+    background: var(--default_background);
+    padding-top: 2vw;
 }
 
 .info{
@@ -20,3 +27,4 @@
 p{
     font-weight: normal;
 }
+
