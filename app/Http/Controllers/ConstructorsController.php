@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
 use Illuminate\Http\Request;
 use App\Models\Team;
+use App\Models\Driver;
 
 class ConstructorsController extends Controller
 {
@@ -15,7 +17,14 @@ class ConstructorsController extends Controller
 
     public function show($id)
     {
-        $team = Team::findOrFail($id); // Obter a equipa com base no ID
-        return view('team_show', compact('team'));
+        $team = Team::findOrFail($id); 
+
+        $cars = Car::where('Team_idTeam', $id)->get();
+        
+        $drivers = Driver::where('Team_idTeam', $id)
+                ->where('mainDriver', 1)
+                ->get();
+
+        return view('team_show', compact('team', 'cars', 'drivers'));
     }
 }

@@ -30,50 +30,13 @@ class DriverController extends Controller
             ->groupBy('driver.idDriver', 'driver.firstName')
             ->get();
 
-
-        /* $years = Results::selectRaw('YEAR(grandprix.year) as year')
-            ->join('grandprix', 'results.GrandPrix_idGrandPrix', '=', 'grandprix.idGrandPrix')
-            ->where('results.Driver_idDriver', $id)
-            ->distinct()
-            ->pluck('year');
-
-        $selectedYear = $request->input('year');
-
-        $resultsQuery = Results::with(['driver', 'grandprix'])
-            ->where('Driver_idDriver', $id);
-
-        if ($selectedYear) {
-            $resultsQuery->whereHas('grandprix', function ($query) use ($selectedYear) {
-                $query->whereYear('year', $selectedYear);
-            });
-        }
-
-        $results = $resultsQuery->get();
-
-        $data = [];
-        $labels = [];
-
-        foreach ($results as $result) {
-            $data[$result->grandprix->year][] = $result->position;
-        }
-
-        $datasets = [];
-        foreach ($data as $year => $positions) {
-            $datasets[] = [
-                'label' => $year,
-                'data' => $positions,
-                'borderColor' => '#' . substr(md5($year), 0, 6),
-                'fill' => false
-            ];
-        }  */
-
         $years = Results::selectRaw('YEAR(grandprix.year) as year')
             ->join('grandprix', 'results.GrandPrix_idGrandPrix', '=', 'grandprix.idGrandPrix')
             ->where('results.Driver_idDriver', $id)
             ->distinct()
             ->pluck('year');
 
-        // Obter o ano selecionado pelo usuário
+        // Obter o ano selecionado pelo utilizador
         $selectedYear = $request->input('year');
 
         // Obter os resultados do piloto filtrados pelo ano selecionado

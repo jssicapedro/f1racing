@@ -27,5 +27,10 @@ class Team extends Model
         return $this->hasMany(Driver::class, 'Team_idTeam', 'idTeam');
     }
 
+    public function car()
+    {
+        return $this->hasMany(Car::class, 'Team_idTeam', 'idTeam');
+    }
+
 
 }

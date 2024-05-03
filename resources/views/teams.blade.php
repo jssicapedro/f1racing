@@ -3,7 +3,7 @@
 @section('title', 'F1Racing - Constructors')
 
 @section('links')
-<link rel="stylesheet" href="{{ asset('css/teams.css') }}">
+<link rel="stylesheet" href="{{ asset('css/team.css') }}">
 @endsection
 
 @section('script')
