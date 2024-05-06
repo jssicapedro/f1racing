@@ -132,7 +132,7 @@
     </div>
 </div>
 <div class="position_img">
-    <img src="{{ asset('img/F1Racing/background_callendar.png') }}" alt="" class="img_calendar">
+    <img src="{{ asset('img/F1Racing/background_callendar_.png') }}" alt="" class="img_calendar">
 </div>
 <div class="races">
     <div class="races__">

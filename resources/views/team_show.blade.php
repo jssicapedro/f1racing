@@ -12,7 +12,7 @@
 
 @section('main')
 <div class="information">
-    <img src="{{ url('storage/team/'.$team->imgFullName) }}" alt="{{$team->fullName}}">
+    <img src="{{ url('storage/team/'.$team->imgLogo) }}" alt="{{$team->fullName}}">
     <div class="about">
         <div class="about_">
             <h2>Basic Information</h2>
@@ -38,12 +38,15 @@
 <div class="drivers">
     @foreach ($drivers as $driver)
     <div class="driver">
-        <img src="{{ url('storage/driver/'.$driver->imgDriver) }}" alt="{{$driver->name}}">
-        <h1>{{$driver->name}} <span><img src="{{ url('storage/driver/'.$driver->imgNumber) }}" alt="{{$driver->number}}"></span></h1>
+        <a class="linkDriver" href="{{ route('driver.show', ['id' => $driver->idDriver]) }}">    
+            <h1>{{$driver->name}} 
+                <span>
+                    <img src="{{ url('storage/driver/'.$driver->imgNumber) }}" alt="{{$driver->number}}">
+                </span>
+            </h1>
+            <img src="{{ url('storage/driver/'.$driver->imgDriver) }}" alt="{{$driver->name}}">
+        </a>
     </div>
     @endforeach
 </div>
-<!-- <div class="bio">
-
-</div> -->
 @endsection

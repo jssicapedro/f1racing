@@ -11,7 +11,7 @@ main{
 }
 
 .information img{
-    width: 25%;
+    width: 10%;
 }
 
 .about{
@@ -64,4 +64,10 @@ span {
 .driver span img {
     height: 25px;
     width: auto;
+}
+
+a{
+    text-decoration: none;
+    color: var(--default_color);
+    text-align: center;
 }
