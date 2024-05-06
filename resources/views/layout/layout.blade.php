@@ -32,7 +32,7 @@
 
     <script src="https://cdn2.hubspot.net/hubfs/476360/Chart.js"></script>
     <script src="https://cdn2.hubspot.net/hubfs/476360/utils.js"></script>
-    @yield('script')
+    @yield('scripts')
     @stack('scripts')
 </body>
 

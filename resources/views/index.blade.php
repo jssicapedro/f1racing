@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="{{ asset('css/slider.css') }}">
 @endsection
 
-@section('script')
+@section('scripts')
 <script src="{{ asset('js/indexDriverSplid.js') }}"></script>
 <script>
     function mostrarConteudo(link) {

@@ -32,5 +32,6 @@ Route::get('/teams', [ConstructorsController::class, 'index']);
 Route::get('/team/{id}', [ConstructorsController::class, 'show'])->name('team.show');
 
 
-Route::get('/prix', [PrixController::class, 'index']);
+Route::get('/prix', [PrixController::class, 'index'])->name('prix');
+Route::get('/prix/{id}', [PrixController::class, 'show'])->name('prix.show');
 

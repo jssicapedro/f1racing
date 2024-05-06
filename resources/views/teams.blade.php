@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{ asset('css/team.css') }}">
 @endsection
 
-@section('script')
+@section('scripts')
 <script src="{{ asset('js/construcSplid.js') }}"></script>
 @endsection
 

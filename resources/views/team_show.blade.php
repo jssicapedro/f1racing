@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{ asset('css/team_show.css') }}">
 @endsection
 
-@section('script')
+@section('scripts')
 
 @endsection
 

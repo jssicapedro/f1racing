@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{ asset('css/driver_show.css') }}">
 @endsection
 
-@section('script')
+@section('scripts')
 
 @endsection
 
@@ -95,7 +95,6 @@
                         display: false,
                     },
                     ticks: {
-						/* display: false, */
                         autoSkip: false, // Evita que as labels sejam cortadas
                         maxRotation: 70, // Rotaciona as labels para melhor visualização
                         minRotation: 70
@@ -113,6 +112,28 @@
                         stepSize: 2
                     }
                 }]
+            },
+            tooltips: {
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                        if (label) {
+                            label += ': ';
+                        }
+                        label += tooltipItem.yLabel;
+                        return label;
+                    },
+                    title: function(tooltipItem, data) {
+                        var year = data.labels[tooltipItem[0].index];
+                        return year;
+                    },
+                    afterLabel: function(tooltipItem, data) {
+                        var year = data.labels[tooltipItem.index];
+                        var index = tooltipItem.index;
+                        var pista = data.labels[year][index]; // Pegar o nome da pista correspondente ao ano
+                        return 'Pista: ' + pista;
+                    }
+                }
             }
         }
     };

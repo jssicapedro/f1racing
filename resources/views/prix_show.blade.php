@@ -11,4 +11,5 @@
 @endsection
 
 @section('main')
+    <h1>{{$prix->name}}</h1>
 @endsection

@@ -7,8 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prix extends Model
 {
-    protected $table = 'prix';
     use HasFactory;
+
+    protected $table= "prix";
+    protected $primaryKey = 'idPrix';
+
+    protected $fillable = [
+        'name',
+        'grandPrixName',
+        'country',
+        'firstGrandPrix',
+        'distance',
+        'length',
+        'info'
+    ];
 
     public function results()
     {
