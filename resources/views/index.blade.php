@@ -395,7 +395,7 @@
                         <td>{{ $result->position }}</td>
                         <td><img src="{{ url('storage/driver/'.$result->driver->imgDriverProfile) }}" alt="{{ $result->driver->name }}" title="{{ $result->driver->name }}"></td>
                         <td>{{ $result->points }}</td>
-                        <td>{{ $result->driver->team->name }}</td>
+                        <td><img src="{{ url('storage/team/'.$result->driver->team->imgLogo) }}" alt="{{ $result->driver->team->name }}" title="{{ $result->driver->team->name }}"></td>
                         <td>{{ $result->fastLapTime }}</td>
                     </tr>
                     @endforeach

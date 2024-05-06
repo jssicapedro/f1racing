@@ -25,7 +25,7 @@ class IndexController extends Controller
         $results = Results::with('driver', 'prix')
             ->join('driver', 'results.driver_idDriver', '=', 'driver.idDriver')
             ->join('prix', 'results.prix_idPrix', '=', 'prix.idPrix')
-            ->select('results.*', 'driver.*', 'prix.*') // seleciona todas as colunas de todas as tabelas
+            ->select('results.*', 'driver.*', 'prix.*')
             ->orderBy('prix.idPrix', 'desc')
             ->limit(20)
             ->get();
