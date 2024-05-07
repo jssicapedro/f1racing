@@ -2,13 +2,13 @@
 
 @section('title', 'F1Racing')
 
-@section('links')
+@push('links')
 
-@endsection
+@endpush
 
-@section('scripts')
+@push('scripts')
 
-@endsection
+@endpush
 
 @section('main')
 @endsection

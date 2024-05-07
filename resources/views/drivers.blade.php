@@ -2,14 +2,14 @@
 
 @section('title', 'F1Racing - Drivers')
 
-@section('links')
+@push('links')
 <link rel="stylesheet" href="{{ asset('css/driver.css') }}">
 <link rel="stylesheet" href="{{ asset('css/slider.css') }}">
-@endsection
+@endpush
 
-@section('scripts')
+@push('scripts')
 <script src="{{ asset('js/driversSplid.js') }}"></script>
-@endsection
+@endpush
 
 @section('main')
 <h1 class="title">Drivers</h1>

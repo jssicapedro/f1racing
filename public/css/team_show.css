@@ -2,22 +2,35 @@ main{
     padding-bottom: 0;
 }
 
-.information {
+.content {
     display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+    width: 50%;
+    margin-bottom: 30px;
 }
 
-.information img{
-    width: 10%;
+.content {
+    display: flex;
+    width: 80%;
+    margin: 30px 0;
+}
+
+.information {
+    width: 50%;
+    color: var(--default_white);
 }
 
 .about{
+    display: flex;
     width: 100%;
     font-size: 22px;
-    display: flex;
+    padding: 50px 0;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    gap: 35px;
+    height: 50vh;
 }
 
 .about img {
@@ -32,23 +45,21 @@ span {
 
 .about_, .chiefs, .car{
     text-align: center;
-    margin-top: 25px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: calc(100% / 3);
+    width: 80%;
 }
 
 .about h2{
     padding: 10px 0;
 }
 
-.drivers{
-    margin-top: 25px;
+.drivers {
     display: flex;
-    width: 100%;
-    justify-content: center;
-    gap: 5%;
+    width: 50%;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .driver {

@@ -2,17 +2,12 @@
 
 @section('title', 'F1Racing - Constructors')
 
-@section('links')
+@push('links')
 <link rel="stylesheet" href="{{ asset('css/team.css') }}">
-@endsection
-
-@section('scripts')
-<script src="{{ asset('js/construcSplid.js') }}"></script>
-@endsection
+@endpush
 
 @section('main')
 <h1 class="title">Constructors</h1>
-
 <section class="splide splide_const" role="group" aria-label="Splide Basic HTML Example">
   <div class="splide__track">
     <ul class="splide__list">
@@ -36,5 +31,8 @@
       @endforeach
     </ul>
 </section>
-
 @endsection
+
+@push('scripts')
+<script src="{{ asset('js/construcSplid.js') }}"></script>
+@endpush

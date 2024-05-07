@@ -2,13 +2,13 @@
 
 @section('title', 'F1Racing')
 
-@section('links')
+@push('links')
 <link rel="stylesheet" href="{{ asset('css/prix.css') }}">
-@endsection
+@endpush
 
 @section('main')
 <form action="{{ route('prix') }}" method="GET">
-<input type="checkbox" name="all" id="all" {{ $filter === 'all' ? 'checked' : '' }}>
+    <input type="checkbox" name="all" id="all" {{ $filter === 'all' ? 'checked' : '' }}>
     <label for="all">All</label>
     <select name="filter" id="filter">
         <option value="" disabled selected>Country</option>
@@ -31,15 +31,13 @@
         </div>
         <hr>
         <img src="{{ url('storage/prix/'.$prix->imgCircuts) }}" alt="">
-</a>
+    </a>
     @endforeach
 </div>
-
 {{ $prixs->links() }}
-
 @endsection
 
-@section('scripts')
+@push('scripts')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
@@ -56,7 +54,7 @@
                 $('#filter').prop('disable', false);
             }
             window.location.href = "{{ route('prix') }}";
-        }); 
+        });
     });
 </script>
-@endsection
+@endpush

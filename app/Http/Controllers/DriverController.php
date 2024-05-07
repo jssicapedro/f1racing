@@ -22,6 +22,7 @@ class DriverController extends Controller
 
     public function show(Request $request, $id)
     {
+
         $driver = Driver::findOrFail($id);
 
         $points = Driver::select('driver.idDriver', 'driver.firstName as driverName')
@@ -30,20 +31,37 @@ class DriverController extends Controller
             ->groupBy('driver.idDriver', 'driver.firstName')
             ->get();
 
+        $years = Results::selectRaw('YEAR(grandprix.year) as year')
+            ->join('grandprix', 'results.GrandPrix_idGrandPrix', '=', 'grandprix.idGrandPrix')
+            ->where('results.Driver_idDriver', $id)
+            ->distinct()
+            ->pluck('year');
+
+        // Obter o ano selecionado pelo utilizador
+        $selectedYear = $request->input('year');
+
+        // Obter os resultados do piloto filtrados pelo ano selecionado
+        $resultsQuery = Results::with(['driver', 'grandprix'])
+            ->where('Driver_idDriver', $id);
+
+        // Filtrar pelos anos selecionados
+        if ($selectedYear) {
+            $resultsQuery->whereHas('grandprix', function ($query) use ($selectedYear) {
+                $query->whereYear('year', $selectedYear);
+            });
+        }
+
+        // Obter os resultados
+        $results = $resultsQuery->get();
+
+        // Organizar os dados para o gráfico
         $labels = [];
         $datasets = [];
-        $pistasPorAno = []; // Array associativo para armazenar as pistas por ano
+
 
         foreach ($results as $result) {
-            $ano = $result->grandprix->year;
-            $labels[$ano][] = $result->prix->name; // Associar o nome da pista ao ano correspondente
-            $datasets[$ano][] = $result->position;
-
-            // Adiciona o nome da pista ao array de pistasPorAno
-            if (!isset($pistasPorAno[$ano])) {
-                $pistasPorAno[$ano] = [];
-            }
-            $pistasPorAno[$ano][] = $result->prix->name;
+            $labels[] = $result->prix->name;
+            $datasets[$result->grandprix->year][] = $result->position;
         }
 
         // Montar os dados para o gráfico

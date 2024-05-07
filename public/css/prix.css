@@ -14,10 +14,13 @@
     border-radius: 0 50px 0 0;
     border-top: 10px solid var(--default_red);
     border-right: 5px solid var(--default_red);
+    color: var(--default_color);
+    text-decoration: none;
 }
 
 .prix:hover{
     cursor: pointer;
+    box-shadow:  rgb(0 0 0 / 11%) 5px 3px 10px;
 }
 
 .prix .country{

@@ -2,39 +2,11 @@
 
 @section('title', 'F1Racing')
 
-@section('links')
+@push('links')
 <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 <link rel="stylesheet" href="{{ asset('css/slider.css') }}">
-@endsection
+@endpush
 
-@section('scripts')
-<script src="{{ asset('js/indexDriverSplid.js') }}"></script>
-<script>
-    function mostrarConteudo(link) {
-        // Ocultar todos os conteúdos
-        var content = document.querySelectorAll("#classification_content > div");
-        for (var i = 0; i < content.length; i++) {
-            content[i].classList.add("hidden");
-        }
-
-        // Mostrar apenas o conteúdo selecionado
-        var id = link.getAttribute("href").substring(1);
-        var element = document.getElementById(id);
-        if (element) {
-            element.classList.remove("hidden");
-        }
-
-        // Remover a classe "active" de todos os links
-        var links = document.querySelectorAll(".classification_menu a");
-        for (var j = 0; j < links.length; j++) {
-            links[j].classList.remove("active");
-        }
-
-        // Adicionar a classe "active" ao link clicado
-        link.classList.add("active");
-    }
-</script>
-@endsection
 
 @section('main')
 <div class="ActualyRace">
@@ -294,21 +266,21 @@
                     @else
                     <p class="top-team">Sem equip</p>
                     @endif
-
-
+                    
+                    
                     @if ($top->podiums == 0)
                     <p class="podium">- <span>times on the podium</span></p>
                     @else
                     <p class="podium">{{ $top->podiums }} <span>times on the podium</span></p>
                     @endif
-
-
+                    
+                    
                     @if ($top->points == 0)
                     <p class="points">- <span>points</span></p>
                     @else
                     <p class="points">{{ $top->points }} <span>points</span></p>
                     @endif
-
+                    
                     @if ($top->grandPrix == 0)
                     <p class="GP">- <span>Grand Prix entered</span></p>
                     @else
@@ -338,19 +310,19 @@
                         @else
                         <p>{{ $otherDriver->podiums }} <span>times on the podium</span></p>
                         @endif
-
+                        
                         @if ($otherDriver->points == 0)
                         <p>- <span>points</span></p>
                         @else
                         <p>{{ $otherDriver->points }} <span>points</span></p>
                         @endif
-
+                        
                         @if ($otherDriver->grandPrix == 0)
                         <p>- <span>Grand Prix entered</span></p>
                         @else
                         <p>{{ $otherDriver->grandPrix }} <span>Grand Prix entered</span></p>
                         @endif
-
+                        
                     </div>
                 </div>
                 @endforeach
@@ -405,8 +377,35 @@
             <p>Não há resultados disponíveis.</p>
             @endif
         </div>
-    </div>
-
-
+    </div>  
 </div>
 @endsection
+
+@push('scripts')
+<script src="{{ asset('js/indexDriverSplid.js') }}"></script>
+<script>
+    function mostrarConteudo(link) {
+        // Ocultar todos os conteúdos
+        var content = document.querySelectorAll("#classification_content > div");
+        for (var i = 0; i < content.length; i++) {
+            content[i].classList.add("hidden");
+        }
+
+        // Mostrar apenas o conteúdo selecionado
+        var id = link.getAttribute("href").substring(1);
+        var element = document.getElementById(id);
+        if (element) {
+            element.classList.remove("hidden");
+        }
+
+        // Remover a classe "active" de todos os links
+        var links = document.querySelectorAll(".classification_menu a");
+        for (var j = 0; j < links.length; j++) {
+            links[j].classList.remove("active");
+        }
+
+        // Adicionar a classe "active" ao link clicado
+        link.classList.add("active");
+    }
+</script>
+@endpush
