@@ -19,7 +19,8 @@ class Prix extends Model
         'firstGrandPrix',
         'distance',
         'length',
-        'info'
+        'info',
+        'comunName'
     ];
 
     public function results()

@@ -10,7 +10,7 @@
 <h1>{{$team->name}}</h1>
 <div class="content">
     <div class="information">
-        <div class="about" style="background-color: {{$team->color}}">
+        <div class="about" style="background-color: {{$team->color == '#FFFFFF' ? '#FF7F00': $team->color}}">
             <div class="about_">
                 <h2>Basic Information</h2>
                 <p>Full Name <span class="about__">{{$team->fullName}}</span></p>

@@ -36,6 +36,6 @@ class PrixController extends Controller
 
     public function show($id){
         $prix = Prix::findOrFail($id);
-        return view('prix_show', compact('$prix'));
+        return view('prix_show', compact('prix'));
     }
 }

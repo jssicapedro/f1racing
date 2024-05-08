@@ -1,3 +1,9 @@
+form{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
 .prixs {
     width: 80%;
     display: flex;
@@ -16,6 +22,10 @@
     border-right: 5px solid var(--default_red);
     color: var(--default_color);
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .prix:hover{
@@ -23,28 +33,37 @@
     box-shadow:  rgb(0 0 0 / 11%) 5px 3px 10px;
 }
 
-.prix .country{
-    height: 67px;
-    border-radius: 10px;
-}
-
-.prix img {
-    height: 180px;
-}
-
 .img_country {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 10px;
+    width: 100%;
+}
+
+.img_country img.country{
+    height: 30px;
+    border-radius: 7px;
+}
+
+.prix img {
+    height: 150px;
+}
+
+hr{
+    width: 100%;
+    border: 1px solid var(--default_color);
 }
 
 .info{
     text-align: left;
     margin: 5px 0;
+    font-size: 25px;
 }
 
-hr{
-    border: 1px solid var(--default_color);
+
+.info p.country{
+    font-size: 18px;
+    font-weight: normal;
 }
 
 ul.pagination {

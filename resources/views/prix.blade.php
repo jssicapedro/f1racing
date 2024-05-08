@@ -8,14 +8,17 @@
 
 @section('main')
 <form action="{{ route('prix') }}" method="GET">
-    <input type="checkbox" name="all" id="all" {{ $filter === 'all' ? 'checked' : '' }}>
-    <label for="all">All</label>
+    <div>
+        <input type="checkbox" name="all" id="all" {{ $filter === 'all' ? 'checked' : '' }}>
+        <label for="all">All</label>
+    </div>
     <select name="filter" id="filter">
         <option value="" disabled selected>Country</option>
         @foreach($countries as $country)
         <option value="{{ $country }}" {{ $filter === $country ? 'selected' : '' }}>{{ $country }}</option>
         @endforeach
     </select>
+
 </form>
 <div class="prixs">
     @foreach ($prixs as $prix)
@@ -25,7 +28,7 @@
         </div>
         <hr>
         <div class="info">
-            <p>{{$prix->country}}</p>
+            <p class="country">{{$prix->country}}</p>
             <p>{{$prix->name}}</p>
             <p>{{$prix->grandPrixName}}</p>
         </div>
