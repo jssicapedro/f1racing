@@ -29,7 +29,7 @@ class PrixController extends Controller
 
 
 
-        $countries = Prix::distinct()->pluck('country');
+        $countries = Prix::distinct()->orderBy('country', 'asc')->pluck('country');
 
         return view('prix', compact('prixs', 'filter', 'countries'));
     }

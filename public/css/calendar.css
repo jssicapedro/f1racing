@@ -1,0 +1,26 @@
+.next-race {
+    display: flex;
+    width: 65%;
+    justify-content: space-between;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 45%;
+}
+
+.dat_country {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dat_country img {
+    width: 10%;
+}
+
+.circuit{
+    width: 35%;
+}
