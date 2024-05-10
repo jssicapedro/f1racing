@@ -30,7 +30,7 @@ main{
     justify-content: center;
     clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
     gap: 35px;
-    height: 50vh;
+    height: 500px;
 }
 
 .about img {

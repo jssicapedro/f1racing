@@ -26,7 +26,7 @@ form{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 34vh;
+    height: 445px;
 }
 
 .prix:hover{
