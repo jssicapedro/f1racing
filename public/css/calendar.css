@@ -24,3 +24,20 @@
 .circuit{
     width: 35%;
 }
+
+.next-race{
+    font-weight: normal;
+}
+
+.dat .month{
+    background-color: var(--default_color);
+    color: var(--default_white);
+    text-align: center;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 5px 0;
+}
+
+.next_country{
+    font-weight: bold;
+}

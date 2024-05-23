@@ -12,9 +12,13 @@ class CallendarController extends Controller
     {
         $calendar = Calendar::orderBy('t1')->with('prix')->get();
         $nextRace = Calendar::with('prix')
-        ->where('t1', '>', Carbon::now())
-        ->orderBy('t1')
-        ->first();
+            ->where('t1', '>', Carbon::now())
+            ->orderBy('t1')
+            ->first();
+
+            if (!$nextRace) {
+                $nextRace = $calendar->first();
+            }
 
         $nextRace->t1 = Carbon::parse($nextRace->t1);
         $nextRace->t2 = Carbon::parse($nextRace->t2);

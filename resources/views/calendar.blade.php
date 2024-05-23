@@ -18,40 +18,40 @@
             <div class="dat">
                 <p>{{ $nextRace->t1->format('d'). ' - ' .$nextRace->race->format('d') }}</p>
                 @if ($nextRace->t1->format('M') == $nextRace->race->format('M'))
-                <p>{{ $nextRace->race->format('M') }}</p>
+                <p class="month">{{ $nextRace->race->format('M') }}</p>
                 @else
-                <p>{{ $nextRace->t1->format('M'). ' - ' .$nextRace->race->format('M') }}</p>
+                <p class="month">{{ $nextRace->t1->format('M'). ' - ' .$nextRace->race->format('M') }}</p>
                 @endif
             </div>
             <img src="{{ url('storage/country/'.$nextRace->prix->imgCountry) }}" alt="{{ $nextRace->prix->country}}">
         </div>
         <hr>
         <div class="country_gpname">
-            <p>{{$nextRace->prix->country}}</p>
+            <p class="next_country">{{$nextRace->prix->country}}</p>
             <p>{{$nextRace->prix->grandPrixName}}</p>
         </div>
         <hr>
         <div class="parctice">
-            @if ($nextRace->t1)
+            @if (!empty($nextRace->t1))
             <p>Practice 1: {{$nextRace->t1->format('d M')}}</p>
             @endif
-            @if ($nextRace->t2)
+            @if (!empty($nextRace->t2))
             <p>Practice 2: {{$nextRace->t2->format('d M')}}</p>
             @endif
-            @if ($nextRace->t3)
+            @if (!empty($nextRace->t3))
             <p>Practice 3: {{$nextRace->t3->format('d/M')}}</p>
             @endif
-            @if ($nextRace->sprintQualify)
+            @if (!empty($nextRace->sprintQualify))
             <p>Sprint Qualify: {{$nextRace->sprintQualify->format('d/M')}}</p>
             @endif
-            @if ($nextRace->sprint)
+            @if (!empty($nextRace->sprint))
             <p>Sprint: {{$nextRace->sprint->format('d/M')}}</p>
             @endif
-            @if ($nextRace->qualify)
+            @if (!empty($nextRace->qualify))
             <p>Qualify: {{$nextRace->qualify->format('d/M')}}</p>
             @endif
-            @if ($nextRace->race)
-            <p>Corrida: {{$nextRace->race->format('d/M')}}</p>
+            @if (!empty($nextRace->race))
+            <p>Race Day: {{$nextRace->race->format('d/M')}}</p>
             @endif
         </div>
     </div>
