@@ -61,7 +61,6 @@
 <h2 class="title">Next Races</h2>
 <div class="others">
     @foreach ($calendar as $race)
-        <h1>{{$race->id}}</h1>
         <div class="race">
             <div class="dat_country">
                 <div class="dat">

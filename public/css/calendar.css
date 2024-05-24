@@ -67,7 +67,8 @@ hr {
 .race {
     margin: 15px;
     padding: 15px;
-    width: 400px;
+    max-width: 400px;
+    min-width: 400px;
     background-color: var(--default_grayA);
     border-radius: 0 50px 0 0;
     border-top: 10px solid var(--default_red);
