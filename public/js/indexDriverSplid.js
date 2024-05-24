@@ -24,7 +24,7 @@ new Splide('.splide_mobile_800', {
     pagination: false,
 }).mount();
 
-var splide = new Splide('.splide_callendar', {
+var splide = new Splide('.splide_calendar', {
     direction: 'ttb',
     height: '100%',
     perPage: 4,

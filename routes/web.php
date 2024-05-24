@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\CallendarController;
+use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\ConstructorsController;
 use App\Http\Controllers\PrixController;
@@ -21,7 +21,8 @@ use App\Http\Controllers\PrixController;
 Route::get('/', [IndexController::class, 'index']);
 
 
-Route::get('/callendar', [CallendarController::class, 'index']);
+Route::get('/calendar', [CalendarController::class, 'index']);
+Route::get('/calendar/{id}', [CalendarController::class, 'show'])->name('calendar.show');
 
 
 Route::get('/drivers', [DriverController::class, 'index']);

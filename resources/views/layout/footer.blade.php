@@ -2,7 +2,7 @@
     <div>
         <a href="{{ asset('/') }}" class="logo"><img src="{{ asset('img/F1Racing/LogoWhite.png') }}" alt="F1Racing"></a>
         <ul>
-            <li><a href="/callendar">Callendar</a></li>
+            <li><a href="/calendar">Calendar</a></li>
             <li><a href="/drivers">Drivers</a></li>
             <li><a href="/teams">Teams</a></li>
             <li><a href="/prix">Prix</a></li>

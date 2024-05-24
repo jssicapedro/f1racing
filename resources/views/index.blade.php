@@ -104,7 +104,7 @@
     </div>
 </div>
 <div class="position_img">
-    <img src="{{ asset('img/F1Racing/background_callendar_.png') }}" alt="" class="img_calendar">
+    <img src="{{ asset('img/F1Racing/background_calendar_.png') }}" alt="" class="img_calendar">
 </div>
 <div class="races">
     <div class="races__">
@@ -123,7 +123,7 @@
             <a class="btnRed" href="#">More</a>
         </div>
         <div class="fullRaces">
-            <div class="splide splide_callendar" role="group" aria-label="Splide Basic HTML Example">
+            <div class="splide splide_calendar" role="group" aria-label="Splide Basic HTML Example">
                 <div class="splide__track">
                     <ul class="splide__list">
                         <li class="splide__slide">
