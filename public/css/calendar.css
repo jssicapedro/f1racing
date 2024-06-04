@@ -9,16 +9,23 @@ main {
 }
 
 .info {
+    max-width: 400px;
+    min-width: 400px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 45%;
     background-color: var(--default_grayA);
     border-radius: 0 50px 0 0;
     border-top: 10px solid var(--default_red);
     border-right: 5px solid var(--default_red);
     color: var(--default_color);
     padding: 25px;
+}
+
+.info:hover{
+        cursor: pointer;
+        box-shadow: rgb(0 0 0 / 11%) 5px 3px 10px;
 }
 
 .dat_country {
@@ -98,4 +105,8 @@ hr {
 
 h2.title {
     margin: 40px 0;
+}
+
+.link{
+    text-decoration: none;
 }
