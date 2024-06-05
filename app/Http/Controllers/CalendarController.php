@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Calendar;
+use App\Models\GrandPrix;
 use Carbon\Carbon;
 
 class CalendarController extends Controller
@@ -30,6 +31,8 @@ class CalendarController extends Controller
 
     public function show($id){
         $prix = Calendar::findOrFail($id);
-        return view('calendar_show', compact('prix'));
+        $year = $prix->grandprix->year;
+        
+        return view('calendar_show', compact('prix', 'year'));
     }
 }

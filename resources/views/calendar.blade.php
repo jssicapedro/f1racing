@@ -12,7 +12,7 @@
 
 @section('main')
 <div class="next-race">
-        <a class="link" href="{{ route('calendar.show', ['id' => $nextRace->idCalendar]) }}">
+    <a class="link" href="{{ route('calendar.show', ['id' => $nextRace->idCalendar]) }}">
         <div class="info">
             <div class="dat_country">
                 <div class="dat">
@@ -32,46 +32,85 @@
             </div>
             <hr>
             <div class="parctice">
-                @if (!empty($nextRace->t1))
-                <p>Practice 1: {{\Carbon\Carbon::parse($nextRace->t1)->format('d/M')}}</p>
-                @else
+                <div>
+                    @if (!empty($nextRace->t1))
+                    <p>Practice 1: </p>
+                    @else
 
-                @endif
+                    @endif
 
-                @if (!empty($nextRace->t2))
-                <p>Practice 2: {{\Carbon\Carbon::parse($nextRace->t2)->format('d/M')}}</p>
-                @else
-                @endif
+                    @if (!empty($nextRace->t2))
+                    <p>Practice 2: </p>
+                    @else
+                    @endif
 
-                @if (!empty($nextRace->t3))
-                <p>Practice 3: {{\Carbon\Carbon::parse($nextRace->t3)->format('d/M')}}</p>
-                @else
-                @endif
+                    @if (!empty($nextRace->t3))
+                    <p>Practice 3: </p>
+                    @else
+                    @endif
 
-                @if (!empty($nextRace->sprintQualify))
-                <p>Sprint Qualify: {{\Carbon\Carbon::parse($nextRace->sprintQualify)->format('d/M')}}</p>
-                @else
-                @endif
+                    @if (!empty($nextRace->sprintQualify))
+                    <p>Sprint Qualify: </p>
+                    @else
+                    @endif
 
-                @if (!empty($nextRace->sprint))
-                <p>Sprint: {{\Carbon\Carbon::parse($nextRace->sprint)->format('d/M')}}</p>
-                @else
-                @endif
+                    @if (!empty($nextRace->sprint))
+                    <p>Sprint: </p>
+                    @else
+                    @endif
 
-                @if (!empty($nextRace->qualify))
-                <p>Qualify: {{\Carbon\Carbon::parse($nextRace->qualify)->format('d/M')}}</p>
-                @else
-                @endif
+                    @if (!empty($nextRace->qualify))
+                    <p>Qualify: </p>
+                    @else
+                    @endif
 
-                @if (!empty($nextRace->race))
-                <p>Race Day: {{\Carbon\Carbon::parse($nextRace->race)->format('d/M')}}</p>
-                @else
-                @endif
+                    @if (!empty($nextRace->race))
+                    <p>Race Day: </p>
+                    @else
+                    @endif
+                </div>
+                <div>
+                    @if (!empty($nextRace->t1))
+                    <p> {{\Carbon\Carbon::parse($nextRace->t1)->format('d/M')}}</p>
+                    @else
+
+                    @endif
+
+                    @if (!empty($nextRace->t2))
+                    <p> {{\Carbon\Carbon::parse($nextRace->t2)->format('d/M')}}</p>
+                    @else
+                    @endif
+
+                    @if (!empty($nextRace->t3))
+                    <p> {{\Carbon\Carbon::parse($nextRace->t3)->format('d/M')}}</p>
+                    @else
+                    @endif
+
+                    @if (!empty($nextRace->sprintQualify))
+                    <p> {{\Carbon\Carbon::parse($nextRace->sprintQualify)->format('d/M')}}</p>
+                    @else
+                    @endif
+
+                    @if (!empty($nextRace->sprint))
+                    <p> {{\Carbon\Carbon::parse($nextRace->sprint)->format('d/M')}}</p>
+                    @else
+                    @endif
+
+                    @if (!empty($nextRace->qualify))
+                    <p> {{\Carbon\Carbon::parse($nextRace->qualify)->format('d/M')}}</p>
+                    @else
+                    @endif
+
+                    @if (!empty($nextRace->race))
+                    <p> {{\Carbon\Carbon::parse($nextRace->race)->format('d/M')}}</p>
+                    @else
+                    @endif
+                </div>
             </div>
         </div>
     </a>
-        <img class="circuit" src="{{ url('storage/prix/'.$nextRace->prix->imgCircuts) }}" alt="">
-    </div>
+    <img class="circuit" src="{{ url('storage/prix/'.$nextRace->prix->imgCircuts) }}" alt="">
+</div>
 
 
 

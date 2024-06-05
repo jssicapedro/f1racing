@@ -221,6 +221,7 @@ h1 {
 
 .actuallyRace h3 {
     font-size: 25px;
+    text-align: center;
 }
 
 .days {
@@ -231,6 +232,7 @@ h1 {
     gap: 10px;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .pqsSubtitle {
@@ -253,6 +255,10 @@ a.btnRed {
     justify-content: center;
 }
 
+.fullRaces a{
+    margin-top: 15px;
+}
+
 .fullRaces div#splide03 {
     width: 100%;
     height: 100%;
@@ -269,12 +275,11 @@ a.btnRed {
 .fullRaces .splide__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
 }
 
 .fullRaces .splide__slide {
+    height: unset !important;
     width: calc(25% - 10px);
-    height: 30% !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -305,6 +310,14 @@ a.btnRed {
     margin-top: 12px;
     width: 70%;
     border-color: var(--default_gray);
+}
+
+.raceDay{
+    font-weight: bold;
+}
+
+p.intervalDate {
+    margin-bottom: 10px;
 }
 
 /* CLASSIFICATION */
@@ -478,12 +491,6 @@ a.btnRed {
 #LastRace th {
     padding-bottom: 30px;
 }
-
-/* #LastRace tbody{
-    border: 1px solid var(--default_color);
-    border-radius: 25px;
-    transition: background-color 0.5s ease;
-} */
 
 #LastRace img {
     width: 60px;
