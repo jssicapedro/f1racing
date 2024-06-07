@@ -8,9 +8,10 @@
 
 
 @section('main')
+@if($driver->imgDriver == 'NULL')
 <div class="about">
     <div class="image">
-        <img src="{{ url('storage/driver/'.$driver->imgDriver) }}" alt="{{$driver->imgDriver}}">
+        <img src="{{ url('storage/driver/'.$driver->imgDriver) }}" alt="{{$driver->name}}">
     </div>
     <div class="info">
         <div class="name">
@@ -69,6 +70,9 @@
     </div>
     <canvas id="canvas" style="display: block; width: 1379px; height: 689px;" width="1379" height="689" class="chartjs-render-monitor"></canvas>
 </div>
+@else
+<h2>Sem informações do piloto</h2>
+@endif
 @endsection
 
 @push('scripts')
