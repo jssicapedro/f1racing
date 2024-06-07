@@ -19,7 +19,7 @@ class ConstructorsController extends Controller
     {
         $team = Team::findOrFail($id); 
 
-        $cars = Car::where('Team_idTeam', $id)->get();
+        $cars = $team->car;
         
         $drivers = Driver::where('Team_idTeam', $id)
                 ->where('mainDriver', 1)

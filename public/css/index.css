@@ -30,7 +30,7 @@
 }
 
 .screen1,
-.races__{
+.races__ {
     width: 75vw;
     display: flex;
     flex-direction: row;
@@ -110,7 +110,7 @@ h1 {
 .drivers .splide__slide {
     display: flex;
     flex-direction: row;
-    max-width: 420px;
+    max-width: 425px;
     background: var(--default_white);
     border-radius: 20px;
     align-items: center;
@@ -255,7 +255,7 @@ a.btnRed {
     justify-content: center;
 }
 
-.fullRaces a{
+.fullRaces a {
     margin-top: 15px;
 }
 
@@ -268,7 +268,7 @@ a.btnRed {
     height: 90% !important;
 }
 
-.fullRaces .splide_calendar{
+.fullRaces .splide_calendar {
     height: 100%;
 }
 
@@ -312,7 +312,7 @@ a.btnRed {
     border-color: var(--default_gray);
 }
 
-.raceDay{
+.raceDay {
     font-weight: bold;
 }
 
@@ -321,7 +321,7 @@ p.intervalDate {
 }
 
 /* CLASSIFICATION */
-.classification{
+.classification {
     margin-top: 150px;
     width: 75vw;
     display: flex;
@@ -329,11 +329,11 @@ p.intervalDate {
     align-items: center;
 }
 
-.classification h1{
+.classification h1 {
     text-align: center;
 }
 
-.classification_menu{
+.classification_menu {
     margin: 35px 0;
     width: 50%;
     display: flex;
@@ -341,7 +341,7 @@ p.intervalDate {
     justify-content: center;
 }
 
-.classification_menu ul{
+.classification_menu ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -353,7 +353,7 @@ p.intervalDate {
     padding: 15px 0px;
 }
 
-.classification_menu ul li a{
+.classification_menu ul li a {
     text-decoration: none;
     color: var(--default_color);
     font-weight: normal;
@@ -368,24 +368,24 @@ p.intervalDate {
     font-weight: normal;
 }
 
-.active{
+.active {
     font-weight: bold !important;
     border: 1px solid var(--default_color);
     background: var(--default_gray);
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
-#classification_content{
+#classification_content {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
 }
 
-.classificarion_drivers_top{
+.classificarion_drivers_top {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -393,37 +393,38 @@ p.intervalDate {
 }
 
 .top {
-    width: calc(100% / 5);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: var(--default_gray);
-    /* background: rgb(225, 6, 0);
-    background: linear-gradient(43deg, rgba(225, 6, 0, 1) 50%, rgba(246, 243, 240, 1) 100%); */
+    background: rgb(225, 6, 0);
+    background: linear-gradient(43deg, rgba(225, 7, 0, 0.637) 25%, rgba(246, 243, 240, 0) 100%);
     padding: 20px;
-    border-radius: 22% 78% 18% 82% / 87% 31% 69% 13% ;
+    border-radius: 22% 78% 18% 82% / 87% 31% 69% 13%;
     transition: transform 0.5s;
+    width: calc(100% / 1.3);
 }
 
-.top:hover{
+.top:hover {
     transform: scale(1.2);
 }
 
-.top-name{
+.top-name {
     padding-top: 10px;
     font-weight: 700;
 }
 
-.top-team{
+.top-team {
     margin-bottom: 20px;
 }
 
-.classificarion_drivers_top p span{
+.classificarion_drivers_top p span {
     font-weight: bold;
 }
 
-.classification_drivers, .classification_teams {
+.classification_drivers,
+.classification_teams {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -431,7 +432,8 @@ p.intervalDate {
     gap: 20px;
 }
 
-.drivers_list, .teams_list {
+.drivers_list,
+.teams_list {
     padding: 15px;
     display: flex;
     align-items: center;
@@ -442,37 +444,43 @@ p.intervalDate {
     transition: background-color 0.5s ease;
 }
 
-.drivers_list:hover, .teams_list:hover{
+.drivers_list:hover,
+.teams_list:hover {
     font-weight: bold;
     background-color: var(--default_color);
     color: var(--default_white);
 }
 
-.drivers_list:hover .driver_info p, .teams_list:hover .driver_info p{
+.drivers_list:hover .driver_info p,
+.teams_list:hover .driver_info p {
     font-weight: bold;
 }
 
-.drivers_list:hover .driver_achievements, .teams_list:hover .driver_achievements{
+.drivers_list:hover .driver_achievements,
+.teams_list:hover .driver_achievements {
     font-weight: normal;
 }
 
-.driver_info p, .teams_info p{
+.driver_info p,
+.teams_info p {
     font-weight: normal;
 }
 
-.teams_info p{
+.teams_info p {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.driver_info img, .teams_info img {
+.driver_info img,
+.teams_info img {
     border-radius: 5px;
     width: 35px;
     margin-left: 15px;
 }
 
-.driver_achievements, .team_achievements {
+.driver_achievements,
+.team_achievements {
     display: flex;
     gap: 55px;
 }
@@ -482,7 +490,7 @@ p.intervalDate {
     justify-content: space-around;
 }
 
-#LastRace table{
+#LastRace table {
     width: 100%;
     text-align: center;
     border: none;
@@ -496,17 +504,29 @@ p.intervalDate {
     width: 60px;
 }
 
+a.nDecoration {
+    text-decoration: none;
+    color: var(--default_color);
+    display: flex;
+}
+
+.cardDriver {
+    width: 100%;
+    justify-content: center;
+}
+
 @media (max-width: 1500px) {
     .position_img {
         display: none;
     }
+
     .races__ {
         width: 100vw;
         color: var(--default_color);
         justify-content: normal;
         align-items: center;
     }
-    
+
     .races__ .actuallyRace {
         width: 35%;
     }
@@ -525,11 +545,11 @@ p.intervalDate {
         height: 130vh;
     }
 
-    .classificarion_drivers_top{
+    .classificarion_drivers_top {
         flex-direction: column;
     }
 
-    .classification_menu ul{
+    .classification_menu ul {
         flex-direction: column;
     }
 
@@ -538,7 +558,7 @@ p.intervalDate {
         height: 320px;
     }
 
-    .top:hover{
+    .top:hover {
         transform: scale(1);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Calendar;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Driver;
 use App\Models\Team;
@@ -15,11 +16,40 @@ class IndexController extends Controller
     {
         $drivers = Driver::where('mainDriver', 1)->get();
 
-        $topDrivers = Driver::with('team')->orderByDesc('podiums')->take(3)->get();
-        $topDriverIds = Driver::orderByDesc('podiums')->take(3)->pluck('idDriver');
+
+
+        // Subconsulta para calcular a pontuação total de cada piloto
+        $subquery = DB::table('results')
+            ->selectRaw('SUM(points) as points, Driver_idDriver')
+            ->where('GrandPrix_idGrandPrix', function ($query) {
+                $query->select('idGrandPrix')
+                    ->from('grandPrix')
+                    ->orderByDesc('year')
+                    ->limit(1);
+            })
+            ->groupBy('Driver_idDriver');
+
+        // Consulta para obter os 3 principais pilotos com base na pontuação
+        $topDrivers = Driver::with('team')
+            ->select('driver.*', 'sub.points as points')
+            ->leftJoinSub($subquery, 'sub', function ($join) {
+                $join->on('driver.idDriver', '=', 'sub.Driver_idDriver');
+            })
+            ->orderByDesc('points')
+            ->take(3)
+            ->get();
+
+        // IDs dos 3 principais pilotos
+        $topDriverIds = $topDrivers->pluck('idDriver');
+
+        // Outros pilotos com base na pontuação
         $otherDrivers = Driver::with('team')
-            ->whereNotIn('idDriver', $topDriverIds)
-            ->orderByDesc('podiums', 'desc')
+            ->select('driver.*', 'sub.points as points')
+            ->leftJoinSub($subquery, 'sub', function ($join) {
+                $join->on('driver.idDriver', '=', 'sub.Driver_idDriver');
+            })
+            ->whereNotIn('driver.idDriver', $topDriverIds)
+            ->orderByDesc('points')
             ->get();
 
         $teams = Team::all();
@@ -44,8 +74,8 @@ class IndexController extends Controller
             ->first();
 
         $nextRaces = Calendar::where('t1', '>', $currentRace->race)
-        ->orderBy('t1')
-        ->get();
+            ->orderBy('t1')
+            ->get();
 
         return view('index', compact('drivers', 'topDrivers', 'otherDrivers', 'teams', 'results', 'currentRace', 'upcomingRace', 'nextRaces'));
     }

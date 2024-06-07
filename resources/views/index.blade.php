@@ -44,6 +44,7 @@
             <ul class="splide__list">
                 @foreach ($drivers as $driver)
                 <li class="splide__slide">
+                    <a class="nDecoration" href="{{ route('driver.show', ['id' => $driver->idDriver]) }}">
                     <div class="driverInfo">
                         <img src="{{ $driver->team ?  url('storage/team/'.$driver->team->imgLogo) : '' }}" alt="">
                         <h2 class="driverName">{{ $driver->firstName }}<br> {{ $driver->lastName }}</h2>
@@ -55,6 +56,7 @@
                     <div class="driverImg">
                         <img src="{{ url('storage/driver/'.$driver->imgDriver) }}" alt="">
                     </div>
+                </a>
                 </li>
                 @endforeach
             </ul>
@@ -63,9 +65,9 @@
     <div class="splide splide_mobile" role="group" aria-label="Splide Basic HTML Example">
         <div class="splide__track">
             <ul class="splide__list">
-
                 @foreach ($drivers as $driver)
                 <li class="splide__slide">
+                    <a class="nDecoration" href="{{ route('driver.show', ['id' => $driver->idDriver]) }}">
                     <div class="driverInfo">
                         <img src="{{ $driver->team ?  url('storage/team/'.$driver->team->imgLogo) : '' }}" alt="">
                         <h2 class="driverName">{{ $driver->firstName }}<br> {{ $driver->lastName }}</h2>
@@ -77,6 +79,7 @@
                     <div class="driverImg">
                         <img src="{{ url('storage/driver/'.$driver->imgDriver) }}" alt="">
                     </div>
+                </a>
                 </li>
                 @endforeach
             </ul>
@@ -88,6 +91,7 @@
 
                 @foreach ($drivers as $driver)
                 <li class="splide__slide">
+                    <a class="nDecoration" href="{{ route('driver.show', ['id' => $driver->idDriver]) }}">
                     <div class="driverInfo">
                         <img src="{{ $driver->team ?  url('storage/team/'.$driver->team->imgLogo) : '' }}" alt="">
                         <h2 class="driverName">{{ $driver->firstName }}<br> {{ $driver->lastName }}</h2>
@@ -99,6 +103,7 @@
                     <div class="driverImg">
                         <img src="{{ url('storage/driver/'.$driver->imgDriver) }}" alt="">
                     </div>
+                </a>
                 </li>
                 @endforeach
             </ul>
@@ -151,20 +156,20 @@
             <div class="splide splide_calendar" role="group" aria-label="Splide Basic HTML Example">
                 <div class="splide__track">
                     <ul class="splide__list">
-                    @if (empty($nextRaces->race))
+                        @if (empty($nextRaces->race))
                         @foreach ($nextRaces as $nextRace)
                         <li class="splide__slide">
-                                <img style="width: 20%; margin-bottom: 10px;" src="{{ url('storage/country/'.$nextRace->prix->imgCountry) }}" alt="">
-                                <p class="intervalDate">Start: {{\Carbon\Carbon::parse($nextRace->t1)->format('d M')}} <br> End: {{\Carbon\Carbon::parse($nextRace->race)->format('d M')}}</p>
-                                <p class="raceDay">RACE DAY</p>
-                                <p class="hourRace">{{\Carbon\Carbon::parse($nextRace->race)->format('dM')}}</p>
-                                <a href="{{ route('calendar.show', ['id' => $nextRace->idCalendar]) }}" class="btnRed">More</a>
-                                <hr>
-                            </li>
+                            <img style="width: 20%; margin-bottom: 10px;" src="{{ url('storage/country/'.$nextRace->prix->imgCountry) }}" alt="">
+                            <p class="intervalDate">Start: {{\Carbon\Carbon::parse($nextRace->t1)->format('d M')}} <br> End: {{\Carbon\Carbon::parse($nextRace->race)->format('d M')}}</p>
+                            <p class="raceDay">RACE DAY</p>
+                            <p class="hourRace">{{\Carbon\Carbon::parse($nextRace->race)->format('dM')}}</p>
+                            <a href="{{ route('calendar.show', ['id' => $nextRace->idCalendar]) }}" class="btnRed">More</a>
+                            <hr>
+                        </li>
                         @endforeach
-                    @else
+                        @else
                         <p>Sem informação de proximas corridas</p>
-                    @endif
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -173,6 +178,7 @@
 </div>
 <div class="classification">
     <h1>Classification</h1>
+    <p>(Sem Sprint)</p>
     <div class="classification_menu">
         <ul>
             <li><a href="#Drivers" class="active" onclick="mostrarConteudo(this)">Drivers</a></li>
@@ -184,74 +190,69 @@
         <div id="Drivers">
             <div class="classificarion_drivers_top">
                 @forelse ($topDrivers as $top)
-                <div class="top">
-                    <img src="{{ url('storage/driver/'.$top->imgDriverProfile) }}" alt="">
-                    <p class="top-name">{{ $loop->iteration }}.{{ $top->firstName . ' ' . $top->lastName }}</p>
-
-                    @if ($top->team)
-                    <p class="top-team">{{ $top->team->name }}</p>
-                    @else
-                    <p class="top-team">Sem equip</p>
-                    @endif
-
-
-                    @if ($top->podiums == 0)
-                    <p class="podium">- <span>times on the podium</span></p>
-                    @else
-                    <p class="podium">{{ $top->podiums }} <span>times on the podium</span></p>
-                    @endif
-
-
-                    @if ($top->points == 0)
-                    <p class="points">- <span>points</span></p>
-                    @else
-                    <p class="points">{{ $top->points }} <span>points</span></p>
-                    @endif
-
-                    @if ($top->grandPrix == 0)
-                    <p class="GP">- <span>Grand Prix entered</span></p>
-                    @else
-                    <p class="GP">{{ $top->grandPrix }} <span>Grand Prix entered</span></p>
-                    @endif
-                </div>
+                <a class="nDecoration cardDriver" href="{{ route('driver.show', ['id' => $top->idDriver]) }}">
+                    <div class="top">
+                        <img src="{{ url('storage/driver/'.$top->imgDriverProfile) }}" alt="">
+                        <p class="top-name">{{ $loop->iteration }}.{{ $top->firstName . ' ' . $top->lastName }}</p>
+                        @if ($top->team)
+                        <p class="top-team">{{ $top->team->name }}</p>
+                        @else
+                        <p class="top-team">Sem equipa</p>
+                        @endif
+                        @if ($top->podiums == 0)
+                        <p class="podium"> - <span>times on the podium</span></p>
+                        @else
+                        <p class="podium">{{ $top->podiums }} <span>times on the podium</span></p>
+                        @endif
+                        @if (isset($top->points))
+                        <p class="points">{{ $top->points }} <span>points</span></p>
+                        @else
+                        <p class="points"> - <span>points</span></p>
+                        @endif
+                        @if ($top->grandPrix == 0)
+                        <p class="GP">- <span>Grand Prix entered</span></p>
+                        @else
+                        <p class="GP">{{ $top->grandPrix }} <span>Grand Prix entered</span></p>
+                        @endif
+                    </div>
+                </a>
                 @empty
                 <li>Null</li>
                 @endforelse
             </div>
             <div class="classification_drivers">
                 @foreach ($otherDrivers as $otherDriver)
-                <div class="drivers_list">
-                    <div class="driver_info">
-                        <p>{{ $loop->iteration + 3 . '. ' . $otherDriver->firstName . ' ' . $otherDriver->lastName }}
-                            <img src="{{ url('storage/country/'.$otherDriver->imgCountry) }}" alt=""><br>
-                            @if ($otherDriver->team)
-                            {{ $otherDriver->team->name }}
+                <a class="nDecoration" href="{{ route('driver.show', ['id' => $top->idDriver]) }}">
+                    <div class="drivers_list">
+                        <div class="driver_info">
+                            <p>{{ $loop->iteration + 3 . '. ' . $otherDriver->firstName . ' ' . $otherDriver->lastName }}
+                                <img src="{{ url('storage/country/'.$otherDriver->imgCountry) }}" alt=""><br>
+                                @if ($otherDriver->team)
+                                {{ $otherDriver->team->name }}
+                                @else
+                                Null
+                                @endif
+                            </p>
+                        </div>
+                        <div class="driver_achievements">
+                            @if ($otherDriver->podiums == 0)
+                            <p>- <span>times on the podium</span></p>
                             @else
-                            Null
+                            <p>{{ $otherDriver->podiums }} <span>times on the podium</span></p>
                             @endif
-                        </p>
+                            @if (isset($otherDriver->points))
+                            <p class="points">{{ $otherDriver->points }} <span>points</span></p>
+                            @else
+                            <p class="points"> - <span>points</span></p>
+                            @endif
+                            @if ($otherDriver->grandPrix == 0)
+                            <p>- <span>Grand Prix entered</span></p>
+                            @else
+                            <p>{{ $otherDriver->grandPrix }} <span>Grand Prix entered</span></p>
+                            @endif
+                        </div>
                     </div>
-                    <div class="driver_achievements">
-                        @if ($otherDriver->podiums == 0)
-                        <p>- <span>times on the podium</span></p>
-                        @else
-                        <p>{{ $otherDriver->podiums }} <span>times on the podium</span></p>
-                        @endif
-
-                        @if ($otherDriver->points == 0)
-                        <p>- <span>points</span></p>
-                        @else
-                        <p>{{ $otherDriver->points }} <span>points</span></p>
-                        @endif
-
-                        @if ($otherDriver->grandPrix == 0)
-                        <p>- <span>Grand Prix entered</span></p>
-                        @else
-                        <p>{{ $otherDriver->grandPrix }} <span>Grand Prix entered</span></p>
-                        @endif
-
-                    </div>
-                </div>
+                </a>
                 @endforeach
 
             </div>
@@ -259,19 +260,21 @@
         <div id="Constructors" class="hidden">
             <div class="classification_teams">
                 @foreach ($teams as $team)
-                <div class="teams_list">
-                    <div class="teams_info">
-                        <div>
-                            <p>{{ $loop->iteration . '. ' . $team->name}}
-                                <img src="{{ url('storage/team/'.$team->imgLogo) }}" alt=""><br>
-                            </p>
+                <a class="nDecoration" href="{{ route('team.show', ['id' => $team->idTeam]) }}">
+                    <div class="teams_list">
+                        <div class="teams_info">
+                            <div>
+                                <p>{{ $loop->iteration . '. ' . $team->name}}
+                                    <img src="{{ url('storage/team/'.$team->imgLogo) }}" alt=""><br>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="team_achievements">
+                            <p><span>Entry at </span>{{ $team->firstTeamEntry }} </p>
+                            <p><span>Base </span>{{ $team->base }} </p>
                         </div>
                     </div>
-                    <div class="team_achievements">
-                        <p><span>Entry at </span>{{ $team->firstTeamEntry }} </p>
-                        <p><span>Base </span>{{ $team->base }} </p>
-                    </div>
-                </div>
+                </a>
                 @endforeach
 
             </div>

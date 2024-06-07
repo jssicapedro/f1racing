@@ -29,7 +29,7 @@ class Team extends Model
 
     public function car()
     {
-        return $this->hasMany(Car::class, 'Team_idTeam', 'idTeam');
+        return $this->belongsTo(Car::class, 'Car_idCar', 'idCar');
     }
 
 

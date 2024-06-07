@@ -22,13 +22,11 @@
                 <p>Team Chief <span>{{$team->teamChief}}</span></p>
                 <p>Technical Chief <span>{{$team->technicalChief}}</span></p>
             </div>
-            @foreach ($cars as $car)
             <div class="car">
                 <h2>Car</h2>
-                <p>Chassis <span>{{$car->chassis}}</span></p>
-                <p>Power Unit <span>{{$car->powerUnit}}</span></p>
+                <p>Chassis <span>{{$cars->chassis}}</span></p>
+                <p>Power Unit <span>{{$cars->powerUnit}}</span></p>
             </div>
-            @endforeach
         </div>
     
     </div>
