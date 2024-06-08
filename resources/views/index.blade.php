@@ -222,7 +222,7 @@
             </div>
             <div class="classification_drivers">
                 @foreach ($otherDrivers as $otherDriver)
-                <a class="nDecoration" href="{{ route('driver.show', ['id' => $top->idDriver]) }}">
+                <a class="nDecoration" href="{{ route('driver.show', ['id' => $otherDriver->idDriver]) }}">
                     <div class="drivers_list">
                         <div class="driver_info">
                             <p>{{ $loop->iteration + 3 . '. ' . $otherDriver->firstName . ' ' . $otherDriver->lastName }}
@@ -254,7 +254,6 @@
                     </div>
                 </a>
                 @endforeach
-
             </div>
         </div>
         <div id="Constructors" class="hidden">

@@ -16,8 +16,6 @@ class IndexController extends Controller
     {
         $drivers = Driver::where('mainDriver', 1)->get();
 
-
-
         // Subconsulta para calcular a pontuação total de cada piloto
         $subquery = DB::table('results')
             ->selectRaw('SUM(points) as points, Driver_idDriver')
@@ -49,6 +47,7 @@ class IndexController extends Controller
                 $join->on('driver.idDriver', '=', 'sub.Driver_idDriver');
             })
             ->whereNotIn('driver.idDriver', $topDriverIds)
+            ->where('mainDRiver', 1)
             ->orderByDesc('points')
             ->get();
 
@@ -65,7 +64,10 @@ class IndexController extends Controller
 
         $currentDate = Carbon::now();
 
-        $currentRace = Calendar::where('t1', '>=', $currentDate)
+        $currentRace = Calendar::where(function ($query) use ($currentDate) {
+            $query->where('t1', '>=', $currentDate)
+                ->orWhere('race', '>=', $currentDate);
+        })
             ->orderBy('t1')
             ->first();
 

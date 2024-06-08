@@ -8,7 +8,7 @@
 
 
 @section('main')
-@if($driver->imgDriver == 'NULL')
+@if(!empty($driver->imgDriver))
 <div class="about">
     <div class="image">
         <img src="{{ url('storage/driver/'.$driver->imgDriver) }}" alt="{{$driver->name}}">

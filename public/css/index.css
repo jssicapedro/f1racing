@@ -205,7 +205,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -665px;
+    margin-top: -685px;
 }
 
 .races__ .actuallyRace {
@@ -357,7 +357,7 @@ p.intervalDate {
     text-decoration: none;
     color: var(--default_color);
     font-weight: normal;
-    padding: 15px 30px;
+    padding: 17px 30px;
     border-radius: 30px;
 }
 

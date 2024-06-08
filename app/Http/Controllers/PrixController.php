@@ -26,9 +26,6 @@ class PrixController extends Controller
             $prixs = Prix::where('country', $filter)->paginate(6);
         }
 
-
-
-
         $countries = Prix::distinct()->orderBy('country', 'asc')->pluck('country');
 
         return view('prix', compact('prixs', 'filter', 'countries'));

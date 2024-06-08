@@ -111,9 +111,6 @@
     </a>
     <img class="circuit" src="{{ url('storage/prix/'.$nextRace->prix->imgCircuts) }}" alt="">
 </div>
-
-
-
 <h2 class="title">Next Races</h2>
 <div class="others">
     @foreach ($upcomingRaces as $race)

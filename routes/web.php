@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\AuthController;
+
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\DriverController;
@@ -17,6 +21,11 @@ use App\Http\Controllers\PrixController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Auth::routes();
+Route::get('/wp-admin', [AuthController::class, 'index']);
+Route::post('/wp-admin/login', [AuthController::class, 'login'])->name('login.submit');
+Route::get('/wp-admin/dash', [AuthController::class, 'dash'])->name('admin.dashboard');
 
 Route::get('/', [IndexController::class, 'index']);
 
@@ -36,3 +45,7 @@ Route::get('/team/{id}', [ConstructorsController::class, 'show'])->name('team.sh
 Route::get('/prix', [PrixController::class, 'index'])->name('prix');
 Route::get('/prix/{id}', [PrixController::class, 'show'])->name('prix.show');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
