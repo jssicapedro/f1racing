@@ -25,6 +25,6 @@ class Prix extends Model
 
     public function results()
     {
-        return $this->belongsTo(Results::class, 'GrandPrix_idGrandPrix');
+        return $this->hasMany(Results::class, 'Prix_idPrix');
     }
 }

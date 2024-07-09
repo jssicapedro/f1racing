@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             DriverTableSeeder::class,
             CalendarTableSeeder::class,
             ResultsTableSeeder::class,
+            UsersTableSeeder::class,
         ]);
     }
 }

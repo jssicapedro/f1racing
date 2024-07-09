@@ -1,0 +1,9 @@
+.selection {
+    display: flex;
+    gap: 5vw;
+    margin: 5vh 0;
+}
+
+.selection_year, .selection_track {
+    width: 25vw;
+}

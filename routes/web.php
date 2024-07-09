@@ -10,6 +10,7 @@ use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\ConstructorsController;
 use App\Http\Controllers\PrixController;
+use App\Http\Controllers\ResultController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,14 @@ Auth::routes();
 Route::get('/wp-admin', [AuthController::class, 'index']);
 Route::post('/wp-admin/login', [AuthController::class, 'login'])->name('login.submit');
 Route::get('/wp-admin/dash', [AuthController::class, 'dash'])->name('admin.dashboard');
+
+Route::get('/results', [ResultController::class, 'index'])->name('results');
+Route::post('/results', [ResultController::class, 'filter'])->name('results.filter');
+Route::get('/results', [ResultController::class, 'getTracks'])->name('results.get-tracks');
+
+
+
+
 
 Route::get('/', [IndexController::class, 'index']);
 
@@ -47,5 +56,4 @@ Route::get('/prix/{id}', [PrixController::class, 'show'])->name('prix.show');
 
 
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -7,6 +7,7 @@
             <li class="nav-item"><a href="{{ asset('/teams') }}">Teams</a></li>
             <li class="nav-item"><a href="{{ asset('/prix') }}">Prix</a></li>
             @auth
+            <li class="nav-item"><a href="{{ asset('/results') }}">Results</a></li>
             <div class="dropdown ms-auto">
                 <li class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                     Olá, {{ Auth::user()->name }}
@@ -15,7 +16,7 @@
                     <li>
                         <a class="dropdown-item" href="{{ asset('perfil') }}">Perfil</a>
                     </li>
-                    @if(Auth::user())
+                    @if(Auth::user()->isAdmin)
                     <li>
                         <a class="dropdown-item" href="{{ asset('dashboardBO') }}">Administração</a>
                     </li>
