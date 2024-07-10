@@ -39,4 +39,9 @@ class CalendarController extends Controller
 
         return view('calendar_show', compact('prix', 'year'));
     }
+
+    public function view()
+    {
+        return view('admin.calendar.index');
+    }
 }

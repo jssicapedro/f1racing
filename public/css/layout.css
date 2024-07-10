@@ -50,6 +50,7 @@ html {
     color: var(--default_white);
     font-weight: 500;
     text-decoration: none;
+    border: none;
 }
 
 .btnBlack {

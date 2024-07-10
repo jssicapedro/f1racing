@@ -27,4 +27,9 @@ class ConstructorsController extends Controller
 
         return view('team_show', compact('team', 'cars', 'drivers'));
     }
+
+    public function view()
+    {
+        return view('admin.teams.index');
+    }
 }

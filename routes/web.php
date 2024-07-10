@@ -11,6 +11,9 @@ use App\Http\Controllers\DriverController;
 use App\Http\Controllers\ConstructorsController;
 use App\Http\Controllers\PrixController;
 use App\Http\Controllers\ResultController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GrandPrixController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,15 +26,24 @@ use App\Http\Controllers\ResultController;
 |
 */
 
-Auth::routes();
 Route::get('/wp-admin', [AuthController::class, 'index']);
 Route::post('/wp-admin/login', [AuthController::class, 'login'])->name('login.submit');
-Route::get('/wp-admin/dash', [AuthController::class, 'dash'])->name('admin.dashboard');
 
-Route::get('/results', [ResultController::class, 'index'])->name('results');
-Route::post('/results', [ResultController::class, 'filter'])->name('results.filter');
-Route::get('/results', [ResultController::class, 'getTracks'])->name('results.get-tracks');
+Route::middleware(['isAdmin'])->group(function () {
+    Route::get('/wp-admin/dash', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/wp-admin/calendar', [CalendarController::class, 'view'])->name('admin.calendar');
+    Route::get('/wp-admin/grandprix', [GrandPrixController::class, 'view'])->name('admin.grandprix');
+    Route::get('/wp-admin/prix', [PrixController::class, 'view'])->name('admin.prix');
+    Route::get('/wp-admin/teams', [ConstructorsController::class, 'view'])->name('admin.teams');
+    Route::get('/wp-admin/drivers', [DriverController::class, 'view'])->name('admin.driver');
+    Route::get('/wp-admin/users', [UsersController::class, 'view'])->name('admin.user');
+});
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/results', [ResultController::class, 'index'])->name('results')->middleware('isUser');
+    Route::post('/results/filter', [ResultController::class, 'filter'])->name('results.filter');
+    Route::get('/results/get-tracks', [ResultController::class, 'getTracks'])->name('results.get-tracks');
+});
 
 
 

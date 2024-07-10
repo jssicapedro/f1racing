@@ -1,3 +1,8 @@
+main {
+    justify-content: flex-start;
+    min-height: 65vh;
+}
+
 .selection {
     display: flex;
     gap: 5vw;

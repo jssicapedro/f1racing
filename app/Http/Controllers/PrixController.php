@@ -35,4 +35,10 @@ class PrixController extends Controller
         $prix = Prix::findOrFail($id);
         return view('prix_show', compact('prix'));
     }
+
+    public function view()
+    {
+        $prixs = Prix::paginate(10);
+        return view('admin.prix.index', compact('prixs'));
+    }
 }

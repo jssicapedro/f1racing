@@ -13,12 +13,9 @@
                     Olá, {{ Auth::user()->name }}
                 </li>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li>
-                        <a class="dropdown-item" href="{{ asset('perfil') }}">Perfil</a>
-                    </li>
                     @if(Auth::user()->isAdmin)
                     <li>
-                        <a class="dropdown-item" href="{{ asset('dashboardBO') }}">Administração</a>
+                        <a class="dropdown-item" href="{{ asset('/wp-admin/dash') }}">Administração</a>
                     </li>
                     @endif
                     <li>
@@ -31,6 +28,10 @@
                     </li>
                 </ul>
             </div>
+            @else
+            <li class="nav-item ms-auto">
+                <a href="{{ route('login') }}" class="nav-link">Login</a>
+            </li>
             @endauth
         </ul>
     </nav>

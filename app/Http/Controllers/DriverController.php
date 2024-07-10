@@ -78,4 +78,9 @@ class DriverController extends Controller
 
         return view('driver_show', compact('driver', 'points', 'datasets', 'years', 'selectedYear', 'labels', 'datasetsFormatted'));
     }
+
+    public function view()
+    {
+        return view('admin.drivers.index');
+    }
 }

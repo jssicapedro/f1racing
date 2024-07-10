@@ -27,13 +27,13 @@ class ResultController extends Controller
         $query = Results::query();
 
         if ($request->year) {
-            $query->whereHas('grandPrix', function($q) use ($request) {
+            $query->whereHas('grandPrix', function ($q) use ($request) {
                 $q->where('year', $request->year);
             });
         }
 
         if ($request->track !== 'all') {
-            $query->whereHas('prix', function($q) use ($request) {
+            $query->whereHas('prix', function ($q) use ($request) {
                 $q->where('name', $request->track);
             });
         }
@@ -44,5 +44,14 @@ class ResultController extends Controller
         $tracks = Prix::distinct()->pluck('name');
 
         return view('result', compact('results', 'years', 'tracks'));
+    }
+
+    public function getTracks(Request $request)
+    {
+        $tracks = Prix::whereHas('grandPrix', function ($query) use ($request) {
+            $query->where('year', $request->year);
+        })->distinct()->pluck('name');
+
+        return response()->json($tracks);
     }
 }
