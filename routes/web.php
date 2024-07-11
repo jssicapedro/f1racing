@@ -40,7 +40,7 @@ Route::middleware(['isAdmin'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/results', [ResultController::class, 'index'])->name('results')->middleware('isUser');
+    Route::get('/results', [ResultController::class, 'index'])->name('results');
     Route::post('/results/filter', [ResultController::class, 'filter'])->name('results.filter');
     Route::get('/results/get-tracks', [ResultController::class, 'getTracks'])->name('results.get-tracks');
 });
@@ -48,7 +48,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-Route::get('/', [IndexController::class, 'index']);
+Route::get('/', [IndexController::class, 'index'])->name('index');
 
 
 Route::get('/calendar', [CalendarController::class, 'index']);

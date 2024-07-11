@@ -7,7 +7,6 @@
 @endpush
 
 @push('scripts')
-
 @endpush
 
 
