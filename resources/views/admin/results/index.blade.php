@@ -14,27 +14,31 @@
     @include('admin.partials.admin-navbar')
     <div class="content">
     <div class="info">
-        <h1>Drivers</h1>
+        <h1>Results</h1>
         <a class="btnRed" href="">Add</a>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Position</th>
                     <th>Driver</th>
-                    <th>Name</th>
-                    <th>Number</th>
-                    <th>Country</th>
+                    <th>Points</th>
+                    <th>Fast Lap Time</th>
+                    <th>Prix</th>
+                    <th>Grand Prix</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($drivers as $driver)
+                @foreach($results as $result)
                 <tr>
-                    <td>{{ $driver->idDriver }}</td>
-                    <td><img class="driver" src="{{ url('storage/driver/'.$driver->imgDriverProfile) }}" alt="{{ $driver->firstName }} {{ $driver->lastName }}"></td>
-                    <td>{{ $driver->firstName }} {{ $driver->lastName }}</td>
-                    <td>{{ $driver->number }}</td>
-                    <td>{{ $driver->country }}</td>
+                    <td>{{ $result->idResults }}</td>
+                    <td>{{ $result->position }}</td>
+                    <td>{{ $result->driver->firstName }} {{ $result->driver->lastName }}</td>
+                    <td>{{ $result->points }}</td>
+                    <td>{{ $result->fastLapTime }}</td>
+                    <td>{{ $result->prix->name }}</td>
+                    <td>{{ $result->grandprix->year }}</td>
                     <td>
                         <!-- Add any actions here, such as edit, delete -->
                         <a href="#">
@@ -52,7 +56,7 @@
                 @endforeach
             </tbody>
         </table>
-        {{ $drivers->links() }}
+        {{ $results->links() }}
     </div>
 </div>
 @endsection

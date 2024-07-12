@@ -30,6 +30,7 @@ class ConstructorsController extends Controller
 
     public function view()
     {
-        return view('admin.teams.index');
+        $teams = Team::paginate(10);
+        return view('admin.teams.index', compact('teams'));
     }
 }

@@ -54,4 +54,11 @@ class ResultController extends Controller
 
         return response()->json($tracks);
     }
+
+    public function view()
+    {
+        $results = Results::orderBy('GrandPrix_idGrandPrix', 'asc')
+                            ->paginate(10);
+        return view('admin.results.index', compact('results'));
+    }
 }

@@ -3,6 +3,7 @@
 :root {
     --default_color: #000;
     --default_red: #E10600;
+    --default_redA: #e1070093;
     --default_background: #F6F3F0;
     --default_white: #fff;
     --default_gray: #9F9EA2;
@@ -150,7 +151,7 @@ footer div ul li a {
     font-family: var(--menu_family);
     font-size: 12px;
     font-weight: 600;
-    color: var(--default_white);
+    color: var(--default_white)!important;
 }
 
 footer div p.slogan {

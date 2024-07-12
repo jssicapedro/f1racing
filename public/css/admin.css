@@ -8,11 +8,11 @@ main {
 .admin-navbar {
     display: flex;
     background-color: var(--default_white);
-    padding: 20px;
-    gap: 20px;
-    width: 10vw;
-    min-height: 65vh;
+    gap: 25px;
+    width: 15vw;
+    min-height: 90vh;
     padding: 40px 20px;
+    justify-content: center;
 }
 
 .logos, .text{
@@ -32,13 +32,14 @@ main {
     text-decoration: underline;
 }
 
-.content{
+.content {
     width: 90vw;
-    min-height: 73vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
+    margin: auto 0;
 }
 
 .content h1{
@@ -75,3 +76,36 @@ a.relative.inline-flex.items-center.px-4.py-2.ml-3.text-sm.font-medium.text-gray
     font-weight: bold;
 }
 
+.logo_team{
+    border-radius: 5px;
+    width: 35px;
+    margin-left: 15px;
+}
+
+.driver{
+    width: 45px;
+    margin-left: 15px;
+}
+
+form {
+    width: 90%;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* .dates {
+    gap: 15px !important;
+} */
+
+.item {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 60px;
+}
+
+.item_content {
+    width: 45%;
+}

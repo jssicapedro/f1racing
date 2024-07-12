@@ -15,7 +15,7 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     @if(Auth::user()->isAdmin)
                     <li>
-                        <a class="dropdown-item" href="{{ asset('/wp-admin/dash') }}">Administration</a>
+                        <a class="dropdown-item" href="{{ asset('/wp-admin/calendar') }}">Administration</a>
                     </li>
                     @endif
                     <li>

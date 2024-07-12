@@ -30,12 +30,22 @@ Route::get('/wp-admin', [AuthController::class, 'index']);
 Route::post('/wp-admin/login', [AuthController::class, 'login'])->name('login.submit');
 
 Route::middleware(['isAdmin'])->group(function () {
-    Route::get('/wp-admin/dash', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/wp-admin/calendar', [CalendarController::class, 'view'])->name('admin.calendar');
+    Route::get('/wp-admin/calendar/{id}', [CalendarController::class, 'edit'])->name('admin.calendar.edit');
+    Route::put('/wp-admin/calendar/{id}', [CalendarController::class, 'update'])->name('admin.calendar.update');
+
+
+
+    Route::get('/wp-admin/results', [ResultController::class, 'view'])->name('admin.results');
+
     Route::get('/wp-admin/grandprix', [GrandPrixController::class, 'view'])->name('admin.grandprix');
+
     Route::get('/wp-admin/prix', [PrixController::class, 'view'])->name('admin.prix');
+
     Route::get('/wp-admin/teams', [ConstructorsController::class, 'view'])->name('admin.teams');
+
     Route::get('/wp-admin/drivers', [DriverController::class, 'view'])->name('admin.driver');
+
     Route::get('/wp-admin/users', [UsersController::class, 'view'])->name('admin.user');
 });
 

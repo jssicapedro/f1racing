@@ -13,15 +13,15 @@ class Calendar extends Model
     protected $primaryKey = 'idCalendar';
 
     protected $fillable = [
-        'Prix_idPrix',
-        'GrandPrix_idGrandPrix',
-        'T1',
-        'T2',
-        'T3',
-        'sprintQualify',
-        'sprint',
-        'qualify',
-        'race'
+        'Prix_idPrix', 
+        'GrandPrix_idGrandPrix', 
+        't1', 
+        't2', 
+        't3', 
+        'qualifysprint', 
+        'sprint', 
+        'qualify', 
+        'race',
     ];
 
     public function prix()

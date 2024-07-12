@@ -17,16 +17,15 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            // Authentication was successful
-            return redirect()->route('index');
+            $user = Auth::user();
+    
+            if ($user->isAdmin) {
+                return redirect()->route('admin.calendar');
+            } else {
+                return redirect()->route('index');
+            }
         } else {
-            // Authentication failed
             return redirect()->back()->withInput()->withErrors(['email' => 'Invalid credentials']);
         }
-    }
-
-    public function dash()
-    {
-        return view('auth/dash');
     }
 }
