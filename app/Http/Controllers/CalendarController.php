@@ -43,7 +43,7 @@ class CalendarController extends Controller
 
     public function view()
     {
-        $calendars = Calendar::with('prix')->get();
+        $calendars = Calendar::with('prix')->select('idCalendar', 'Prix_idPrix', 'GrandPrix_idGrandPrix', 't1', 't2', 't3', 'sprintQualify', 'qualify', 'race')->get();
 
         $events = [];
 
@@ -102,6 +102,38 @@ class CalendarController extends Controller
         }
 
         return view('admin.calendar.index', compact('events'));
+    }
+
+    public function create()
+    {
+        $prix = Prix::all();
+        $grandprix = GrandPrix::all();
+        $nextId = Calendar::max('idCalendar') + 1;
+
+        return view('admin.calendar.create', compact('nextId', 'prix', 'grandprix'));
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'Prix_idPrix' => 'required|exists:prix,idPrix',
+            'GrandPrix_idGrandPrix' => 'required|exists:grandprix,idGrandPrix',
+            't1' => 'date|required',
+            't2' => 'nullable|date',
+            't3' => 'nullable|date',
+            'sprintQualify' => 'nullable|date',
+            'sprint' => 'nullable|date',
+            'qualify' => 'date|required',
+            'race' => 'date|required',
+        ]);
+
+        $data = $request->only(['Prix_idPrix', 'GrandPrix_idGrandPrix', 't1', 't2', 't3', 'sprintQualify', 'sprint', 'qualify', 'race']);
+
+        
+
+        Calendar::create($data);
+
+        return redirect()->route('admin.calendar')->with('success', 'Event created successfully.');
     }
 
     public function edit($id)

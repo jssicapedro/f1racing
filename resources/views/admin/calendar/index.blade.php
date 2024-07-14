@@ -8,7 +8,7 @@
     }
 
     #calendar {
-        width: 90%;
+        width: 100%;
         height: 80vh;
     }
 
@@ -60,6 +60,10 @@
         background: var(--default_white);
         padding: 5px;
     }
+
+    a.fc-event.fc-event-start.fc-event-end.fc-event-future.fc-daygrid-event.fc-daygrid-dot-event:hover {
+    cursor: pointer;
+}
 </style>
 @push('links')
 
@@ -102,9 +106,11 @@
 @section('main')
 @include('admin.partials.admin-navbar')
 <div class="content">
-    <h1>Calendar</h1>
-    <div id="calendar">
-
+    <div class="info">
+        <h1>Calendar</h1>
+        <a class="btnRed" href="{{ route('admin.calendar.create') }}">Add</a>
+        <div id="calendar">
+        </div>
     </div>
 </div>
 @endsection

@@ -88,7 +88,7 @@ a.relative.inline-flex.items-center.px-4.py-2.ml-3.text-sm.font-medium.text-gray
 }
 
 form {
-    width: 90%;
+    width: 100%;
     gap: 15px;
     display: flex;
     flex-direction: column;

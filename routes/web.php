@@ -31,8 +31,12 @@ Route::post('/wp-admin/login', [AuthController::class, 'login'])->name('login.su
 
 Route::middleware(['isAdmin'])->group(function () {
     Route::get('/wp-admin/calendar', [CalendarController::class, 'view'])->name('admin.calendar');
+    Route::get('/wp-admin/calendar/new', [CalendarController::class, 'create'])->name('admin.calendar.create');
+    Route::post('/wp-admin/calendar/store', [CalendarController::class, 'store'])->name('admin.calendar.store');
+    
     Route::get('/wp-admin/calendar/{id}', [CalendarController::class, 'edit'])->name('admin.calendar.edit');
     Route::put('/wp-admin/calendar/{id}', [CalendarController::class, 'update'])->name('admin.calendar.update');
+
 
 
 

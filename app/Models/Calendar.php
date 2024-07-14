@@ -18,7 +18,7 @@ class Calendar extends Model
         't1', 
         't2', 
         't3', 
-        'qualifysprint', 
+        'sprintQualify', 
         'sprint', 
         'qualify', 
         'race',
