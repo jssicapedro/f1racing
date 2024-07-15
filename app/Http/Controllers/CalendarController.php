@@ -176,4 +176,9 @@ class CalendarController extends Controller
 
         return redirect()->route('admin.calendar')->with('success', 'Event updated successfully.');
     }
+
+    public function destroy($id){
+        Calendar::destroy($id);
+        return redirect()->route('admin.calendar');
+    }
 }

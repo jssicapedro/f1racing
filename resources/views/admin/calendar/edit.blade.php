@@ -7,6 +7,19 @@
 @endpush
 
 @push('scripts')
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+    function confirmDelete(event) {
+        event.preventDefault();
+        $('#confirmDeleteModal').modal('show');
+        $('#confirmDeleteButton').on('click', function() {
+            event.target.submit();
+        });
+        return false;
+    }
+</script>
 @endpush
 
 
@@ -14,7 +27,7 @@
 @include('admin.partials.admin-navbar')
 <div class="content">
     <div class="info">
-        <a class="btnRed" href="{{ route('admin.calendar') }}">Return list</a>
+        <a class="btnBlack" href="{{ route('admin.calendar') }}">Return list</a>
         <h1>{{ $day->prix->idPrix.' - '.$day->prix->name }}</h1>
         @if(session('success'))
         <div class="alert alert-success">
@@ -103,6 +116,31 @@
 
             <button type="submit" class="btn btn-primary">Update Event</button>
         </form>
+        <form action="{{ route('admin.calendar.destroy', ['id' => $day->idCalendar]) }}" method="POST" onsubmit="return confirmDelete(event)">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+    <!-- Modal de confirmação -->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmDeleteLabel">Confirm Delete</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete this event?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteButton">Delete</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

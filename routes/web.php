@@ -30,17 +30,24 @@ Route::get('/wp-admin', [AuthController::class, 'index']);
 Route::post('/wp-admin/login', [AuthController::class, 'login'])->name('login.submit');
 
 Route::middleware(['isAdmin'])->group(function () {
+    /* calendar */
     Route::get('/wp-admin/calendar', [CalendarController::class, 'view'])->name('admin.calendar');
     Route::get('/wp-admin/calendar/new', [CalendarController::class, 'create'])->name('admin.calendar.create');
     Route::post('/wp-admin/calendar/store', [CalendarController::class, 'store'])->name('admin.calendar.store');
-    
+    Route::delete(
+        '/wp-admin/calendar/destroy/{id}',
+        [CalendarController::class, 'destroy']
+    )->name('admin.calendar.destroy');
     Route::get('/wp-admin/calendar/{id}', [CalendarController::class, 'edit'])->name('admin.calendar.edit');
     Route::put('/wp-admin/calendar/{id}', [CalendarController::class, 'update'])->name('admin.calendar.update');
 
-
-
-
+    /* results */
     Route::get('/wp-admin/results', [ResultController::class, 'view'])->name('admin.results');
+    Route::get('/wp-admin/results/create', [ResultController::class, 'create'])->name('admin.results.create');
+    Route::post('/wp-admin/results/store', [ResultController::class, 'store'])->name('admin.results.store');
+
+
+
 
     Route::get('/wp-admin/grandprix', [GrandPrixController::class, 'view'])->name('admin.grandprix');
 

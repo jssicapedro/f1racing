@@ -108,7 +108,7 @@
 <div class="content">
     <div class="info">
         <h1>Calendar</h1>
-        <a class="btnRed" href="{{ route('admin.calendar.create') }}">Add</a>
+        <a class="btnBlack" href="{{ route('admin.calendar.create') }}">Add</a>
         <div id="calendar">
         </div>
     </div>

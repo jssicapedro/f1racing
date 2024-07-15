@@ -15,7 +15,7 @@
     <div class="content">
     <div class="info">
         <h1>Results</h1>
-        <a class="btnRed" href="">Add</a>
+        <a class="btnBlack" href="{{ route('admin.results.create') }}">Add</a>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>

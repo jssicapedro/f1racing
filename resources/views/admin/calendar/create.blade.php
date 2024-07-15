@@ -27,7 +27,7 @@
 @include('admin.partials.admin-navbar')
 <div class="content">
     <div class="info">
-        <a class="btnRed" href="{{ route('admin.calendar') }}">Return list</a>
+        <a class="btnBlack" href="{{ route('admin.calendar') }}">Return list</a>
         <h1>New Race</h1>
         <form action="{{ route('admin.calendar.store') }}" method="POST">
             @csrf
