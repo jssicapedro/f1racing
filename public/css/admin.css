@@ -10,8 +10,11 @@ main {
     background-color: var(--default_white);
     gap: 25px;
     width: 15vw;
-    min-height: 90vh;
-    padding: 40px 20px;
+    height: 100vh;
+    padding: 8rem 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
     justify-content: center;
 }
 
@@ -20,7 +23,6 @@ main {
     flex-direction: column;
     gap: 20px;
 }
-
 .text a{
     color: var(--default_color);
     text-decoration: none;
@@ -33,13 +35,14 @@ main {
 }
 
 .content {
+    margin-left: 15vw;
+    padding: 10vh 0;
     width: 90vw;
     height: 100%;
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
-    margin: auto 0;
 }
 
 .content h1{
@@ -94,10 +97,6 @@ form {
     flex-direction: column;
     align-items: flex-start;
 }
-
-/* .dates {
-    gap: 15px !important;
-} */
 
 .item {
     width: 100%;

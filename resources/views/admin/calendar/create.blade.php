@@ -8,17 +8,21 @@
 
 @push('scripts')
 <script>
-    document.getElementById('sprintCheckbox').addEventListener('change', function() {
-        var sprintFields = document.getElementById('sprintFields');
-        var nonSprintFields = document.getElementById('nonSprintFields');
-        if (this.checked) {
-            sprintFields.style.display = 'block';
-            nonSprintFields.style.display = 'none';
-        } else {
-            sprintFields.style.display = 'none';
-            nonSprintFields.style.display = 'block';
-        }
-    });
+    document.addEventListener('DOMContentLoaded', function () {
+            const sprintCheckbox = document.getElementById('sprintCheckbox');
+            const sprintFields = document.getElementById('sprintFields');
+            const nonSprintFields = document.getElementById('nonSprintFields');
+
+            sprintCheckbox.addEventListener('change', function () {
+                if (sprintCheckbox.checked) {
+                    sprintFields.style.display = 'block';
+                    nonSprintFields.style.display = 'none';
+                } else {
+                    sprintFields.style.display = 'none';
+                    nonSprintFields.style.display = 'block';
+                }
+            });
+        });
 </script>
 @endpush
 
@@ -31,7 +35,6 @@
         <h1>New Race</h1>
         <form action="{{ route('admin.calendar.store') }}" method="POST">
             @csrf
-
             <div>
                 <label class="form-label">Id</label>
                 <input type="text" class="form-control" value="{{ $nextId }}" readonly>
@@ -58,14 +61,14 @@
 
             <div class="mb-3 form-check">
                 <label class="form-check-label" for="sprintCheckbox">With Sprint</label>
-                <input type="checkbox" class="form-check-input" id="sprintCheckbox">
+                <input type="checkbox" class="form-check-input" id="sprintCheckbox" name="with_sprint">
             </div>
 
             <div id="sprintFields" style="display: none;">
                 <div class="item dates">
                     <div class="mb-3">
-                        <label for="sprintT1" class="form-label">T1</label>
-                        <input type="datetime-local" class="form-control" id="sprintT1" name="t1">
+                        <label for="t1" class="form-label">T1</label>
+                        <input type="datetime-local" class="form-control" id="t1" name="t1">
                     </div>
                     <div class="mb-3">
                         <label for="sprintQualify" class="form-label">Qualify Sprint</label>
@@ -110,7 +113,6 @@
                     </div>
                 </div>
             </div>
-
             <button type="submit" class="btn btn-primary">Add New</button>
         </form>
     </div>

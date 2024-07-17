@@ -84,6 +84,8 @@ header {
     font-family: var(--menu_family);
     font-size: 15px;
     font-weight: 600;
+    position: relative;
+    z-index: 2;
 }
 
 nav.menu {
@@ -128,6 +130,8 @@ footer {
     gap: 12px;
     display: flex !important;
     flex-direction: column;
+    position: relative;
+    z-index: 2;
 }
 
 footer div {
