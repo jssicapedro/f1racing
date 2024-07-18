@@ -41,7 +41,7 @@
                         <input type="checkbox" name="" id="" onclick="return false;">
                         @endif
                     </td>
-                    <td>
+                    <td class="actions">
                         <!-- Add any actions here, such as edit, delete -->
                         <a href="#">
                             <img src="{{ asset('img/logoAdminBar/edit.png') }}" alt="edit">

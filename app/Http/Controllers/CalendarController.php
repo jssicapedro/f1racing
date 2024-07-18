@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CalendarRequest;
 use Illuminate\Http\Request;
 use App\Models\Calendar;
 use App\Models\GrandPrix;
@@ -113,23 +114,33 @@ class CalendarController extends Controller
         return view('admin.calendar.create', compact('nextId', 'prix', 'grandprix'));
     }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'Prix_idPrix' => 'required|exists:prix,idPrix',
-            'GrandPrix_idGrandPrix' => 'required|exists:grandprix,idGrandPrix',
-            't1' => 'date|required',
-            't2' => 'nullable|date',
-            't3' => 'nullable|date',
-            'sprintQualify' => 'nullable|date',
-            'sprint' => 'nullable|date',
-            'qualify' => 'date|required',
-            'race' => 'date|required',
-        ]);
+    public function store(CalendarRequest $request)
+    {        
+        $data = $request->only(
+            [
+                'Prix_idPrix',
+                'GrandPrix_idGrandPrix',
 
-        $data = $request->only(['Prix_idPrix', 'GrandPrix_idGrandPrix', 't1', 't2', 't3', 'sprintQualify', 'sprint', 'qualify', 'race']);
+                'sprint_t1',
+                'sprintQualify',
+                'sprint',
+                'sprint_qualify',
+                'sprint_race',
 
-        
+                't1',
+                't2',
+                't3',
+                'qualify',
+                'race'
+            ]
+        );
+
+        if ($request->input('with_sprint')) {
+            $data['t1'] = $request->input('sprint_t1');
+            $data['qualify'] = $request->input('sprint_qualify');
+            $data['race'] = $request->input('sprint_race');
+        }
+
 
         Calendar::create($data);
 
@@ -177,7 +188,8 @@ class CalendarController extends Controller
         return redirect()->route('admin.calendar')->with('success', 'Event updated successfully.');
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         Calendar::destroy($id);
         return redirect()->route('admin.calendar');
     }

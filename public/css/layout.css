@@ -38,7 +38,7 @@ html {
     overflow-x: hidden;
 }
 
-a.btnRed {
+.btnRed, a.btnRed {
     max-width: 135px;
     padding: 5px 10px;
     font-size: 13px;
@@ -54,7 +54,7 @@ a.btnRed {
     border: none;
 }
 
-a.btnBlack {
+.btnBlack, a.btnBlack {
     text-decoration: none;
     width: 5vw;
     padding: 5px 100px;

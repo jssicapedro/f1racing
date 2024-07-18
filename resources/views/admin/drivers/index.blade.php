@@ -35,7 +35,7 @@
                     <td>{{ $driver->firstName }} {{ $driver->lastName }}</td>
                     <td>{{ $driver->number }}</td>
                     <td>{{ $driver->country }}</td>
-                    <td>
+                    <td class="actions">
                         <!-- Add any actions here, such as edit, delete -->
                         <a href="#">
                             <img src="{{ asset('img/logoAdminBar/edit.png') }}" alt="edit">

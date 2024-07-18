@@ -45,7 +45,8 @@ Route::middleware(['isAdmin'])->group(function () {
     Route::get('/wp-admin/results', [ResultController::class, 'view'])->name('admin.results');
     Route::get('/wp-admin/results/create', [ResultController::class, 'create'])->name('admin.results.create');
     Route::post('/wp-admin/results/store', [ResultController::class, 'store'])->name('admin.results.store');
-
+    Route::get('/wp-admin/results/{id}', [ResultController::class, 'edit'])->name('admin.results.edit');
+    Route::put('/wp-admin/results/{id}', [ResultController::class, 'update'])->name('admin.results.update');
 
 
 

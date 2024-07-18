@@ -8,21 +8,15 @@
 
 @push('scripts')
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-            const sprintCheckbox = document.getElementById('sprintCheckbox');
-            const sprintFields = document.getElementById('sprintFields');
-            const nonSprintFields = document.getElementById('nonSprintFields');
-
-            sprintCheckbox.addEventListener('change', function () {
-                if (sprintCheckbox.checked) {
-                    sprintFields.style.display = 'block';
-                    nonSprintFields.style.display = 'none';
-                } else {
-                    sprintFields.style.display = 'none';
-                    nonSprintFields.style.display = 'block';
-                }
-            });
-        });
+    document.getElementById('sprintCheckbox').addEventListener('change', function() {
+        if (this.checked) {
+            document.getElementById('sprintFields').style.display = 'block';
+            document.getElementById('nonSprintFields').style.display = 'none';
+        } else {
+            document.getElementById('sprintFields').style.display = 'none';
+            document.getElementById('nonSprintFields').style.display = 'block';
+        }
+    });
 </script>
 @endpush
 
@@ -33,6 +27,16 @@
     <div class="info">
         <a class="btnBlack" href="{{ route('admin.calendar') }}">Return list</a>
         <h1>New Race</h1>
+
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{ route('admin.calendar.store') }}" method="POST">
             @csrf
             <div>
@@ -61,14 +65,14 @@
 
             <div class="mb-3 form-check">
                 <label class="form-check-label" for="sprintCheckbox">With Sprint</label>
-                <input type="checkbox" class="form-check-input" id="sprintCheckbox" name="with_sprint">
+                <input type="checkbox" class="form-check-input" id="sprintCheckbox" name="with_sprint" value="1">
             </div>
 
             <div id="sprintFields" style="display: none;">
                 <div class="item dates">
                     <div class="mb-3">
-                        <label for="t1" class="form-label">T1</label>
-                        <input type="datetime-local" class="form-control" id="t1" name="t1">
+                        <label for="sprint_t1" class="form-label">T1</label>
+                        <input type="datetime-local" class="form-control" id="sprint_t1" name="sprint_t1">
                     </div>
                     <div class="mb-3">
                         <label for="sprintQualify" class="form-label">Qualify Sprint</label>
@@ -79,12 +83,12 @@
                         <input type="datetime-local" class="form-control" id="sprint" name="sprint">
                     </div>
                     <div class="mb-3">
-                        <label for="qualify" class="form-label">Qualify</label>
-                        <input type="datetime-local" class="form-control" id="qualify" name="qualify">
+                        <label for="sprint_qualify" class="form-label">Qualify</label>
+                        <input type="datetime-local" class="form-control" id="sprint_qualify" name="sprint_qualify">
                     </div>
                     <div class="mb-3">
-                        <label for="race" class="form-label">Race</label>
-                        <input type="datetime-local" class="form-control" id="race" name="race">
+                        <label for="sprint_race" class="form-label">Race</label>
+                        <input type="datetime-local" class="form-control" id="sprint_race" name="sprint_race">
                     </div>
                 </div>
             </div>

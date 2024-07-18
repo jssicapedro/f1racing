@@ -23,7 +23,7 @@
         const resultsFields = document.getElementById('resultsFields');
         const drivers = @json($drivers);
         const prix = document.getElementById('Prix_idPrix');
-        const laps = prix.options[prix.selectedIndex].getAttribute('data-laps'); // Use 'data-laps' correctly
+        const laps = prix.options[prix.selectedIndex].getAttribute('data-laps');
 
         resultsFields.innerHTML = '';
         for (let i = 0; i < entries; i++) {
@@ -55,7 +55,7 @@
                     </div>
                     <div class="form-group">
                         <label for="points${i}">Points</label>
-                        <input type="number" class="form-control" id="points${i}" name="results[${i}][points]" required>
+                        <input type="number" class="form-control" id="points${i}" name="results[${i}][points]" min="0" max="26" required>
                     </div>
                     <div class="form-group">
                         <label for="fastLapNumber${i}">Fast Lap Nº</label>

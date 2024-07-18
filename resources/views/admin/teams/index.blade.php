@@ -36,7 +36,7 @@
                     <td>{{ $team->name }}</td>
                     <td>{{ $team->base }}</td>
                     <td>{{ $team->firstTeamEntry }}</td>
-                    <td>
+                    <td class="actions">
                         <!-- Add any actions here, such as edit, delete -->
                         <a href="#">
                             <img src="{{ asset('img/logoAdminBar/edit.png') }}" alt="edit">
