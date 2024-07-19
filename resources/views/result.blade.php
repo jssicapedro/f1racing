@@ -9,7 +9,7 @@
 @section('main')
 <h1>Results</h1>
 <div class="container">
-    <form method="POST" action="{{ route('results.filter') }}">
+    <form class="filter" method="POST" action="{{ route('results.filter') }}">
         @csrf
         <div class="selection">
             <div class="selection_year">

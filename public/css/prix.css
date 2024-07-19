@@ -82,3 +82,15 @@ ul.pagination .page-link{
 ul.pagination .active{
     font-weight: bolder;
 }
+
+@media (max-width:1030px){
+    .prix{
+        width: 30vw;
+    }
+}
+
+@media (max-width:750px){
+    .prix{
+        width: 100%;
+    }
+}

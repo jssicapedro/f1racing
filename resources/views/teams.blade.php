@@ -26,7 +26,9 @@
     <ul class="splide__list">
       @foreach ($teams as $team)
       <li class="splide__slide" style="background: {{$team->color}};">
-        <img src="{{url('storage/team/'.$team->imgFullName)}}" alt="{{$team->name}}">
+        <a href="{{ route('team.show', ['id' => $team->idTeam]) }}">
+          <img src="{{url('storage/team/'.$team->imgFullName)}}" alt="{{$team->name}}">
+        </a>
       </li>
       @endforeach
     </ul>

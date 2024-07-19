@@ -14,7 +14,7 @@
     @include('admin.partials.admin-navbar')
 <div class="content">
     <div class="info">
-        <h1>Prix</h1>
+        <h1>Race</h1>
         <a class="btnRed" href="">Add</a>
         <table class="table table-bordered table-striped">
             <thead>

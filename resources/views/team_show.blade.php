@@ -4,6 +4,15 @@
 
 @push('links')
 <link rel="stylesheet" href="{{ asset('css/team_show.css') }}">
+<link rel="stylesheet" href="{{ asset('css/layout.css') }}">
+<style>
+        @media (max-width: 700px){ 
+            .driver{
+                border-top: 10px solid {{$team->color == '#FFFFFF' ? '#FF7F00': $team->color}};
+                border-left: 5px solid {{$team->color == '#FFFFFF' ? '#FF7F00': $team->color}};
+            }
+        }
+</style>
 @endpush
 
 @section('main')
@@ -30,9 +39,10 @@
         </div>
     
     </div>
+    <h2 class=" title title_drivers">Drivers</h2>
     <div class="drivers">
         @foreach ($drivers as $driver)
-        <div class="driver">
+        <div class="driver" style="">
             <a class="linkDriver" href="{{ route('driver.show', ['id' => $driver->idDriver]) }}">
                 <h1>{{$driver->name}}
                     <span>

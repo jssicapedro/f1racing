@@ -50,7 +50,7 @@
 
             <div class="item">
                 <div class="item_content">
-                    <label class="form-label">Prix</label>
+                    <label class="form-label">Race</label>
                     <select class="form-control" name="Prix_idPrix">
                         <option value="{{ $result->prix->idPrix }}" selected>{{ $result->prix->idPrix.' - '.$result->prix->name }}</option>
                         @foreach($prix as $gp)

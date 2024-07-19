@@ -7,8 +7,20 @@ main {
     display: flex;
     gap: 5vw;
     margin: 5vh 0;
+    width: 100%;
 }
 
 .selection_year, .selection_track {
     width: 25vw;
+}
+
+.filter{
+    display: flex;
+    width: 100%;
+}
+
+@media (max-width:1000px){
+    .selection {
+        gap: 10vw;
+    }
 }

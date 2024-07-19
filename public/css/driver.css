@@ -125,9 +125,12 @@ div#splide01-track {
 }
 
 @media (max-width: 1400px) {
-    h2.driverName, .driverTeam{
+
+    h2.driverName,
+    .driverTeam {
         color: var(--default_color);
     }
+
     .splide_driver {
         display: none;
     }
@@ -149,7 +152,7 @@ div#splide01-track {
         margin-bottom: 35px;
     }
 
-    .driver_mobile .item_driver .linkDriver{
+    .driver_mobile .item_driver .linkDriver {
         flex-direction: column;
     }
 
@@ -161,7 +164,39 @@ div#splide01-track {
         height: 350px;
     }
 
-    .driver_mobile .driverImg img{
+    .driver_mobile .driverImg img {
         height: 100%;
+    }
+}
+
+@media (max-width: 990px) {
+    .driver_mobile {
+        width: 100%;
+    }
+    .list_driver{
+        margin: 0;
+        padding: 0;
+    }
+    .driverName {
+        font-size: 40px;
+    }
+    .driverName .lastName {
+        font-size: 55px;
+    }
+    .driverNameCountry{
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .driver_mobile .list_driver {
+        display: flex;
+    }
+
+    .driver_mobile .item_driver {
+        width: 80%;
+        border-radius: 50px 0 0 0;
+        border-top: 10px solid var(--default_red);
+        border-left: 5px solid var(--default_red);
+        padding: 10px;
     }
 }

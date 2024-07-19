@@ -1,5 +1,5 @@
-main{
-    background: var(--default_white)!important;
+main {
+    background: var(--default_white) !important;
     padding: 0;
 }
 
@@ -11,19 +11,81 @@ main{
     padding-top: 2vw;
 }
 
-.info{
+.info {
     width: 35%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-.team_country, .podium_points, .birth_born {
+.team_country,
+.podium_points,
+.birth_born {
     display: flex;
     justify-content: flex-start;
     gap: 160px;
 }
 
-p{
+p {
     font-weight: normal;
+}
+
+@media (max-width: 890px) {
+    .about {
+        width: 80%;
+        align-items: center;
+        border-radius: 50px 0 0 0;
+        border-top: 10px solid var(--default_red);
+        border-left: 5px solid var(--default_red);
+        padding: 10px;
+    }
+
+    .info {
+        width: 80%;
+        gap: 15px;
+    }
+
+    .image {
+        width: 45%;
+    }
+
+    .image img {
+        width: 100%;
+    }
+
+    .name h1,
+    .name h2 {
+        font-weight: bold;
+    }
+
+    .team,
+    .country,
+    .podium,
+    .points,
+    .grandPrix,
+    .birth,
+    .born {
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .team_country,
+    .podium_points,
+    .birth_born {
+        padding: 0 30px;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .name,
+    .grandPrix {
+        padding: 0 30px;
+    }
+
+    h3 {
+        font-size: calc(1rem + 1.5vw);
+    }
 }

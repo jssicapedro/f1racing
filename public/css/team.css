@@ -1,9 +1,9 @@
 .splide__list {
-    margin: 0 15px!important;
+    margin: 0 15px !important;
 }
 
 .splide__slide {
-    height: 520px;
+    height: 570px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,7 +18,7 @@
     overflow: hidden;
 }
 
-.splide__slide:hover a{
+.splide__slide:hover a {
     transform: scale(1.2);
 }
 
@@ -27,19 +27,20 @@
     object-fit: contain;
 }
 
-.splide_const{
+.splide_const {
     display: flex;
 }
 
 .splide_mobile {
-  display: none;
+    display: none;
 }
 
 @media (max-width: 1000px) {
-    .splide_const{
+    .splide_const {
         display: none;
     }
+
     .splide_mobile {
-      display: flex;
+        display: flex;
     }
-  }
+}

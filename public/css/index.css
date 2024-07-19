@@ -74,9 +74,8 @@ h1 {
 }
 
 .nextRace {
-    margin-top: 30px;
     background: var(--default_white);
-    max-width: 400px;
+    width: 400px;
     border-radius: 20px;
     padding: 20px;
     display: flex;
@@ -357,7 +356,7 @@ p.intervalDate {
     text-decoration: none;
     color: var(--default_color);
     font-weight: normal;
-    padding: 17px 30px;
+    padding: 17px 5px;
     border-radius: 30px;
 }
 
@@ -520,6 +519,9 @@ a.nDecoration {
     .position_img {
         display: none;
     }
+    .races {
+        margin-top: 70px;
+    }
 
     .races__ {
         width: 100vw;
@@ -547,10 +549,6 @@ a.nDecoration {
     }
 
     .classificarion_drivers_top {
-        flex-direction: column;
-    }
-
-    .classification_menu ul {
         flex-direction: column;
     }
 
@@ -599,6 +597,33 @@ a.nDecoration {
 
     .ActualyRaceImg {
         width: 100%;
+    }
+
+    a.aNextRace {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .nextRace{
+        width: 100%;
+    }
+
+    .infoActualyRace h1 br {
+        display: none;
+    }
+}
+
+@media (max-width:900px) {
+    .classification_menu ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    .classification_menu ul li{
+        width: 100%;
+        text-align: center;
+    }
+    .classification_menu ul li a{
+        display: block;
     }
 }
 

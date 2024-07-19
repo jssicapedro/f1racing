@@ -11,6 +11,7 @@
 @endpush
 
 @section('main')
+<h1 class="title">Calendar</h1>
 <div class="next-race">
     <a class="link" href="{{ route('calendar.show', ['id' => $nextRace->idCalendar]) }}">
         <div class="info">

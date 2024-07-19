@@ -27,7 +27,7 @@
             <img src="{{ url('storage/prix/'.$currentRace->prix->imgAbout) }}" alt="">
         </div>
     </div>
-    <a href="{{ route('calendar.show', ['id' => $upcomingRace->idCalendar]) }}" style="text-decoration: none;">
+    <a class="aNextRace" href="{{ route('calendar.show', ['id' => $upcomingRace->idCalendar]) }}" style="text-decoration: none;">
         <div class="nextRace">
             <img style="width: 20%;" src="{{ url('storage/country/'.$upcomingRace->prix->imgCountry) }}" alt="">
             <div class="infoNextRace">

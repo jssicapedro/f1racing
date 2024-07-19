@@ -5,12 +5,12 @@ main {
 .next-race {
     display: flex;
     width: 65%;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .info {
-    max-width: 400px;
-    min-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -35,10 +35,6 @@ main {
 
 .dat_country img {
     width: 10%;
-}
-
-.circuit {
-    width: 35%;
 }
 
 .parctice {

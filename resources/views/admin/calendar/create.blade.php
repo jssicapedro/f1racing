@@ -46,7 +46,7 @@
 
             <div class="item">
                 <div class="item_content">
-                    <label class="form-label">Prix</label>
+                    <label class="form-label">Race</label>
                     <select class="form-control" name="Prix_idPrix" required>
                         @foreach($prix as $p)
                         <option value="{{ $p->idPrix }}">{{ $p->idPrix .' - '. $p->name }}</option>

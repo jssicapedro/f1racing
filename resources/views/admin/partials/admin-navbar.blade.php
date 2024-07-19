@@ -33,7 +33,7 @@
             <p>Grand Prix</p>
         </a>
         <a class="adminLink" href="{{ asset('/wp-admin/prix') }}">
-            <p>Prix</p>
+            <p>Race</p>
         </a>
         <a class="adminLink" href="{{ asset('/wp-admin/teams') }}">
             <p>Teams</p>
