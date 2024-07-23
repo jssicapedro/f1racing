@@ -13,6 +13,7 @@ class GrandPrix extends Model
     protected $primaryKey = 'idGrandPrix';
 
     protected $fillable = [
+        'name',
         'year'
     ];
 

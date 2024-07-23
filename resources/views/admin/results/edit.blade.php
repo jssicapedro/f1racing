@@ -35,14 +35,18 @@
     <div class="info">
         <a class="btnBlack" href="{{ route('admin.results') }}">Return list</a>
         <h1>{{ $result->driver->name.' - '.$result->prix->name.' - '.$result->grandprix->name }}</h1>
-        @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-        @endif
         <form action="{{ route('admin.results.update', $result->idResults) }}" method="POST">
             @csrf
             @method('PUT')
+            @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <div>
                 <label class="form-label">Id Result</label>
                 <input type="text" class="form-control" value="{{ $result->idResults }}" readonly>
@@ -72,7 +76,7 @@
             <div class="item">
                 <div class="item_content">
                     <label class="form-label">Driver</label>
-                    <select class="form-control" name="Prix_idPrix">
+                    <select class="form-control" name="Driver_idDriver">
                         <option value="{{ $result->prix->id }}" selected>{{ $result->driver->idDriver.' - '.$result->driver->name }}</option>
                         @foreach($drivers as $d)
                         <option value="{{ $d->idDriver }}" {{ $d->idDriver == $result->Driver_idDriver ? 'selected' : '' }}>{{ $d->idDriver.' - '.$d->name }}</option>
@@ -84,15 +88,15 @@
                 <div class="item_content">
                     <label for="position">Position</label>
                     <select class="form-control" id="position" name="position" required>
-                        @for ($n = 1; $n <= 20; $n++) <option value="{{ $n }}">{{ $n }}</option>
+                        @for ($n = 1; $n <= 20; $n++) <option value="{{ $n }}" {{ $n == $result->position ? 'selected' : '' }}>{{ $n }}</option>
                             @endfor
-                            <option value="NC">NC</option>
-                            <option value="DNF">DNF</option>
+                            <option value="NC" {{ $result->position == 'NC' ? 'selected' : '' }}>NC</option>
+                            <option value="DNF" {{ $result->position == 'DNF' ? 'selected' : '' }}>DNF</option>
                     </select>
                 </div>
                 <div class="item_content">
                     <label for="points">Points</label>
-                    <input type="number" class="form-control" id="points" name="points" min="0" max="26" required>
+                    <input type="number" class="form-control" id="points" name="points" min="0" max="26" value="{{$result->points}}" required>
                 </div>
             </div>
 
@@ -100,14 +104,16 @@
             <div class="item">
                 <div class="item_content">
                     <label for="fastLapNumber${i}">Fast Lap Nº</label>
-                    <select class="form-control" id="fastLapNumber${i}" name="results[${i}][fastLapNumber]">
+                    <select class="form-control" id="fastLapNumber" name="fastLapNumber">
                         <option value="">Select Fast Lap Number</option>
-                        ${fastLapNumberOptions}
+                        @foreach($fastLapNumbers as $num)
+                        <option value="{{ $num }}" {{ $num == $result->fastLapNumber ? 'selected' : '' }}>{{ $num }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="item_content">
                     <label for="fastLapTime${i}">Fast Lap Time</label>
-                    <input type="text" class="form-control" id="fastLapTime${i}" name="results[${i}][fastLapTime]" pattern="\\d{1}:\\d{2}\\.\\d{3}" placeholder="1:36.156">
+                    <input type="text" class="form-control" id="fastLapTime" name="fastLapTime" pattern="\d{1}:\d{2}\.\d{3}" placeholder="1:36.156" value="{{ $result->fastLapTime }}">
                 </div>
             </div>
 
@@ -169,6 +175,15 @@
         <form action="#" method="POST" onsubmit="return confirmDelete(event)">
             @csrf
             @method('DELETE')
+            @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <button type="submit" class="btn btn-danger">Delete</button>
         </form>
     </div>

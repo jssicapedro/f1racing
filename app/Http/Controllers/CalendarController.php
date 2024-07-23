@@ -135,10 +135,22 @@ class CalendarController extends Controller
             ]
         );
 
-        if ($request->input('with_sprint')) {
+        if ($request->input('with_sprint') == 'true') {
             $data['t1'] = $request->input('sprint_t1');
+            $data['t2'] = null;
+            $data['t3'] = null;
+            $data['sprintQualify'] = $request->input('sprintQualify');
+            $data['sprint'] = $request->input('sprint');
             $data['qualify'] = $request->input('sprint_qualify');
             $data['race'] = $request->input('sprint_race');
+        } else {
+            $data['t1'] = $request->input('t1');
+            $data['t2'] = $request->input('t2');
+            $data['t3'] = $request->input('t3');
+            $data['sprintQualify'] = null;
+            $data['sprint'] = null;
+            $data['qualify'] = $request->input('qualify');
+            $data['race'] = $request->input('race');
         }
 
 

@@ -8,14 +8,27 @@
 
 @push('scripts')
 <script>
-    document.getElementById('sprintCheckbox').addEventListener('change', function() {
-        if (this.checked) {
-            document.getElementById('sprintFields').style.display = 'block';
-            document.getElementById('nonSprintFields').style.display = 'none';
-        } else {
-            document.getElementById('sprintFields').style.display = 'none';
-            document.getElementById('nonSprintFields').style.display = 'block';
+    function toggleSprintFields() {
+        var sprintTrue = document.getElementById('sprintTrue');
+        var sprintFalse = document.getElementById('sprintFalse');
+        var sprintFields = document.getElementById('sprintFields');
+        var nonSprintFields = document.getElementById('nonSprintFields');
+        var withSprintField = document.getElementById('with_sprint');
+
+        if (sprintTrue.checked) {
+            sprintFields.style.display = 'block';
+            nonSprintFields.style.display = 'none';
+            withSprintField.value = 'true';
+        } else if (sprintFalse.checked) {
+            sprintFields.style.display = 'none';
+            nonSprintFields.style.display = 'block';
+            withSprintField.value = 'false';
         }
+    }
+
+    // Inicializa o estado correto dos campos ao carregar a página
+    document.addEventListener('DOMContentLoaded', function() {
+        toggleSprintFields();
     });
 </script>
 @endpush
@@ -27,18 +40,25 @@
     <div class="info">
         <a class="btnBlack" href="{{ route('admin.calendar') }}">Return list</a>
         <h1>New Race</h1>
-
-        @if($errors->any())
+        <form action="{{ route('admin.calendar.store') }}" method="POST">
+            @csrf
+            @if($errors->any())
             <div class="alert alert-danger">
                 <ul>
                     @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
+                    <li>{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>
-        @endif
-        <form action="{{ route('admin.calendar.store') }}" method="POST">
-            @csrf
+            @endif
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <div>
                 <label class="form-label">Id</label>
                 <input type="text" class="form-control" value="{{ $nextId }}" readonly>
@@ -63,11 +83,15 @@
                 </div>
             </div>
 
-            <div class="mb-3 form-check">
-                <label class="form-check-label" for="sprintCheckbox">With Sprint</label>
-                <input type="checkbox" class="form-check-input" id="sprintCheckbox" name="with_sprint" value="1">
+            <div>
+                <label class="form-check-label" for="sprintTrue">With Sprint</label>
+                <div>
+                    <input type="radio" class="form-check-input" id="sprintTrue" name="with_sprint" value="true" onclick="toggleSprintFields()"> Yes
+                </div> 
+                <div>
+                <input type="radio" class="form-check-input" id="sprintFalse" name="with_sprint" value="false" onclick="toggleSprintFields()" checked> No
+                </div>
             </div>
-
             <div id="sprintFields" style="display: none;">
                 <div class="item dates">
                     <div class="mb-3">

@@ -16,6 +16,15 @@
         <h1>Login</h1>
         <form method="POST" action="{{ route('login.submit') }}">
             @csrf
+            @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <div class="input-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>

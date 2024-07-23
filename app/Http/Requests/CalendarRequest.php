@@ -22,7 +22,7 @@ class CalendarRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'with_sprint' => 'required|boolean',
+            'with_sprint' => 'required|in:true,false',
             'Prix_idPrix' => 'required|exists:prix,idPrix',
             'GrandPrix_idGrandPrix' => 'required|exists:grandprix,idGrandPrix',
 

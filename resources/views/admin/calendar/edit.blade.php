@@ -37,6 +37,15 @@
         <form action="{{ route('admin.calendar.update', $day->idCalendar) }}" method="POST">
             @csrf
             @method('PUT')
+            @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <div>
                 <label class="form-label">Id Calendar</label>
                 <input type="text" class="form-control" value="{{ $day->idCalendar }}" readonly>
@@ -119,6 +128,15 @@
         <form action="{{ route('admin.calendar.destroy', ['id' => $day->idCalendar]) }}" method="POST" onsubmit="return confirmDelete(event)">
             @csrf
             @method('DELETE')
+            @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <button type="submit" class="btn btn-danger">Delete</button>
         </form>
     </div>

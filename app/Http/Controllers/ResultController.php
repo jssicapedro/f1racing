@@ -73,9 +73,9 @@ class ResultController extends Controller
         }
 
         $results = $query->orderBy('idResults', 'desc')
-                        ->orderBy('GrandPrix_idGrandPrix')
-                        ->with(['driver', 'prix', 'grandPrix'])
-                        ->paginate(20);
+            ->orderBy('GrandPrix_idGrandPrix')
+            ->with(['driver', 'prix', 'grandPrix'])
+            ->paginate(20);
 
         $years = GrandPrix::select('year')->distinct()->orderBy('year', 'desc')->get();
         $tracks = Prix::distinct()->pluck('name');
@@ -85,9 +85,7 @@ class ResultController extends Controller
 
     public function create()
     {
-        $prix = Prix::all();
         $grandprix = GrandPrix::all();
-        $drivers = Driver::all();
 
         return view('admin.results.create', compact('prix', 'grandprix', 'drivers'));
     }
@@ -119,17 +117,56 @@ class ResultController extends Controller
         return redirect()->route('admin.results')->with('success', 'Event created successfully.');
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $result = Results::findOrFail($id);
         $prix = Prix::all();
-        $laps = Prix::all();
         $grandprix = GrandPrix::all();
         $drivers = Driver::all();
 
-        return view('admin.results.edit', compact('result', 'prix', 'grandprix', 'drivers'));
+        $track = Prix::find($result->Prix_idPrix);
+        $fastLapNumbers = range(1, $track->laps);
+
+
+        return view('admin.results.edit', compact('result', 'prix', 'grandprix', 'drivers', 'fastLapNumbers'));
     }
 
-    public function update(){
+    public function update(Request $request, $id)
+    {
+        $event = Results::findOrFail($id);
+
+        // Atualizar somente os campos que não estão nulos
+        $fields = [
+            'Prix_idPrix',
+            'GrandPrix_idGrandPrix',
+            'Driver_idDriver',
+            'position',
+            'points',
+            'fastLapNumber',
+            'fastLapTime'
+        ];
+
+        foreach ($fields as $field) {
+            if ($request->has($field) && $request->input($field) !== null) {
+                $event->$field = $request->input($field);
+            }
+        }
+
+        $event->save();
+
+
+        return redirect()->route('admin.results')->with('success', 'Event updated successfully.');
+    }
+
+    public function destroy($id)
+    {
+        $result = Results::destroy($id);
+
+        if (!$result) {
+            return redirect()->route('admin.results')->with('error', 'Result not found.');
+        }
+
+        return redirect()->route('admin.results')->with('success', 'Event delete successfully.');
 
     }
 }

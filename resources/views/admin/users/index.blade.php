@@ -17,7 +17,7 @@
 <div class="content">
     <div class="info">
         <h1>Users</h1>
-        <a class="btnRed" href="">Add</a>
+        <a class="btnBlack" href="">Add</a>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
@@ -49,6 +49,15 @@
                         <form action="#" method="POST" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
+                            @if($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
                             <a href="#">
                                 <img src="{{ asset('img/logoAdminBar/delete.png') }}" alt="delete">
                             </a>
