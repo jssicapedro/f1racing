@@ -21,7 +21,6 @@
 
     <link rel="stylesheet" href="{{asset('css/layout.css')}}">
 
-    @yield('links')
     @stack('links')
 </head>
 
@@ -33,8 +32,8 @@
     <main>
         @yield('main')
 
-        @if(Auth::user()->isAdmin)
-        @include('components.message-modal')
+        @if(Auth::check() && Auth::user()->isAdmin)
+         @include('components.message-modal')
         @endif
     </main>
 
@@ -51,7 +50,6 @@
     <!-- chart -->
     <script src="https://cdn2.hubspot.net/hubfs/476360/Chart.js"></script>
     <script src="https://cdn2.hubspot.net/hubfs/476360/utils.js"></script>
-    @yield('scripts')
     @stack('scripts')
     <script src="{{ asset('js/modal.js') }}"></script>
 </body>
