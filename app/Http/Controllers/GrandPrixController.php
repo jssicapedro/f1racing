@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GrandPrixRequest;
 use Illuminate\Http\Request;
 use App\Models\GrandPrix;
 
@@ -18,19 +19,51 @@ class GrandPrixController extends Controller
         return view('admin.grandprix.create');
     }
 
-    public function store(Request $request)
+    public function store(GrandPrixRequest $request)
     {
-        $request->validate([
-            'nameGrandPrix' => 'required|string|max:255',
-            'year' => 'required',
-        ]);
-        /* dd($request); */
-
         GrandPrix::create([
-            'name' => $request->input('nameGrandPrix'),
+            'name' => $request->input('name'),
             'year' => $request->input('year'),
         ]);
 
         return redirect()->route('admin.grandprix')->with('success', 'Event created successfully.');
+    }
+
+    public function edit($id)
+    {
+        $grandprix = GrandPrix::findOrFail($id);
+
+        return view('admin.grandprix.edit', compact('grandprix'));
+    }
+
+    public function update(GrandPrixRequest $request, $id)
+    {
+        $event = GrandPrix::findOrFail($id);
+
+        $fields = [
+            'name',
+            'year'
+        ];
+
+        foreach ($fields as $field) {
+            if ($request->has($field) && $request->input($field) !== null) {
+                $event->$field = $request->input($field);
+            }
+        }
+
+        $event->save();
+
+        return redirect()->route('admin.grandprix')->with('success', 'Event updated successfully');
+    }
+
+    public function destroy($id)
+    {
+        $result = GrandPrix::destroy($id);
+
+        if (!$result) {
+            return redirect()->route('admin.grandprix')->with('error', 'Result not found.');
+        }
+
+        return redirect()->route('admin.grandprix')->with('success', 'Event delete successfully.');
     }
 }

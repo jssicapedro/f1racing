@@ -51,14 +51,6 @@
                 </ul>
             </div>
             @endif
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
             <div>
                 <label class="form-label">Id</label>
                 <input type="text" class="form-control" value="{{ $nextId }}" readonly>

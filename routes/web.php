@@ -93,3 +93,6 @@ Route::get('/prix/{id}', [PrixController::class, 'show'])->name('prix.show');
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/error/403', function () {return view('errors.403');})->name('error.403');

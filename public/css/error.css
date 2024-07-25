@@ -29,16 +29,10 @@ main{
 
 #Container:hover div {
     position: absolute;
-    opacity: 0.5;
-    -webkit-box-shadow: 0 0 1px 1px rgba(142, 68, 173, 1);
-    box-shadow: 0 0 1px 1px rgba(142, 68, 173, 1);
 }
 
 #Container div:hover {
     position: absolute;
-    opacity: 0.5;
-    -webkit-box-shadow: 0 0 4px 4px rgba(46, 204, 113, 1.0);
-    box-shadow: 0 0 4px 4px rgba(46, 204, 113, 1.0);
 }
 
 @keyframes entrance {

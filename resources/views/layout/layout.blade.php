@@ -32,9 +32,6 @@
     <main>
         @yield('main')
 
-        @if(Auth::check() && Auth::user()->isAdmin)
-         @include('components.message-modal')
-        @endif
     </main>
 
     <!-- ======= Footer ======= -->

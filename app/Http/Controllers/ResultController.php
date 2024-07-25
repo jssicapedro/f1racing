@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ResultRequest;
 use App\Models\Driver;
 use Illuminate\Http\Request;
 use App\Models\Results;
@@ -86,11 +87,13 @@ class ResultController extends Controller
     public function create()
     {
         $grandprix = GrandPrix::all();
+        $prix = Prix::all();
+        $drivers = Driver::all();
 
         return view('admin.results.create', compact('prix', 'grandprix', 'drivers'));
     }
 
-    public function store(Request $request)
+    public function store(ResultRequest $request)
     {
         $request->validate([
             'Prix_idPrix' => 'required|exists:prix,idPrix',
@@ -101,20 +104,23 @@ class ResultController extends Controller
             'results.*.fastLapNumber' => 'nullable|integer|min:1|max:100', // A placeholder max value, update dynamically
             'results.*.fastLapTime' => 'nullable|regex:/^\d{1}:\d{2}\.\d{3}$/', // Matches the format 1:36.156
         ]);
-
-        foreach ($request->results as $result) {
-            Results::create([
-                'Prix_idPrix' => $request->Prix_idPrix,
-                'GrandPrix_idGrandPrix' => $request->GrandPrix_idGrandPrix,
-                'Driver_idDriver' => $result['Driver_idDriver'],
-                'position' => $result['position'],
-                'points' => $result['points'],
-                'fastLapNumber' => $result['fastLapNumber'],
-                'fastLapTime' => $result['fastLapTime'],
-            ]);
+        try {
+            foreach ($request->results as $result) {
+                Results::create([
+                    'Prix_idPrix' => $request->Prix_idPrix,
+                    'GrandPrix_idGrandPrix' => $request->GrandPrix_idGrandPrix,
+                    'Driver_idDriver' => $result['Driver_idDriver'],
+                    'position' => $result['position'],
+                    'points' => $result['points'],
+                    'fastLapNumber' => $result['fastLapNumber'],
+                    'fastLapTime' => $result['fastLapTime'],
+                ]);
+            }
+            return redirect()->route('admin.results')->with('success', 'Event created successfully.');
+        } catch (\Exception $e) {
+            \Log::error('Error creating results: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Failed to create event.');
         }
-
-        return redirect()->route('admin.results')->with('success', 'Event created successfully.');
     }
 
     public function edit($id)
@@ -131,9 +137,12 @@ class ResultController extends Controller
         return view('admin.results.edit', compact('result', 'prix', 'grandprix', 'drivers', 'fastLapNumbers'));
     }
 
-    public function update(Request $request, $id)
+    public function update(ResultRequest $request, $id)
     {
         $event = Results::findOrFail($id);
+
+
+        $validPoints = [25, 18, 15, 12, 10, 8, 6, 4, 2, 1];
 
         // Atualizar somente os campos que não estão nulos
         $fields = [
@@ -160,13 +169,14 @@ class ResultController extends Controller
 
     public function destroy($id)
     {
-        $result = Results::destroy($id);
+        $result = Results::find($id);
 
         if (!$result) {
             return redirect()->route('admin.results')->with('error', 'Result not found.');
         }
 
-        return redirect()->route('admin.results')->with('success', 'Event delete successfully.');
+        $result->delete();
 
+        return redirect()->route('admin.results')->with('success', 'Event delete successfully.');
     }
 }

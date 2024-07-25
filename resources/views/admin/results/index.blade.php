@@ -24,22 +24,6 @@
             formToSubmit.submit(); // Submete o formulário
         }
     });
-
-    document.getElementById('year').addEventListener('change', function() {
-        var year = this.value;
-        fetch(`/admin/results/tracks?year=${year}`)
-            .then(response => response.json())
-            .then(data => {
-                var trackSelect = document.getElementById('track');
-                trackSelect.innerHTML = '<option value="">Select Prix</option>';
-                data.forEach(track => {
-                    var option = document.createElement('option');
-                    option.value = track;
-                    option.textContent = track;
-                    trackSelect.appendChild(option);
-                });
-            });
-    });
 </script>
 @endpush
 
@@ -114,18 +98,16 @@
         {{ $results->links() }}
     </div>
 </div>
-
-
-<!-- Modal de Confirmação -->
+<!-- modal -->
 <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Delete</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Are you sure you want to delete this result?
+                Are you sure you want to delete this item?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

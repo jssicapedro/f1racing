@@ -43,15 +43,6 @@
                         <form action="#" method="POST" style="display:inline-block;">
                             @csrf
                             @method('DELETE')
-                            @if($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                            @endif
                             <a href="#">
                                 <img src="{{ asset('img/logoAdminBar/delete.png') }}" alt="delete">
                             </a>
