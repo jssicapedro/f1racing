@@ -9,7 +9,7 @@
         <a class="adminLink" href="{{ route('admin.grandprix') }}">
             <img src="{{ asset('img/logoAdminBar/grand_prix.png') }}" alt="image grand prix">
         </a>
-        <a class="adminLink" href="{{ route('admin.prix') }}">
+        <a class="adminLink" href="{{ route('admin.track') }}">
             <img src="{{ asset('img/logoAdminBar/prix.png') }}" alt="image prix">
         </a>
         <a class="adminLink" href="{{ route('admin.teams') }}">
@@ -32,8 +32,8 @@
         <a class="adminLink" href="{{ route('admin.grandprix') }}">
             <p>Grand Prix</p>
         </a>
-        <a class="adminLink" href="{{ route('admin.prix') }}">
-            <p>Race</p>
+        <a class="adminLink" href="{{ route('admin.track') }}">
+            <p>Track</p>
         </a>
         <a class="adminLink" href="{{ route('admin.teams') }}">
             <p>Teams</p>

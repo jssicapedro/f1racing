@@ -14,8 +14,8 @@
 @include('admin.partials.admin-navbar')
 <div class="content">
     <div class="info">
-        <h1>Race</h1>
-        <a class="btnBlack" href="">Add</a>
+        <h1>Track</h1>
+        <a class="btnBlack" href="{{ route('admin.track.create') }}">Add</a>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>

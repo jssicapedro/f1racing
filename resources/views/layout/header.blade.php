@@ -5,7 +5,7 @@
             <li class="nav-item"><a href="{{ asset('/calendar') }}">Calendar</a></li>
             <li class="nav-item"><a href="{{ asset('/drivers') }}">Drivers</a></li>
             <li class="nav-item"><a href="{{ asset('/teams') }}">Teams</a></li>
-            <li class="nav-item"><a href="{{ asset('/prix') }}">Race</a></li>
+            <li class="nav-item"><a href="{{ asset('/track') }}">Track</a></li>
             @auth
             <li class="nav-item"><a href="{{ asset('/results') }}">Results</a></li>
             <div class="dropdown ms-auto">

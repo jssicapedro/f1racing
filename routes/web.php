@@ -26,7 +26,7 @@ use App\Http\Controllers\UsersController;
 |
 */
 
-Route::get('/wp-admin', [AuthController::class, 'index']);
+Route::get('/wp-admin', [AuthController::class, 'index'])->name('login');
 Route::post('/wp-admin/login', [AuthController::class, 'login'])->name('login.submit');
 
 Route::middleware(['isAdmin'])->group(function () {
@@ -54,7 +54,13 @@ Route::middleware(['isAdmin'])->group(function () {
     Route::put('/wp-admin/grandprix/{id}', [GrandPrixController::class, 'update'])->name('admin.grandprix.update');
     Route::delete('/wp-admin/grandprix/destroy/{id}',[GrandPrixController::class, 'destroy'])->name('admin.grandprix.destroy');
 
-    Route::get('/wp-admin/prix', [PrixController::class, 'view'])->name('admin.prix');
+    /* track */
+    Route::get('/wp-admin/track', [PrixController::class, 'view'])->name('admin.track');
+    Route::get('/wp-admin/track/create', [PrixController::class, 'create'])->name('admin.track.create');
+    Route::post('/wp-admin/track/store', [PrixController::class, 'store'])->name('admin.track.store');
+    Route::get('/wp-admin/track/{id}', [PrixController::class, 'edit'])->name('admin.track.edit');
+    Route::put('/wp-admin/track/{id}', [PrixController::class, 'update'])->name('admin.track.update');
+    Route::delete('/wp-admin/track/destroy/{id}', [PrixController::class, 'destroy'])->name('admin.track.destroy');
 
     Route::get('/wp-admin/teams', [ConstructorsController::class, 'view'])->name('admin.teams');
 
@@ -87,8 +93,8 @@ Route::get('/teams', [ConstructorsController::class, 'index']);
 Route::get('/team/{id}', [ConstructorsController::class, 'show'])->name('team.show');
 
 
-Route::get('/prix', [PrixController::class, 'index'])->name('prix');
-Route::get('/prix/{id}', [PrixController::class, 'show'])->name('prix.show');
+Route::get('/track', [PrixController::class, 'index'])->name('track');
+Route::get('/track/{id}', [PrixController::class, 'show'])->name('track.show');
 
 
 Auth::routes();

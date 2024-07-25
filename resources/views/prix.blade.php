@@ -7,7 +7,7 @@
 @endpush
 
 @section('main')
-<form action="{{ route('prix') }}" method="GET">
+<form action="{{ route('track') }}" method="GET">
     <div>
         <input type="checkbox" name="all" id="all" {{ $filter === 'all' ? 'checked' : '' }}>
         <label for="all">All</label>
@@ -22,7 +22,7 @@
 </form>
 <div class="prixs">
     @foreach ($prixs as $prix)
-    <a class="prix" href="{{ route('prix.show', ['id' => $prix->idPrix]) }}">
+    <a class="prix" href="{{ route('track.show', ['id' => $prix->idPrix]) }}">
         <div class="img_country">
             <img class="country" src="{{ url('storage/country/'.$prix->imgCountry) }}" alt="{{ $prix->country}}">
         </div>
@@ -56,7 +56,7 @@
             } else {
                 $('#filter').prop('disable', false);
             }
-            window.location.href = "{{ route('prix') }}";
+            window.location.href = "{{ route('track') }}";
         });
     });
 </script>

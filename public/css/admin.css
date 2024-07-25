@@ -125,3 +125,19 @@ td.actions {
     display: flex;
     text-align: justify;
 }
+
+.title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.title h1{
+    color: var(--default_color);
+}
+
+.title hr {
+    border: 6px solid var(--default_red);
+    width: 100%;
+}

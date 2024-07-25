@@ -92,7 +92,7 @@
             <form action="{{ route('admin.results.store') }}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="Prix_idPrix">Race</label>
+                    <label for="Prix_idPrix">Track</label>
                     <select class="form-control" id="Prix_idPrix" name="Prix_idPrix" required>
                         @foreach($prix as $p)
                             <option value="{{ $p->idPrix }}" data-laps="{{ $p->laps }}" {{ old('Prix_idPrix') == $p->idPrix ? 'selected' : '' }}>{{ $p->idPrix }} - {{ $p->name }}</option>

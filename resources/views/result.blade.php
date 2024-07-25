@@ -59,7 +59,7 @@
         </tbody>
     </table>
     @else
-    <p>Não houve corrida nesta pista no ano selecionado</p>
+    <p>There was no race on this track in the selected year</p>
     @endif
     @endif
 </div>

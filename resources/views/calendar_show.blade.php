@@ -51,7 +51,7 @@
         <div class="day">
             <p class="dm"> {{\Carbon\Carbon::parse($prix->race)->format('d')}} <br> {{\Carbon\Carbon::parse($prix->race)->format('M')}}</p>
             <hr>
-            <p class="dt"><span>Race</span> <br> {{\Carbon\Carbon::parse($prix->race)->format('H:i')}}</p>
+            <p class="dt"><span>Track</span> <br> {{\Carbon\Carbon::parse($prix->race)->format('H:i')}}</p>
         </div>
         @else
         @endif

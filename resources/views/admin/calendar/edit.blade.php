@@ -53,7 +53,7 @@
 
             <div class="item">
                 <div class="item_content">
-                    <label class="form-label">Race</label>
+                    <label class="form-label">Track</label>
                     <select class="form-control" name="Prix_idPrix">
                         <option value="{{ $day->prix->id }}" selected>{{ $day->prix->idPrix.' - '.$day->prix->name }}</option>
                         @foreach($prix as $p)
@@ -117,7 +117,7 @@
 
                 @if(isset($day->race))
                 <div class="item_content">
-                    <label class="form-label">Race</label>
+                    <label class="form-label">Track</label>
                     <input type="datetime-local" class="form-control" id="event_date_time" name="race" value="{{ $day->race }}">
                 </div>
                 @endif

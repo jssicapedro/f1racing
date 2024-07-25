@@ -64,7 +64,7 @@
                     <th>Driver</th>
                     <th>Points</th>
                     <th>Fast Lap Time</th>
-                    <th>Race</th>
+                    <th>Track</th>
                     <th>Grand Prix</th>
                     <th>Actions</th>
                 </tr>
