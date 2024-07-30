@@ -15,12 +15,16 @@ class Prix extends Model
     protected $fillable = [
         'name',
         'grandPrixName',
+        'comunName',
         'country',
         'firstGrandPrix',
         'distance',
         'length',
+        'laps',
         'info',
-        'comunName'
+        'imgCircuts',
+        'imgBanner',
+        'imgAbout'
     ];
 
     public function results()

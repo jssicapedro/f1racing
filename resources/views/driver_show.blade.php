@@ -2,9 +2,9 @@
 
 @section('title', 'F1Racing - Constructors')
 
-@section('links')
+@push('links')
 <link rel="stylesheet" href="{{ asset('css/driver_show.css') }}">
-@endsection
+@endpush
 
 
 @section('main')
