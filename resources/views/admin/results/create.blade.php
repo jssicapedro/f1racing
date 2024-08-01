@@ -2,14 +2,14 @@
 
 @section('title', 'F1Racing')
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+
+@push('links')
 <style>
     .result {
         display: flex;
         gap: 50px;
     }
 </style>
-@push('links')
-
 @endpush
 
 @push('scripts')

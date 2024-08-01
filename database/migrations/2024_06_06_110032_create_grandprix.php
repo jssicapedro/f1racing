@@ -11,15 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('grandprix', function (Blueprint $table) {
-            $table->id('idGrandPrix');
-            $table->string('name', 45);
-            $table->year('year');
+        if (!Schema::hasTable('grandprix')) {
+            Schema::create('grandprix', function (Blueprint $table) {
+                $table->id('idGrandPrix');
+                $table->string('name', 45);
+                $table->year('year');
 
-            $table->unique('idGrandPrix');
-            
-            $table->timestamps();
-        });
+                $table->unique('idGrandPrix');
+
+                $table->timestamps();
+            });
+        }
     }
 
     /**
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('grandprix');
     }
 };

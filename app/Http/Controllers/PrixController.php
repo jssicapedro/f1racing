@@ -7,6 +7,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Http\Request;
 use Exception;
 use App\Models\Prix;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -47,7 +48,9 @@ class PrixController extends Controller
 
     public function create()
     {
-        return view('admin.prix.create');
+        // Obtém todos os países da tabela
+        $countries = DB::table('countries')->get();
+        return view('admin.prix.create', compact('countries'));
     }
 
     private function resizeImage($file, $width, $height, $destination)

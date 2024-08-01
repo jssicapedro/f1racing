@@ -11,15 +11,19 @@ class Team extends Model
     protected $primaryKey = 'idTeam';
 
     protected $fillable = [
-        'idTeam',
         'name',
         'fullName',
         'base',
+        'country',
         'teamChief',
         'technicalChief',
         'firstTeamEntry',
         'polePosition',
         'worldChampionShips',
+        'color',
+        'imgFullName',
+        'imgLogo',
+        'imgTeam'
     ];
 
     public function drivers()
@@ -32,5 +36,8 @@ class Team extends Model
         return $this->belongsTo(Car::class, 'Car_idCar', 'idCar');
     }
 
-
+    public function country()
+    {
+        return $this->belongsTo(Country::class, 'country', 'name');
+    }
 }

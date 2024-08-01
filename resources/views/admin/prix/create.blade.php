@@ -72,7 +72,14 @@
                 <div class="item-content">
                     <div class="mb-3">
                         <label for="country" class="form-label">Country</label>
-                        <input type="text" class="form-control" id="country" name="country" value="{{ old('country') }}">
+                        <select class="form-control" id="country" name="country" required>
+                            <option value="">Select Country</option>
+                            @foreach($countries as $country)
+                                <option value="{{ $country->iso_3166_2 }}" data-flag="{{ strtolower($country->iso_3166_2) }}">
+                                    {{ $country->name }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
                     @if ($errors->has('country'))
                     <div class="text-danger">{{ $errors->first('country') }}</div>

@@ -19,7 +19,7 @@ class TeamTableSeeder extends Seeder
                 'name' => 'Red Bull',
                 'fullName' => 'Oracle Red Bull Racing',
                 'base' => 'Milton Keynes, United Kingdom',
-                'country' => '',
+                'country' => 'United Kingdom',
                 'teamChief' => 'Christian Horner',
                 'technicalChief' => 'Pierre Waché',
                 'firstTeamEntry' => 1997,
@@ -29,7 +29,6 @@ class TeamTableSeeder extends Seeder
                 'imgLogo' => 'RedBull.png',
                 'imgTeam' => '',
                 'imgFullName' => 'RedBull_full.png',
-                'imgCountry' => NULL,
                 'Car_idCar' => 1
             ],
         [
@@ -37,7 +36,7 @@ class TeamTableSeeder extends Seeder
                 'name' => 'Ferrari',
                 'fullName' => 'Scuderia Ferrari',
                 'base' => 'Maranello, Italy',
-                'country' => '',
+                'country' => 'Italy',
                 'teamChief' => 'Frédéric Vasseur',
                 'technicalChief' => 'Enrico Cardile / Enrico Gualtieri',
                 'firstTeamEntry' => 1950,
@@ -47,7 +46,6 @@ class TeamTableSeeder extends Seeder
                 'imgLogo' => 'Ferrari.png',
                 'imgTeam' => '',
                 'imgFullName' => 'Ferrari_full.png',
-                'imgCountry' => NULL,
                 'Car_idCar' => 2
             ],
         [
@@ -55,7 +53,7 @@ class TeamTableSeeder extends Seeder
                 'name' => 'McLaren',
                 'fullName' => 'McLaren Formula 1 Team',
                 'base' => 'Woking, United Kingdom',
-                'country' => '',
+                'country' => 'United Kingdom',
                 'teamChief' => 'Andrea Stella',
                 'technicalChief' => 'Peter Prodromou / David Sanchez / Rob Marshall',
                 'firstTeamEntry' => 1966,
@@ -65,7 +63,6 @@ class TeamTableSeeder extends Seeder
                 'imgLogo' => 'McLaren.png',
                 'imgTeam' => '',
                 'imgFullName' => 'McLaren_full.png',
-                'imgCountry' => NULL,
                 'Car_idCar' => 3
             ],
         [
@@ -73,7 +70,7 @@ class TeamTableSeeder extends Seeder
                 'name' => 'Mercedes',
                 'fullName' => 'Mercedes-AMG PETRONAS F1 Team',
                 'base' => 'Brackley, United Kingdom',
-                'country' => '',
+                'country' => 'United Kingdom',
                 'teamChief' => 'Toto Wolff',
                 'technicalChief' => 'James Allison',
                 'firstTeamEntry' => 1970,
@@ -83,7 +80,6 @@ class TeamTableSeeder extends Seeder
                 'imgLogo' => 'Mercedes.png',
                 'imgTeam' => '',
                 'imgFullName' => 'Mercedes_full.png',
-                'imgCountry' => NULL,
                 'Car_idCar' => 4
             ],
         [
@@ -91,7 +87,7 @@ class TeamTableSeeder extends Seeder
                 'name' => 'Aston Martin',
                 'fullName' => 'Aston Martin Aramco F1 Team',
                 'base' => 'Silverstone, United Kingdom',
-                'country' => '',
+                'country' => 'United Kingdom',
                 'teamChief' => 'Mike Krack',
                 'technicalChief' => 'Dan Fallows',
                 'firstTeamEntry' => 2018,
@@ -101,7 +97,6 @@ class TeamTableSeeder extends Seeder
                 'imgLogo' => 'AstonMartin.png',
                 'imgTeam' => '',
                 'imgFullName' => 'AstonMartin_full.png',
-                'imgCountry' => NULL,
                 'Car_idCar' => 5
             ],
         [
@@ -109,7 +104,7 @@ class TeamTableSeeder extends Seeder
                 'name' => 'Haas',
                 'fullName' => 'MoneyGram Haas F1 Team',
                 'base' => 'Kannapolis, United States',
-                'country' => '',
+                'country' => 'United States',
                 'teamChief' => 'Ayao Komatsu',
                 'technicalChief' => 'Andrea De Zordo',
                 'firstTeamEntry' => 2016,
@@ -119,7 +114,6 @@ class TeamTableSeeder extends Seeder
                 'imgLogo' => 'Haas.png',
                 'imgTeam' => '',
                 'imgFullName' => 'Haas_full.png',
-                'imgCountry' => NULL,
                 'Car_idCar' => 6
             ],
         [
@@ -127,7 +121,7 @@ class TeamTableSeeder extends Seeder
                 'name' => 'Williams',
                 'fullName' => 'Williams Racing',
                 'base' => 'Grove, United Kingdom',
-                'country' => '',
+                'country' => 'United Kingdom',
                 'teamChief' => 'James Vowles',
                 'technicalChief' => 'Pat Fry',
                 'firstTeamEntry' => 1978,
@@ -137,7 +131,6 @@ class TeamTableSeeder extends Seeder
                 'imgLogo' => 'Williams.png',
                 'imgTeam' => '',
                 'imgFullName' => 'Williams_full.png',
-                'imgCountry' => NULL,
                 'Car_idCar' => 7
             ],
         [
@@ -145,7 +138,7 @@ class TeamTableSeeder extends Seeder
                 'name' => 'Kick Sauber',
                 'fullName' => 'Stake F1 Team Kick Sauber',
                 'base' => 'Hinwil, Switzerland',
-                'country' => '',
+                'country' => 'Switzerland',
                 'teamChief' => 'Alessandro Alunni Bravi',
                 'technicalChief' => 'James Key',
                 'firstTeamEntry' => 1993,
@@ -155,7 +148,6 @@ class TeamTableSeeder extends Seeder
                 'imgLogo' => 'KickSauber.png',
                 'imgTeam' => '',
                 'imgFullName' => 'KickSauber_full.png',
-                'imgCountry' => NULL,
                 'Car_idCar' => 8
             ],
         [
@@ -163,7 +155,7 @@ class TeamTableSeeder extends Seeder
                 'name' => 'RB',
                 'fullName' => 'Visa Cash App RB Formula One Team',
                 'base' => 'Faenza, Italy',
-                'country' => '',
+                'country' => 'Italy',
                 'teamChief' => 'Laurent Mekies',
                 'technicalChief' => 'Jody Egginton',
                 'firstTeamEntry' => 1985,
@@ -173,7 +165,6 @@ class TeamTableSeeder extends Seeder
                 'imgLogo' => 'RB.png',
                 'imgTeam' => '',
                 'imgFullName' => 'RB_full.png',
-                'imgCountry' => NULL,
                 'Car_idCar' => 9
             ],
         [
@@ -181,7 +172,7 @@ class TeamTableSeeder extends Seeder
                 'name' => 'Alpine',
                 'fullName' => 'BWT Alpine F1 Team',
                 'base' => 'Enstone, United Kingdom',
-                'country' => '',
+                'country' => 'United Kingdom',
                 'teamChief' => 'Bruno Famin',
                 'technicalChief' => 'Joe Burnell / David Wheater / Ciaron Pilbeam',
                 'firstTeamEntry' => 1986,
@@ -191,7 +182,6 @@ class TeamTableSeeder extends Seeder
                 'imgLogo' => 'Alpine.png',
                 'imgTeam' => '',
                 'imgFullName' => 'Alpine_full.png',
-                'imgCountry' => NULL,
                 'Car_idCar' => 10
             ],
         ]);

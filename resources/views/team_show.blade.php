@@ -6,13 +6,42 @@
 <link rel="stylesheet" href="{{ asset('css/team_show.css') }}">
 <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
 <style>
-        @media (max-width: 700px){ 
-            .driver{
-                border-top: 10px solid {{$team->color == '#FFFFFF' ? '#FF7F00': $team->color}};
-                border-left: 5px solid {{$team->color == '#FFFFFF' ? '#FF7F00': $team->color}};
+    @media (max-width: 700px) {
+        .driver {
+            border-top: 10px solid {
+                    {
+                    $team->color =='#FFFFFF' ? '#FF7F00': $team->color
+                }
             }
+
+            ;
+
+            border-left: 5px solid {
+                    {
+                    $team->color =='#FFFFFF' ? '#FF7F00': $team->color
+                }
+            }
+
+            ;
         }
+    }
 </style>
+@endpush
+
+
+@push('scripts')
+<script>
+    /* document.addEventListener('DOMContentLoaded', function () {
+        var countryCode = "{{ $team->country_code }}"; // Certifique-se de que o código do país está correto
+
+        if (countryCode) {
+            var flagUrl = `https://flagcdn.com/w320/${countryCode.toLowerCase()}.png`;
+            var flagImg = document.getElementById('country-flag');
+            flagImg.src = flagUrl;
+            flagImg.style.display = 'block';
+        }
+    }); */
+</script>
 @endpush
 
 @section('main')
@@ -23,7 +52,17 @@
             <div class="about_">
                 <h2>Basic Information</h2>
                 <p>Full Name <span class="about__">{{$team->fullName}}</span></p>
-                <p>Base <span class="about__">{{$team->base}} <img src="{{ url('storage/country/'.$team->imgCountry) }}" alt="{{$team->country}}"></span></p>
+                <p>Base
+                    <span class="about__">{{$team->base}}
+                        <!-- <img src="{{ url('storage/country/'.$team->imgCountry) }}" alt="{{$team->country}}"> -->
+
+                        @if($team->flag_url)
+                        <img src="{{ $team->flag_url }}" srcset="{{ $team->flag_url }} 1x,
+    {{ $team->flag_url }} 2x,
+    {{ $team->flag_url }} 3x" width="16" height="12" alt="Flag of {{ $team->country }}">
+                        @endif
+                    </span>
+                </p>
                 <p>First Year <span class="about__">{{$team->firstTeamEntry}}</span></p>
             </div>
             <div class="chiefs">
@@ -33,16 +72,20 @@
             </div>
             <div class="car">
                 <h2>Car</h2>
+                @if(!empty($cars->chassis))
                 <p>Chassis <span>{{$cars->chassis}}</span></p>
+                @endif
+                @if(!empty($cars->powerUnit))
                 <p>Power Unit <span>{{$cars->powerUnit}}</span></p>
+                @endif
             </div>
         </div>
-    
+
     </div>
     <h2 class=" title title_drivers">Drivers</h2>
     <div class="drivers">
         @foreach ($drivers as $driver)
-        <div class="driver" style="">
+        <div class="driver">
             <a class="linkDriver" href="{{ route('driver.show', ['id' => $driver->idDriver]) }}">
                 <h1>{{$driver->name}}
                     <span>
@@ -56,6 +99,3 @@
     </div>
 </div>
 @endsection
-
-@push('scripts')
-@endpush

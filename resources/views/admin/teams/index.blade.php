@@ -16,7 +16,7 @@
 <div class="content">
     <div class="info">
         <h1>Teams</h1>
-        <a class="btnBlack" href="">Add</a>
+        <a class="btnBlack" href="{{ route('admin.teams.create') }}">Add</a>
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>

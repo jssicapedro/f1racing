@@ -193,8 +193,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-
+        App\Providers\RouteServiceProvider::class,'Webpatser\Countries\CountriesServiceProvider',
     ],
 
     /*
@@ -209,7 +208,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'Example' => App\Facades\Example::class,
+       'Countries' => 'Webpatser\Countries\CountriesFacade',
     ])->toArray(),
 
 ];

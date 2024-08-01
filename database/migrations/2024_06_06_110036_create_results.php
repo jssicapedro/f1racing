@@ -11,24 +11,26 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('results', function (Blueprint $table) {
-            $table->id('idResults');
-            $table->string('position', 45);
-            $table->decimal('points', 5, 2);
-            $table->integer('fastLapNumber')->nullable();
-            $table->string('fastLapTime', 8)->nullable();
-            $table->unsignedBigInteger('Driver_idDriver');
-            $table->unsignedBigInteger('Prix_idPrix');
-            $table->unsignedBigInteger('GrandPrix_idGrandPrix');
+        if (!Schema::hasTable('results')) {
+            Schema::create('results', function (Blueprint $table) {
+                $table->id('idResults');
+                $table->string('position', 45);
+                $table->decimal('points', 5, 2);
+                $table->integer('fastLapNumber')->nullable();
+                $table->string('fastLapTime', 8)->nullable();
+                $table->unsignedBigInteger('Driver_idDriver');
+                $table->unsignedBigInteger('Prix_idPrix');
+                $table->unsignedBigInteger('GrandPrix_idGrandPrix');
 
-            $table->unique('idResults');
-            $table->foreign('Driver_idDriver')->references('idDriver')->on('driver')->onDelete('cascade');
-            $table->foreign('Prix_idPrix')->references('idPrix')->on('prix')->onDelete('cascade');
-            $table->foreign('GrandPrix_idGrandPrix')->references('idGrandPrix')->on('grandprix')->onDelete('cascade');
+                $table->unique('idResults');
+                $table->foreign('Driver_idDriver')->references('idDriver')->on('driver')->onDelete('cascade');
+                $table->foreign('Prix_idPrix')->references('idPrix')->on('prix')->onDelete('cascade');
+                $table->foreign('GrandPrix_idGrandPrix')->references('idGrandPrix')->on('grandprix')->onDelete('cascade');
 
-            
-            $table->timestamps();
-        });
+
+                $table->timestamps();
+            });
+        }
     }
 
     /**
@@ -36,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('results');
     }
 };

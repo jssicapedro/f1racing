@@ -29,7 +29,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'JeddahCornicheCircuit.png',
                 'imgBanner' => 'JeddahCornicheCircuit_banner.jpg',
                 'imgAbout' => 'JeddahCornicheCircuit_about.png',
-                'imgCountry' => 'SaudiArabia.jpg'
             ],
             [
                 'idPrix' => 2,
@@ -45,7 +44,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'BahrainInternationalCircuit.png',
                 'imgBanner' => 'BahrainInternationalCircuit_banner.jpg',
                 'imgAbout' => 'BahrainInternationalCircuit_about.png',
-                'imgCountry' => 'Bahrain.jpg'
             ],
             [
                 'idPrix' => 3,
@@ -61,7 +59,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'AlbertParkCircuit.png',
                 'imgBanner' => 'AlbertParkCircuit_banner.jpg',
                 'imgAbout' => 'AlbertParkCircuit_about.png',
-                'imgCountry' => 'Australia.jpg'
             ],
             [
                 'idPrix' => 4,
@@ -77,7 +74,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'SuzukaInternationalRacingCourse.png',
                 'imgBanner' => 'SuzukaInternationalRacingCourse_banner.jpg',
                 'imgAbout' => 'SuzukaInternationalRacingCourse_about.png',
-                'imgCountry' => 'Japan.jpg'
             ],
             [
                 'idPrix' => 5,
@@ -93,7 +89,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'ShanghaiInternationalCircuit.png',
                 'imgBanner' => 'ShanghaiInternationalCircuit_banner.jpg',
                 'imgAbout' => 'ShanghaiInternationalCircuit_about.png',
-                'imgCountry' => 'China.jpg'
             ],
             [
                 'idPrix' => 6,
@@ -109,7 +104,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'MiamiInternationalAutodrome.png',
                 'imgBanner' => 'MiamiInternationalAutodrome_banner.jpg',
                 'imgAbout' => 'MiamiInternationalAutodrome_about.png',
-                'imgCountry' => 'UnitedStates.jpg'
             ],
             [
                 'idPrix' => 7,
@@ -125,7 +119,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'AutodromoEnzoeDinoFerrari.png',
                 'imgBanner' => 'AutodromoEnzoeDinoFerrari_banner.jpg',
                 'imgAbout' => 'AutodromoEnzoeDinoFerrari_about.png',
-                'imgCountry' => 'Italy.jpg'
             ],
             [
                 'idPrix' => 8,
@@ -141,7 +134,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'CircuitdeMonaco.png',
                 'imgBanner' => 'CircuitdeMonaco_banner.jpg',
                 'imgAbout' => 'CircuitdeMonaco_about.png',
-                'imgCountry' => 'Monaco.jpg'
             ],
             [
                 'idPrix' => 9,
@@ -157,7 +149,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'CircuitGilles-Villeneuve.png',
                 'imgBanner' => 'CircuitGilles-Villeneuve_banner.jpg',
                 'imgAbout' => 'CircuitGilles-Villeneuve_about.png',
-                'imgCountry' => 'Canada.jpg'
             ],
             [
                 'idPrix' => 10,
@@ -173,7 +164,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'CircuitdeBarcelona-Catalunya.png',
                 'imgBanner' => 'CircuitdeBarcelona-Catalunya_banner.jpg',
                 'imgAbout' => 'CircuitdeBarcelona-Catalunya_about.png',
-                'imgCountry' => 'Spain.jpg'
             ],
             [
                 'idPrix' => 11,
@@ -189,7 +179,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'RedBullRing.png',
                 'imgBanner' => 'RedBullRing_banner.jpg',
                 'imgAbout' => 'RedBullRing_about.png',
-                'imgCountry' => 'Austria.jpg'
             ],
             [
                 'idPrix' => 12,
@@ -205,7 +194,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'SilverstoneCircuit.png',
                 'imgBanner' => 'SilverstoneCircuit_banner.jpg',
                 'imgAbout' => 'SilverstoneCircuit_about.png',
-                'imgCountry' => 'GreatBritain.jpg'
             ],
             [
                 'idPrix' => 13,
@@ -221,7 +209,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'Hungaroring.png',
                 'imgBanner' => 'Hungaroring_banner.jpg',
                 'imgAbout' => 'Hungaroring_about.png',
-                'imgCountry' => 'Hungary.jpg'
             ],
             [
                 'idPrix' => 14,
@@ -237,7 +224,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'CircuitdeSpa-Francorchamps.png',
                 'imgBanner' => 'CircuitdeSpa-Francorchamps_banner.jpg',
                 'imgAbout' => 'CircuitdeSpa-Francorchamps_about.png',
-                'imgCountry' => 'Belgium.jpg'
             ],
             [
                 'idPrix' => 15,
@@ -253,7 +239,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'CircuitZandvoort.png',
                 'imgBanner' => 'CircuitZandvoort_banner.jpg',
                 'imgAbout' => 'CircuitZandvoort_about.png',
-                'imgCountry' => 'Netherlands.jpg'
             ],
             [
                 'idPrix' => 16,
@@ -269,7 +254,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'AutodromoNazionaleMonza.png',
                 'imgBanner' => 'AutodromoNazionaleMonza_banner.jpg',
                 'imgAbout' => 'AutodromoNazionaleMonza_about.png',
-                'imgCountry' => 'Italy.jpg'
             ],
             [
                 'idPrix' => 17,
@@ -285,7 +269,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'BakuCityCircuit.png',
                 'imgBanner' => 'BakuCityCircuit_banner.jpg',
                 'imgAbout' => 'BakuCityCircuit_about.png',
-                'imgCountry' => 'Azerbaijan.jpg'
             ],
             [
                 'idPrix' => 18,
@@ -301,7 +284,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'MarinaBayStreetCircuit.png',
                 'imgBanner' => 'MarinaBayStreetCircuit_banner.jpg',
                 'imgAbout' => 'MarinaBayStreetCircuit_about.png',
-                'imgCountry' => 'Singapore.jpg'
             ],
             [
                 'idPrix' => 19,
@@ -317,7 +299,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'CircuitofTheAmericas.png',
                 'imgBanner' => 'CircuitofTheAmericas_banner.jpg',
                 'imgAbout' => 'CircuitofTheAmericas_about.png',
-                'imgCountry' => 'UnitedStates.jpg'
             ],
             [
                 'idPrix' => 20,
@@ -333,7 +314,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'AutódromoHermanosRodríguez.png',
                 'imgBanner' => 'AutódromoHermanosRodríguez_banner.jpg',
                 'imgAbout' => 'AutódromoHermanosRodríguez_about.png',
-                'imgCountry' => 'Mexico.jpg'
             ],
             [
                 'idPrix' => 21,
@@ -349,7 +329,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'AutódromoJoséCarlosPace.png',
                 'imgBanner' => 'AutódromoJoséCarlosPace_banner.jpg',
                 'imgAbout' => 'AutódromoJoséCarlosPace_about.png',
-                'imgCountry' => 'Brazil.jpg'
             ],
             [
                 'idPrix' => 22,
@@ -365,7 +344,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'LasVegasStripCircuit.png',
                 'imgBanner' => 'LasVegasStripCircuit_banner.jpg',
                 'imgAbout' => 'LasVegasStripCircuit_about.png',
-                'imgCountry' => 'UnitedStates.jpg'
             ],
             [
                 'idPrix' => 23,
@@ -381,7 +359,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'LusailInternationalCircuit.png',
                 'imgBanner' => 'LusailInternationalCircuit_banner.jpg',
                 'imgAbout' => 'LusailInternationalCircuit_about.png',
-                'imgCountry' => 'Qatar.jpg'
             ],
             [
                 'idPrix' => 24,
@@ -397,7 +374,6 @@ class PrixTableSeeder extends Seeder
                 'imgCircuts' => 'YasMarinaCircuit.png',
                 'imgBanner' => 'YasMarinaCircuit_banner.jpg',
                 'imgAbout' => 'YasMarinaCircuit_about.png',
-                'imgCountry' => 'AbuDhabi.jpg'
             ]
         ]);
     }
