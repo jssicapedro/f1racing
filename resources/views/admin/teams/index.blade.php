@@ -38,7 +38,7 @@
                     <td>{{ $team->firstTeamEntry }}</td>
                     <td class="actions">
                         <!-- Add any actions here, such as edit, delete -->
-                        <a href="#">
+                        <a href="{{ route('admin.teams.edit', $team->idTeam) }}">
                             <img src="{{ asset('img/logoAdminBar/edit.png') }}" alt="edit">
                         </a>
                         <form action="#" method="POST" style="display:inline-block;">

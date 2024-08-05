@@ -105,4 +105,11 @@ class ConstructorsController extends Controller
 
         return redirect()->route('admin.teams')->with('success', 'Team created successfully.');
     }
+
+    public function edit($id)
+    {
+        $team = Team::findOrFail($id);
+        $countries = DB::table('countries')->get();
+        return view('admin.teams.edit', compact('team', 'countries'));
+    }
 }
