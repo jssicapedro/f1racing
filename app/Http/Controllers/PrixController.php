@@ -117,6 +117,7 @@ class PrixController extends Controller
         }
 
 
+
         Prix::create([
             'name' => $request->name,
             'grandPrixName' => $request->grandPrixName,

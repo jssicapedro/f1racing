@@ -32,9 +32,9 @@ class PrixRequest extends FormRequest
             'length' => 'required|numeric|between:0,999.99',
             'laps' => 'required|integer',
             'info' => 'nullable|string',
-            'imgCircuts' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'imgBanner' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'imgAbout' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'imgCircuts' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'imgBanner' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'imgAbout' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ];
     }
 }
