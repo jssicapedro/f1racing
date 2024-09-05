@@ -112,4 +112,57 @@ class ConstructorsController extends Controller
         $countries = DB::table('countries')->get();
         return view('admin.teams.edit', compact('team', 'countries'));
     }
+
+    public function update(TeamRequest $request, $id){
+        $team = Team::findOrFail($id);
+
+        $imgFullName = $imgLogo = $imgTeam = null;
+
+        // Verifica e armazena a imagem de 'imgFullName'
+        if ($request->hasFile('imgFullName') && $request->file('imgFullName')->isValid()) {
+            $imgFullName = str_replace(' ', '', $request->name) . '_full.' . $request->imgFullName->extension();
+            $request->imgFullName->storeAs('team', $imgFullName, 'public');
+        }
+
+        // Verifica e armazena a imagem de 'imgLogo'
+        if ($request->hasFile('imgLogo') && $request->file('imgLogo')->isValid()) {
+            $imgLogo = str_replace(' ', '', $request->name) . '.' . $request->imgLogo->extension();
+            $request->imgLogo->storeAs('team', $imgLogo, 'public');
+        }
+
+        // Verifica e armazena a imagem de 'imgTeam'
+        if ($request->hasFile('imgTeam') && $request->file('imgTeam')->isValid()) {
+            $imgTeam = str_replace(' ', '', $request->name) . '_team.' . $request->imgTeam->extension();
+            $request->imgTeam->storeAs('team', $imgTeam, 'public');
+        }
+
+        $team->update([
+            'name' => $request->input('name'),
+            'fullName' => $request->input('fullName'),
+            'base' => $request->input('base'),
+            'country' => $request->input('country'), // Armazena o nome do país
+            'teamChief' => $request->input('teamChief'),
+            'technicalChief' => $request->input('technicalChief'),
+            'firstTeamEntry' => $request->input('firstTeamEntry'),
+            'polePositions' => $request->input('polePositions'),
+            'worldChampionShips' => $request->input('worldChampionShips'),
+            'color' => $request->input('color'),
+            'imgFullName' => $imgFullName,
+            'imgLogo' => $imgLogo,
+            'imgTeam' => $imgTeam,
+        ]);
+
+        return redirect()->route('admin.teams')->with('success', 'Grand Prix updated successfully.');
+    }
+
+    public function destroy($id){
+        $team = Team::find($id);
+        if (!$team) {
+            return redirect()->route('admin.team')->with('error', 'Result not found.');
+        }
+
+        $team->delete();
+
+        return redirect()->route('admin.teams')->with('success', 'Event delete successfully.');
+    }
 }

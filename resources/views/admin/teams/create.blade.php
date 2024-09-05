@@ -89,7 +89,7 @@
                 <div class="item-content">
                     <div class="mb-3">
                         <label for="polePositions" class="form-label">Pole Positions</label>
-                        <input type="number" class="form-control" id="polePositions" name="polePositions" required>
+                        <input type="number" class="form-control" id="polePositions" name="polePositions">
                     </div>
                 </div>
                 <div class="item-content">

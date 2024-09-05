@@ -24,8 +24,9 @@
     <div class="info">
         <a class="btnBlack" href="{{ route('admin.teams') }}">Return list</a>
         <h1>{{ $team->idTeam. ' - ' .$team->name }}</h1>
-        <form action="{{ route('admin.teams.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.teams.update', $team->idTeam) }}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
             <div class="title">
                 <h1>Information</h1>
                 <hr>
@@ -55,7 +56,7 @@
                     <div class="mb-3">
                         <label for="country" class="form-label">Country</label>
                         <select class="form-control" id="country" name="country" value="{{ $team->country }}" required>
-                            <option value="">Select Country</option>
+                            <option value="{{ $team->country }}">{{ $team->country }}</option>
                             @foreach($countries as $country)
                             <option value="{{ $country->name }}" data-flag="{{ strtolower($country->name) }}">
                                 {{ $country->name }}
@@ -113,7 +114,7 @@
             <div class="item item-img">
                 <div class="item-content-img">
                     <label class="item-content-img" for="imgFullName">Full name</label>
-                    <img src="{{url('storage/prix/'.$team->imgFullName)}}" alt="{{$team->name}}">
+                    <img src="{{url('storage/team/'.$team->imgFullName)}}" alt="{{$team->name}}">
                     <input type="file" class="form-control" name="imgFullName">
                     @if ($errors->has('imgFullName'))
                     <div class="text-danger">{{ $errors->first('imgFullName') }}</div>
@@ -121,7 +122,7 @@
                 </div>
                 <div class="item-content-img">
                     <label class="item-content-img" for="imgLogo">Logotipo</label>
-                    <img src="{{url('storage/prix/'.$team->imgLogo)}}" alt="{{$team->name}}">
+                    <img src="{{url('storage/team/'.$team->imgLogo)}}" alt="{{$team->name}}">
                     <input type="file" class="form-control" name="imgLogo">
                     @if ($errors->has('imgLogo'))
                     <div class="text-danger">{{ $errors->first('imgLogo') }}</div>
@@ -129,14 +130,14 @@
                 </div>
                 <div class="item-content-img">
                     <label class="item-content-img" for="imgTeam">Team</label>
-                    <img src="{{url('storage/prix/'.$team->imgTeam)}}" alt="{{$team->name}}">
+                    <img src="{{url('storage/team/'.$team->imgTeam)}}" alt="{{$team->name}}">
                     <input type="file" class="form-control" name="imgTeam">
                     @if ($errors->has('imgTeam'))
                     <div class="text-danger">{{ $errors->first('imgTeam') }}</div>
                     @endif
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Add New</button>
+            <button type="submit" class="btn btn-primary">Update Team</button>
         </form>
     </div>
     @endsection
