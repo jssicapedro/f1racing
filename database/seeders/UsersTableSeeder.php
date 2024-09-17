@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
+use App\Models\Role;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -14,23 +16,44 @@ class UsersTableSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('users')->insert([
-            [
-                'name' => 'Jéssica',
-                'email' => 'admin@example.com',
-                'password' => Hash::make('password'),
-                'isAdmin' => true,
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'name' => 'Ana',
-                'email' => 'ana@example.com',
-                'password' => Hash::make('password'),
-                'isAdmin' => false,
-                'created_at' => now(),
-                'updated_at' => now()
-            ]
-        ]);
+
+        $role = new Role();
+        $role->name = "user";
+        $role->slug = "user";
+        $role->save();
+
+        $role = new Role();
+        $role->name = "admin";
+        $role->slug = "admin";
+        $role->save();
+
+        $role = new Role();
+        $role->name = "dev";
+        $role->slug = "dev";
+        $role->save();
+
+        $user = new User();
+        $user->role_id = 3; // dev
+        $user->name = "Jéssica";
+        $user->username = "developer";
+        $user->email = "developer@f1racing.host";
+        $user->password = Hash::make("password");
+        $user->save();
+
+        $user = new User();
+        $user->role_id = 2; // admin
+        $user->name = "Jéssica";
+        $user->username = "admin";
+        $user->email = "admin@f1racing.host";
+        $user->password = Hash::make("password");
+        $user->save();
+
+        $user = new User();
+        $user->role_id = 1; // user
+        $user->name = "John Doe";
+        $user->username = "john.doe";
+        $user->email = "john.doe@f1racing.host";
+        $user->password = Hash::make("password");
+        $user->save();
     }
 }
